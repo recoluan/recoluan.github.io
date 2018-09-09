@@ -1,5 +1,4 @@
 module.exports = {
-  base: '/notes/',
   title: "Afternoon Grocery Store",
   description: 'Enjoy when you can, and endure when you master.',
   dest: 'public',
