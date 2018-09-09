@@ -1,24 +1,23 @@
 module.exports = {
   title: "Afternoon Grocery Store",
-  description: 'Enjoy when you can, and endure when you master.',
+  description: 'Enjoy when you can, and endure when you must.',
   dest: 'public',
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
   themeConfig: {
     nav: [
-      { text: '首页', link: '/' },
-      { text: '分类', 
+      { text: 'Home', link: '/' },
+      { text: 'Categories', 
         items: [
-          { text: '前端', link: '/categories/front' },
-          { text: '后端', link: '/categories/back' },
-          { text: '随笔', link: '/categories/essay' },
-          { text: '其他', link: '/categories/other' }
+          { text: 'FrontEnd', link: '/categories/front' },
+          { text: 'BackEnd', link: '/categories/back' },
+          { text: 'Essay', link: '/categories/essay' },
+          { text: 'Other', link: '/categories/other' }
         ]
       },
-      { text: '标签墙', link: '/tags/' },
-      { text: '关于我', link: '/views/personalInfo/' },
-      { text: 'GitHub', link: 'https://gitlab.com/recoluan/notes' },
+      { text: 'Tags', link: '/tags/' },
+      { text: 'GitHub', link: 'https://gitlab.com/recoluan/recoluan.gitlab.io' },
     ],
     //搜索
     search: true,
