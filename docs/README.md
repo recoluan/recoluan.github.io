@@ -9,6 +9,6 @@ features:
 - title: Where am I？
   details: In Beijing? On earth? Or in a small part of space.
 - title: What am I going to do？
-  details: Work? Travel? Or go to a destination I don't know.
+  details: Work? Struggle? Or go to a destination I don't know.
 footer: 'by reco_luan'
 ---

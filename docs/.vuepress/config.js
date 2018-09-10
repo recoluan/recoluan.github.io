@@ -10,8 +10,8 @@ module.exports = {
       { text: 'Home', link: '/' },
       { text: 'Categories', 
         items: [
-          { text: 'FrontEnd', link: '/categories/front' },
-          { text: 'BackEnd', link: '/categories/back' },
+          { text: 'FrontEnd', link: '/categories/frontEnd' },
+          { text: 'BackEnd', link: '/categories/backEnd' },
           { text: 'Essay', link: '/categories/essay' },
           { text: 'Other', link: '/categories/other' }
         ]

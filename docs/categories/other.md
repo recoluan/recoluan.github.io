@@ -1,6 +1,7 @@
 ---
+title: other
 isCategories: true
 sidebar: false
 ---
 
-## 其他
+## Other
