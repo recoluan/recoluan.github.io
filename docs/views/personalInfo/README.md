@@ -2,7 +2,6 @@
 title: 个人信息
 tags:
  - 个人信息
-categories: 个人信息
 ---
 
 ## 个人基本信息
