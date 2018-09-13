@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>【vue】fetch封装 | Afternoon Grocery Store</title>
+    <meta name="description" content="Enjoy when you can, and endure when you must.">
+    <link rel="icon" href="/favicon.ico">
+    
+    <link rel="preload" href="/assets/css/0.styles.8201d540.css" as="style"><link rel="preload" href="/assets/js/app.8363057b.js" as="script"><link rel="preload" href="/assets/js/24.b58146b6.js" as="script"><link rel="prefetch" href="/assets/js/13.fa5befa4.js"><link rel="prefetch" href="/assets/js/2.8944b3dc.js"><link rel="prefetch" href="/assets/js/3.d93ada53.js"><link rel="prefetch" href="/assets/js/4.1f8759e3.js"><link rel="prefetch" href="/assets/js/5.fc046a7b.js"><link rel="prefetch" href="/assets/js/6.a4fe1ab1.js"><link rel="prefetch" href="/assets/js/7.d29dfd8a.js"><link rel="prefetch" href="/assets/js/8.6ab6981d.js"><link rel="prefetch" href="/assets/js/9.6d16f68f.js"><link rel="prefetch" href="/assets/js/10.69acd782.js"><link rel="prefetch" href="/assets/js/11.158d2d70.js"><link rel="prefetch" href="/assets/js/12.ebc098e2.js"><link rel="prefetch" href="/assets/js/14.47c70460.js"><link rel="prefetch" href="/assets/js/15.baa2e23f.js"><link rel="prefetch" href="/assets/js/16.577a4b3b.js"><link rel="prefetch" href="/assets/js/17.3f0ca02e.js"><link rel="prefetch" href="/assets/js/18.7a26c8b6.js"><link rel="prefetch" href="/assets/js/19.6050c10e.js"><link rel="prefetch" href="/assets/js/20.045cd9fc.js"><link rel="prefetch" href="/assets/js/21.9d4afeb4.js"><link rel="prefetch" href="/assets/js/22.1ecc1ee9.js"><link rel="prefetch" href="/assets/js/23.7735d617.js"><link rel="prefetch" href="/assets/js/25.6d9ee350.js"><link rel="prefetch" href="/assets/js/26.42c48297.js"><link rel="prefetch" href="/assets/js/27.af98a77e.js"><link rel="prefetch" href="/assets/js/28.a61b3504.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.8201d540.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">Afternoon Grocery Store</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Categories</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/frontEnd.html" class="nav-link">FrontEnd</a></li><li class="dropdown-item"><!----> <a href="/categories/backEnd.html" class="nav-link">BackEnd</a></li><li class="dropdown-item"><!----> <a href="/categories/essay.html" class="nav-link">Essay</a></li><li class="dropdown-item"><!----> <a href="/categories/other.html" class="nav-link">Other</a></li></ul></div></div><div class="nav-item"><a href="/tags/" class="nav-link">Tags</a></div><div class="nav-item"><a href="https://gitlab.com/recoluan/recoluan.gitlab.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Categories</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/frontEnd.html" class="nav-link">FrontEnd</a></li><li class="dropdown-item"><!----> <a href="/categories/backEnd.html" class="nav-link">BackEnd</a></li><li class="dropdown-item"><!----> <a href="/categories/essay.html" class="nav-link">Essay</a></li><li class="dropdown-item"><!----> <a href="/categories/other.html" class="nav-link">Other</a></li></ul></div></div><div class="nav-item"><a href="/tags/" class="nav-link">Tags</a></div><div class="nav-item"><a href="https://gitlab.com/recoluan/recoluan.gitlab.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>【vue】fetch封装</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/views/frontEnd/2018/2018091301.html#封装的主要内容" class="sidebar-link">封装的主要内容</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/frontEnd/2018/2018091301.html#封装的代码" class="sidebar-link">封装的代码</a><ul class="sidebar-sub-headers"></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><div class="tip custom-block"><p class="custom-block-title">TIP</p> <ul><li><code>fetch</code> 必然要替换 <code>XMLHttpRequest</code> ，所以是时候尝试 <a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank" rel="noopener noreferrer">fetch<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 了；</li> <li>本封装仅针对npm引入；</li> <li>本封装依赖 <a href="https://github.com/github/fetch" target="_blank" rel="noopener noreferrer">es6-promise<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 和 <a href="https://github.com/stefanpenner/es6-promise" target="_blank" rel="noopener noreferrer">whatwg-fetch<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，分别对 <code>promise</code> 和 <code>fetch</code> 进行兼容性处理；</li> <li>还有一种兼容性处理是依赖 <a href="https://github.com/github/fetch" target="_blank" rel="noopener noreferrer">es6-promise<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 和<a href="https://github.com/matthew-andrews/isomorphic-fetch" target="_blank" rel="noopener noreferrer">isomorphic-fetch<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> ，但是看它的源码就会发现，<code>isomorphic-fetch</code> 只不过是引用了 <code>whatwg-fetch</code> ，并没有做二次开发，<code>isomorphic-fetch</code> 只是将fetch添加为全局，以便其API在客户端和服务器之间保持一致，所以没必要。</li></ul></div> <h2 id="封装的主要内容"><a href="#封装的主要内容" aria-hidden="true" class="header-anchor">#</a> 封装的主要内容</h2> <ol><li><code>fetch</code> 的请求方式同 <code>$ajax</code> 和 <code>axios</code> 都不太一样，并且它本身的get请求同其他请求对数据的处理和herder也不太相同，所以为了统一请求行为，方便请求过程，将请求过程进行封装；</li> <li><code>fetch</code> 请求的结果均返回到.then()中，但是平时的习惯是是在 <code>.then()</code> 中处理正确结果，<code>.catch()</code> 中处理错误，所以对请求结果进行统一处理；</li> <li><code>fetch</code> 本身没有 <strong>请求超时</strong> 这个概念，所以通过 <code>Promise.race</code> 来处理，它的作用是多个promise同时运行，返回的结果以最快返回结果的那个promise的值为准。</li></ol> <h2 id="封装的代码"><a href="#封装的代码" aria-hidden="true" class="header-anchor">#</a> 封装的代码</h2> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token comment">// 处理promise和fetch的兼容性以及引入</span>
+<span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'es6-promise'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">polyfill</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token keyword">import</span> <span class="token string">'whatwg-fetch'</span>
+
+<span class="token comment">// 前置拼接url</span>
+<span class="token keyword">const</span> api <span class="token operator">=</span> <span class="token string">'***'</span>
+
+<span class="token comment">// 自定义headers</span>
+<span class="token keyword">const</span> headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token string">'Accept'</span><span class="token punctuation">:</span> <span class="token string">'application/json; version=3.13.0'</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 处理get请求，传入参数对象拼接</span>
+<span class="token keyword">const</span> <span class="token function-variable function">formatUrl</span> <span class="token operator">=</span> obj <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">const</span> params <span class="token operator">=</span> Object<span class="token punctuation">.</span><span class="token function">values</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">,</span> i<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token template-string"><span class="token string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>a<span class="token interpolation-punctuation punctuation">}</span></span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>Object<span class="token punctuation">.</span><span class="token function">keys</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>b<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">&amp;`</span></span><span class="token punctuation">,</span> <span class="token string">'?'</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> params<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> params<span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">/**
+ * @param url    (String) 接口URL
+ * @param option (Object) 参数对象，包括method(请求方式，不填默认'get')，headers(设置请求头，选填)，data(请求参数，所有请求方式均适用)
+ * @return 
+ */</span>
+<span class="token keyword">const</span> <span class="token function-variable function">recoFetch</span> <span class="token operator">=</span> <span class="token punctuation">(</span>url<span class="token punctuation">,</span> option <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 设置请求超时的时间</span>
+  <span class="token keyword">const</span> timeout <span class="token operator">=</span> option<span class="token punctuation">.</span>timeout <span class="token operator">||</span> <span class="token number">5000</span>
+
+  option<span class="token punctuation">.</span>headers <span class="token operator">=</span> option<span class="token punctuation">.</span>headers <span class="token operator">||</span> headers
+  option<span class="token punctuation">.</span>method <span class="token operator">=</span> <span class="token punctuation">(</span>option<span class="token punctuation">.</span>method <span class="token operator">||</span> <span class="token string">'get'</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toLocaleLowerCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  
+  <span class="token comment">// 格式化get请求的数据(fetch的get请求需要需要将参数拼接到url后面)</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>option<span class="token punctuation">.</span>method <span class="token operator">===</span> <span class="token string">'get'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>option<span class="token punctuation">.</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      url <span class="token operator">=</span> url <span class="token operator">+</span> <span class="token function">formatUrl</span><span class="token punctuation">(</span>option<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token comment">// 对非get类请求头和请求体做处理</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>option<span class="token punctuation">.</span>method <span class="token operator">===</span> <span class="token string">'post'</span> <span class="token operator">||</span> option<span class="token punctuation">.</span>method <span class="token operator">===</span> <span class="token string">'put'</span> <span class="token operator">||</span> option<span class="token punctuation">.</span>method <span class="token operator">===</span> <span class="token string">'delete'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    option<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">'Content-Type'</span><span class="token punctuation">]</span> <span class="token operator">=</span> option<span class="token punctuation">.</span>headers<span class="token punctuation">[</span><span class="token string">'Content-Type'</span><span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token string">'application/json'</span>
+
+    <span class="token comment">// 非get类请求传参时，需要将参数挂在body上</span>
+    option<span class="token punctuation">.</span>body <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>option<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+
+    <span class="token comment">// 根据后台要求，如果有时候是java请求会用qs转</span>
+    <span class="token comment">// option.body = qs.stringify(option.data)</span>
+  <span class="token punctuation">}</span>
+  <span class="token keyword">delete</span> option<span class="token punctuation">.</span>data
+
+  <span class="token keyword">return</span> <span class="token function">addTimeout</span><span class="token punctuation">(</span><span class="token function">fetch</span><span class="token punctuation">(</span>api <span class="token operator">+</span> url<span class="token punctuation">,</span> option<span class="token punctuation">)</span><span class="token punctuation">,</span> timeout<span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 对请求结果进行处理：fetch请求成功后返回的是json对象</span>
+<span class="token keyword">function</span> <span class="token function">parseJSON</span> <span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> response<span class="token punctuation">.</span><span class="token function">json</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// 增加超时处理：fetch本身是没有请求超时处理的，所以可以通过</span>
+<span class="token keyword">function</span> <span class="token function">addTimeout</span> <span class="token punctuation">(</span>fetchPromise<span class="token punctuation">,</span> timeout<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">let</span> timeoutFn <span class="token operator">=</span> <span class="token keyword">null</span>
+
+  <span class="token comment">// 请求超时的Promise</span>
+  <span class="token keyword">var</span> timeoutPromise <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token function-variable function">timeoutFn</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">reject</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+        code<span class="token punctuation">:</span> <span class="token string">'timeOut'</span><span class="token punctuation">,</span>
+        text<span class="token punctuation">:</span> <span class="token string">'请求超时，请重试'</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token comment">// 声明Promise.race</span>
+  <span class="token keyword">const</span> racePromise <span class="token operator">=</span> Promise<span class="token punctuation">.</span><span class="token function">race</span><span class="token punctuation">(</span><span class="token punctuation">[</span>
+    fetchPromise<span class="token punctuation">,</span>
+    timeoutPromise
+  <span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+  <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">timeoutFn</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span> timeout<span class="token punctuation">)</span>
+
+  <span class="token keyword">const</span> racePromiseResult <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> status <span class="token operator">=</span> <span class="token number">0</span>
+
+    racePromise
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        status <span class="token operator">=</span> response<span class="token punctuation">.</span>status
+        <span class="token keyword">return</span> response
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>parseJSON<span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span>response <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 将状态码添加到返回结果中，以备后用</span>
+        response<span class="token punctuation">.</span>status <span class="token operator">=</span> status
+
+        <span class="token comment">// 如果返回码在300到900之间，将以错误返回，如果需要对错误统一处理，可以放在下面判断中</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token regex">/^[3-9]\d{2}$/</span><span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>status<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+          <span class="token function">reject</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+
+        <span class="token comment">// 否则以正确值返回</span>
+        <span class="token function">resolve</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+      <span class="token punctuation">.</span><span class="token keyword">catch</span><span class="token punctuation">(</span>error <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token comment">// 请求出错则报错 recoFetch Error: ***</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'recoFetch Error:'</span><span class="token punctuation">,</span> error<span class="token punctuation">)</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+  <span class="token comment">// 将racePromise的结果返回</span>
+  <span class="token keyword">return</span> racePromiseResult
+<span class="token punctuation">}</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> recoFetch
+</code></pre></div></div> <!----> <div id="valine" data-v-9cc63080></div> <!----> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/24.b58146b6.js" defer></script><script src="/assets/js/app.8363057b.js" defer></script>
+  </body>
+</html>
