@@ -5,6 +5,7 @@ module.exports = {
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
+  theme: 'reco',
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
@@ -26,5 +27,10 @@ module.exports = {
     sidebar: 'auto',
     // 最后更新时间
     lastUpdated: 'Last Updated', // string | boolean
+    // valine配置
+    valineConfig: {
+      appId: 'Q6hMeY2PSaM9FMkXetzoJoU5-gzGzoHsz',// your appId
+      appKey: 'iLQlev5jo2Cm5pLcI0z3qhtr', // your appKey
+    }
   }
 }
