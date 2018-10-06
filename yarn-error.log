@@ -22,7 +22,7 @@ npm manifest:
     "version": "1.0.0",
     "description": "recoluan's blog",
     "main": "index.js",
-    "repository": "https://blog.recoluan.com",
+    "repository": "http://recoluan.gitlab.io",
     "author": "reco_luan",
     "license": "MIT",
     "scripts": {
