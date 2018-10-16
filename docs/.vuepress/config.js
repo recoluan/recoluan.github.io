@@ -18,6 +18,7 @@ module.exports = {
         ]
       },
       { text: 'Tags', link: '/tags/' },
+      { text: 'Three-Month Study', link: '/threeMonthStudy/' },
       { text: 'GitHub', link: 'https://gitlab.com/recoluan/recoluan.gitlab.io' },
     ],
     //搜索
