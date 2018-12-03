@@ -5,7 +5,7 @@ module.exports = {
   head: [
     ['link', { rel: 'icon', href: '/favicon.ico' }]
   ],
-  theme: 'reco',
+  // theme: 'reco',
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
