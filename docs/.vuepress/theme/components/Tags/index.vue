@@ -99,7 +99,7 @@ export default {
 .tags-wrapper
   max-width: 740px;
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding: 0 .6rem;
   .tags
     margin-bottom 30px
     span
