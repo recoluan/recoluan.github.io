@@ -21,6 +21,7 @@ module.exports = {
       { text: 'Three-Month Study', link: '/threeMonthStudy/' },
       { text: 'GitHub', link: 'https://gitlab.com/recoluan/recoluan.gitlab.io' },
     ],
+    logo: '/head.png',
     //搜索
     search: true,
     searchMaxSuggestions: 10,
