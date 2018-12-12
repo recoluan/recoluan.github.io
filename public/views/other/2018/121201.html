@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>【Gitlab】gitlab-CI 持续集成以及runner的配置简版 | Afternoon Grocery Store</title>
+    <meta name="description" content="Enjoy when you can, and endure when you must.">
+    <link rel="icon" href="/favicon.ico">
+  <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    
+    <link rel="preload" href="/assets/css/styles.71d1873e.css" as="style"><link rel="preload" href="/assets/js/app.71d1873e.js" as="script"><link rel="preload" href="/assets/js/31.d50a005d.js" as="script"><link rel="prefetch" href="/assets/js/15.a530a387.js"><link rel="prefetch" href="/assets/css/1.styles.d6c6c629.css"><link rel="prefetch" href="/assets/js/1.d6c6c629.js"><link rel="prefetch" href="/assets/css/2.styles.5d2e4441.css"><link rel="prefetch" href="/assets/js/2.5d2e4441.js"><link rel="prefetch" href="/assets/js/3.4abae202.js"><link rel="prefetch" href="/assets/js/4.a19d44f5.js"><link rel="prefetch" href="/assets/js/5.a01458ee.js"><link rel="prefetch" href="/assets/js/6.eba4901c.js"><link rel="prefetch" href="/assets/js/7.b8fd41bc.js"><link rel="prefetch" href="/assets/js/8.b234368c.js"><link rel="prefetch" href="/assets/js/9.aa41a162.js"><link rel="prefetch" href="/assets/js/10.53620b77.js"><link rel="prefetch" href="/assets/js/11.e034ab9a.js"><link rel="prefetch" href="/assets/js/12.32416fc5.js"><link rel="prefetch" href="/assets/js/13.2c83c55b.js"><link rel="prefetch" href="/assets/js/14.a63ca883.js"><link rel="prefetch" href="/assets/js/16.e03bfc68.js"><link rel="prefetch" href="/assets/js/17.5fe58538.js"><link rel="prefetch" href="/assets/js/18.db8c605f.js"><link rel="prefetch" href="/assets/js/19.f5992761.js"><link rel="prefetch" href="/assets/js/20.34e253a8.js"><link rel="prefetch" href="/assets/js/21.85f7dc4f.js"><link rel="prefetch" href="/assets/js/22.ceb09cec.js"><link rel="prefetch" href="/assets/js/23.56946ca8.js"><link rel="prefetch" href="/assets/js/24.cd898bce.js"><link rel="prefetch" href="/assets/js/25.0af37f70.js"><link rel="prefetch" href="/assets/js/26.025feadc.js"><link rel="prefetch" href="/assets/js/27.b355b64d.js"><link rel="prefetch" href="/assets/js/28.85124a51.js"><link rel="prefetch" href="/assets/js/29.2952f3ea.js"><link rel="prefetch" href="/assets/js/30.6c7edf0b.js"><link rel="prefetch" href="/assets/js/32.b4b50012.js"><link rel="prefetch" href="/assets/css/33.styles.a6475a5e.css"><link rel="prefetch" href="/assets/js/vendors~docsearch.a6475a5e.js">
+    <link rel="stylesheet" href="/assets/css/1.styles.d6c6c629.css"><link rel="stylesheet" href="/assets/css/2.styles.5d2e4441.css"><link rel="stylesheet" href="/assets/css/styles.71d1873e.css"><link rel="stylesheet" href="/assets/css/33.styles.a6475a5e.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/head.png" alt="Afternoon Grocery Store" class="logo"> <span class="site-name can-hide">Afternoon Grocery Store</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Categories</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/frontEnd.html" class="nav-link">FrontEnd</a></li><li class="dropdown-item"><!----> <a href="/categories/backEnd.html" class="nav-link">BackEnd</a></li><li class="dropdown-item"><!----> <a href="/categories/essay.html" class="nav-link">Essay</a></li><li class="dropdown-item"><!----> <a href="/categories/other.html" class="nav-link">Other</a></li></ul></div></div><div class="nav-item"><a href="/tags/" class="nav-link">Tags</a></div><div class="nav-item"><a href="/threeMonthStudy/" class="nav-link">Three-Month Study</a></div><div class="nav-item"><a href="https://gitlab.com/recoluan/recoluan.gitlab.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">Home</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title">Categories</span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/categories/frontEnd.html" class="nav-link">FrontEnd</a></li><li class="dropdown-item"><!----> <a href="/categories/backEnd.html" class="nav-link">BackEnd</a></li><li class="dropdown-item"><!----> <a href="/categories/essay.html" class="nav-link">Essay</a></li><li class="dropdown-item"><!----> <a href="/categories/other.html" class="nav-link">Other</a></li></ul></div></div><div class="nav-item"><a href="/tags/" class="nav-link">Tags</a></div><div class="nav-item"><a href="/threeMonthStudy/" class="nav-link">Three-Month Study</a></div><div class="nav-item"><a href="https://gitlab.com/recoluan/recoluan.gitlab.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>【Gitlab】gitlab-CI 持续集成以及runner的配置简版</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/views/other/2018/121201.html#gitlab-ci" class="sidebar-link">Gitlab CI</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/other/2018/121201.html#gitlab-runner" class="sidebar-link">Gitlab-Runner</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/other/2018/121201.html#配置-gitlab-runner-yml" class="sidebar-link">配置 gitlab-runner.yml</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/views/other/2018/121201.html#其他" class="sidebar-link">其他</a><ul class="sidebar-sub-headers"></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><div class="tip custom-block"><p class="custom-block-title">TIP</p> <p>在我们完成项目开发后，提交到git，当监听提交后，自动进行编译，并进行项目的部署，是不是一想就很爽，所以下面引入我们的主角 —— gitlab-CI，<a href="https://fennay.github.io/gitlab-ci-cn/" target="_blank" rel="noopener noreferrer">中文文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。</p></div> <h2 id="gitlab-ci"><a href="#gitlab-ci" aria-hidden="true" class="header-anchor">#</a> Gitlab CI</h2> <p>Gitlab-CI 是 GitLab Continuous Integration（Gitlab持续集成）的简称。
+从Gitlab的8.0版本开始，gitlab就全面集成了Gitlab-CI,并且对所有项目默认开启。
+只要在项目仓库的根目录添加.gitlab-ci.yml文件，并且配置了Runner（运行器），那么每一次合并请求（MR）或者push都会触发CI pipeline。</p> <h2 id="gitlab-runner"><a href="#gitlab-runner" aria-hidden="true" class="header-anchor">#</a> Gitlab-Runner</h2> <h4 id="安装gitlab-ci-multi-runner（linux）"><a href="#安装gitlab-ci-multi-runner（linux）" aria-hidden="true" class="header-anchor">#</a> 安装gitlab-ci-multi-runner（linux）</h4> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 添加yum源</span>
+<span class="token function">curl</span> -L https://packages.gitlab.com/install/repositories/runner/gitlab-ci-multi-runner/script.rpm.sh <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">bash</span>
+
+<span class="token comment"># 安装</span>
+yum <span class="token function">install</span> gitlab-ci-multi-runner
+</code></pre></div><h4 id="使用-gitlab-ci-multi-runner-注册-specific-runners"><a href="#使用-gitlab-ci-multi-runner-注册-specific-runners" aria-hidden="true" class="header-anchor">#</a> 使用 gitlab-ci-multi-runner 注册 Specific Runners</h4> <p><img src="https://upload-images.jianshu.io/upload_images/4660406-23e31a052864a7a0.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="runners.jpg"></p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ gitlab-ci-multi-runner register
+Running <span class="token keyword">in</span> system-mode.
+
+Please enter the gitlab-ci coordinator URL <span class="token punctuation">(</span>e.g. https://gitlab.com/<span class="token punctuation">)</span>:
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span> 你的URL
+
+Please enter the gitlab-ci token <span class="token keyword">for</span> this runner:
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span> 你的Token
+
+Please enter the gitlab-ci description <span class="token keyword">for</span> this runner:
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span> 你对该runner的描述
+
+Please enter the gitlab-ci tags <span class="token keyword">for</span> this runner <span class="token punctuation">(</span>comma separated<span class="token punctuation">)</span>:
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span> 该runner的标签
+
+Whether to run untagged builds <span class="token punctuation">[</span>true/false<span class="token punctuation">]</span>:
+<span class="token punctuation">[</span>false<span class="token punctuation">]</span>: <span class="token boolean">true</span>
+
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span> 是否运行没有标记的项目（后期可以改）
+
+Whether to lock Runner to current project <span class="token punctuation">[</span>true/false<span class="token punctuation">]</span>:
+<span class="token punctuation">[</span>false<span class="token punctuation">]</span>:
+
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span> 是否锁定只运行当前项目（后期可以改）
+
+Registering runner<span class="token punctuation">..</span>. succeeded                     runner<span class="token operator">=</span>9e48baqx
+
+Please enter the executor: parallels, docker+machine, ssh, virtualbox, docker-ssh+machine, kubernetes, docker, docker-ssh, shell:
+
+<span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span><span class="token operator">&gt;&gt;</span> 选择runner的类型（根据你的需求选择，我选择的shell，我的项目是node项目）
+
+Runner registered successfully. Feel <span class="token function">free</span> to start it, but <span class="token keyword">if</span> it's running already the config should be automatically reloaded<span class="token operator">!</span>
+</code></pre></div><div class="warning custom-block"><p class="custom-block-title">WARNING</p> <ol><li>首先你的项目中的 <code>getlab-runner.yml</code> 文件中的命令需要的环境，你的runner所在的服务器是必须要搭好的，必须你需要执行 <code>npm install</code> 和 <code>npm run build</code> ，那你的服务器必须要有node环境；</li> <li>runner的类型比较重要，你必须要清楚你需要一个什么类型的runner。比如，开始我是需要一个能够运行node项目的runner，但是网上的很多教程统一都是都选择docker，这个时候你电脑上必须要安装了docker才可以，因为这相当于在docker里面又安装了一个docker（docker in docker），所以对于我的需求来说，我选择shell就可以了；</li> <li>通过Gitlab中某个项目的 <code>Settings</code> 下的 <code>CI/CD Pipelines</code> 按钮进入的页面中得到的URL和Token所注册的runner只服务于本项目，当你在其他项目的当前页面时，可以选择让这个runner为当前项目开启服务。</li></ol></div> <h4 id="ci-cd-pipelines-页"><a href="#ci-cd-pipelines-页" aria-hidden="true" class="header-anchor">#</a> CI/CD Pipelines 页</h4> <h2 id="配置-gitlab-runner-yml"><a href="#配置-gitlab-runner-yml" aria-hidden="true" class="header-anchor">#</a> 配置 gitlab-runner.yml</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>mage: node:9.11.1
+
+pages:
+ cache:
+   paths:
+   - node_modules/
+
+ script:
+ - cnpm <span class="token function">install</span>
+ - <span class="token function">npm</span> run build
+ - <span class="token function">sudo</span> <span class="token function">rm</span> -rf /data/ftp/http/files/scfAdminDoc
+ - <span class="token function">sudo</span> <span class="token function">mv</span> ./scfAdminDoc /data/ftp/http/files/
+ artifacts:
+   paths:
+   - public
+ only:
+ - master
+</code></pre></div><p>具体配置见<a href="https://fennay.github.io/gitlab-ci-cn/gitlab-ci-yaml.html" target="_blank" rel="noopener noreferrer">文档<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p> <h2 id="其他"><a href="#其他" aria-hidden="true" class="header-anchor">#</a> 其他</h2> <h4 id="代码推送到gitlab上之后，一直是pending状态，要等很久才pick到一个runner来执行"><a href="#代码推送到gitlab上之后，一直是pending状态，要等很久才pick到一个runner来执行" aria-hidden="true" class="header-anchor">#</a> 代码推送到gitlab上之后，一直是pending状态，要等很久才pick到一个runner来执行</h4> <p>这个现象一般发生在本机注册了多个runner，之前的都删除了，只留下一个，但是当我们在gitlab管理平台移除了某个runner的时候，并没有完全删除记录，当执行的 <code>gitlab-ci-multi-runner list</code> 的时候你会发现它仍然还在，如果需要彻底删除它，还应该这样做：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">cd</span> /etc/gitlab-runner
+<span class="token function">ls</span>
+
+<span class="token comment"># 你会看到config.toml文件，打开它并删除已有的那些runner记录</span>
+vim config.toml
+</code></pre></div><h4 id="配置node环境"><a href="#配置node环境" aria-hidden="true" class="header-anchor">#</a> 配置node环境</h4> <ol><li>下载node-v9.11.1-linux-x64.tar.xz文件</li> <li>例如放在 <code>/home</code> 文件夹<div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># 进入所在目录，解压</span>
+<span class="token function">tar</span> -xvf node-v9.11.1-linux-x64.tar.xz
+
+<span class="token comment"># 重命名文件夹</span>
+<span class="token function">mv</span> node-v9.11.1-linux-x64 nodejs
+
+<span class="token comment"># 建立软链接，配置全局环境变量（源路径和目标路径为相对路径）</span>
+<span class="token function">ln</span> -s /home/nodejs/bin/npm /usr/local/bin/
+<span class="token function">ln</span> -s /home/nodejs/bin/node /usr/local/bin/
+
+<span class="token comment"># 检查是否配置成功</span>
+node -v
+<span class="token function">npm</span> -v
+</code></pre></div></li></ol> <p>个人博客：<a href="http://recoluan.gitlab.io" target="_blank" rel="noopener noreferrer"><strong>午后南杂</strong><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></p></div> <!----> <div id="valine" data-v-55081fcf></div> <!----> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/assets/js/31.d50a005d.js" defer></script><script src="/assets/js/app.71d1873e.js" defer></script>
+  </body>
+</html>
