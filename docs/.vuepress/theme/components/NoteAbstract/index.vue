@@ -29,8 +29,11 @@ export default {
   props: ['data', 'currentPage'],
   methods: {
     goTags (tag) {
+      const tagClick = this.$site.themeConfig.tagClick
       this.$emit('currentTag', tag)
-      this.$router.push({path: '/tags', query: { tag }})
+      if (tagClick == true) {
+        this.$router.push({path: '/tags', query: { tag }})
+      }
     }
   }
 }

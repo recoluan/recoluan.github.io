@@ -28,15 +28,13 @@ module.exports = {
     searchMaxSuggestions: 10,
     // 自动生成文本
     sidebar: 'auto',
+    tagClick: true,
     // 最后更新时间
     lastUpdated: 'Last Updated', // string | boolean
     // valine配置
     valineConfig: {
       appId: 'Q6hMeY2PSaM9FMkXetzoJoU5-gzGzoHsz',// your appId
       appKey: 'iLQlev5jo2Cm5pLcI0z3qhtr', // your appKey
-    },
-    categories: [
-      { text: 'Test', link: '/test' },
-    ]
+    }
   }
 }

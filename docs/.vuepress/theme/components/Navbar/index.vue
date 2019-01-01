@@ -1,5 +1,5 @@
 <template>
-  <header class="navbar" ref="navbarWrapper">
+  <header class="navbar" id="navbarWrapper">
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')"/>
 
     <router-link :to="$localePath" class="home-link">
@@ -43,26 +43,6 @@ export default {
   },
 
   mounted() {
-    // 头部导航条的滚动
-    let oldScrollY = 0
-    let oldTransformHeight = 0
-    window.addEventListener('scroll', (e) => {
-      const newScrollY = window.scrollY
-      // 判断滚动方向
-      const scrollDirection = newScrollY - oldScrollY > 0 ? 'up' : 'down'
-      
-      const navbarWrapper = this.$refs.navbarWrapper
-      const height = navbarWrapper.offsetHeight == 58 ? 58 : 58
-      const transformHeight = scrollDirection == 'up' ? height : 0
-
-      if (oldTransformHeight != transformHeight) {
-        navbarWrapper.style.top = `-${transformHeight}px`
-      }
-      
-      oldScrollY = newScrollY
-      oldTransformHeight = transformHeight
-    })
-
     const MOBILE_DESKTOP_BREAKPOINT = 719; // refer to config.styl
     const NAVBAR_VERTICAL_PADDING =
       parseInt(css(this.$el, "paddingLeft")) +
@@ -79,6 +59,31 @@ export default {
     };
     handleLinksWrapWidth();
     window.addEventListener("resize", handleLinksWrapWidth, false);
+  },
+
+  updated () {
+    this.$nextTick(() => {
+      // 头部导航条的滚动
+      let oldScrollY = 0
+      let oldTransformHeight = 0
+      window.addEventListener('scroll', (e) => {
+        const newScrollY = window.scrollY
+        // 判断滚动方向
+        const scrollDirection = newScrollY - oldScrollY > 0 ? 'up' : 'down'
+        
+        // 使用ref会间断性获取不到dom
+        const navbarWrapper = document.querySelector('#navbarWrapper')
+        const height = navbarWrapper.offsetHeight == 58 ? 58 : 58
+        const transformHeight = scrollDirection == 'up' ? height : 0
+
+        if (oldTransformHeight != transformHeight) {
+          navbarWrapper.style.top = `-${transformHeight}px`
+        }
+        
+        oldScrollY = newScrollY
+        oldTransformHeight = transformHeight
+      })
+    })
   },
 
   computed: {
