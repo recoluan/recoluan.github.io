@@ -1,5 +1,6 @@
 <template>
   <div class="tags-wrapper">
+    <h2>标签云</h2>
     <div class="tags">
       <span 
         v-for="(tag, index) in tags" 
@@ -8,10 +9,10 @@
         @click="getPagesByTags(tag)">{{tag}}</span>
     </div>
 
-
     <note-abstract
       :data="pages"
-      :currentPage="currentPage"></note-abstract>
+      :currentPage="currentPage"
+      @currentTag="getCurrentTag"></note-abstract>
     
     <pagation
       :data="pages" 
@@ -78,6 +79,9 @@ export default {
     },
     getCurrentPage () {
       this.currentPage = page
+    },
+    getCurrentTag (tag) {
+      this.currentTag = tag
     }
   },
   watch: {
@@ -99,7 +103,7 @@ export default {
 .tags-wrapper
   max-width: 740px;
   margin: 0 auto;
-  padding: 0 .6rem;
+  padding: 4rem 2.5rem 0;
   .tags
     margin-bottom 30px
     span
@@ -117,16 +121,10 @@ export default {
       &:hover
         transform scale(1.04)
       &.active
-        background #3eaf7c
+        background $accentColor
         color #fff
 
 @media (max-width: $MQMobile)
-  .page-edit
-    .edit-link
-      margin-bottom .5rem
-    .last-updated
-      font-size .8em
-      float none
-      text-align left
-
+  .tags-wrapper
+    padding: 4rem 0.6rem 0;
 </style>

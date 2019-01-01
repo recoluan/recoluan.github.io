@@ -1,5 +1,5 @@
 module.exports = {
-  title: "Afternoon Grocery Store",
+  title: "午后南杂",
   description: 'Enjoy when you can, and endure when you must.',
   dest: 'public',
   head: [
@@ -15,12 +15,12 @@ module.exports = {
           { text: 'FrontEnd', link: '/categories/frontEnd' },
           { text: 'BackEnd', link: '/categories/backEnd' },
           { text: 'Essay', link: '/categories/essay' },
-          { text: 'Other', link: '/categories/other' }
+          { text: 'Other', link: '/categories/other' },
         ]
       },
-      { text: 'Tags', link: '/tags/' },
+      { text: 'Tags', link: '/tags' },
       { text: 'Three-Month Study', link: '/threeMonthStudy/' },
-      { text: 'GitHub', link: 'https://gitlab.com/recoluan/recoluan.gitlab.io' },
+      { text: 'GitHub', link: 'https://github.com/recoluan/vuepress-theme-reco' },
     ],
     logo: '/head.png',
     //搜索
@@ -34,6 +34,9 @@ module.exports = {
     valineConfig: {
       appId: 'Q6hMeY2PSaM9FMkXetzoJoU5-gzGzoHsz',// your appId
       appKey: 'iLQlev5jo2Cm5pLcI0z3qhtr', // your appKey
-    }
+    },
+    categories: [
+      { text: 'Test', link: '/test' },
+    ]
   }
 }

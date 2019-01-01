@@ -16,7 +16,6 @@ export default {
         window.AV = AV
         
       }
-      console.log(this.$site)
       
       new Valine({
         el: '#valine' ,

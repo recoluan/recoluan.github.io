@@ -2,6 +2,8 @@ export const hashRE = /#.*$/
 export const extRE = /\.(md|html)$/
 export const endingSlashRE = /\/$/
 export const outboundRE = /^(https?:|mailto:|tel:)/
+export const categories = /categories/
+export const tags = /tags/
 
 export function normalize (path) {
   return decodeURI(path)
@@ -35,7 +37,9 @@ export function ensureExt (path) {
   const hashMatch = path.match(hashRE)
   const hash = hashMatch ? hashMatch[0] : ''
   const normalized = normalize(path)
-
+  if (categories.test(normalized) || tags.test(normalized)) {
+    return path
+  }
   if (endingSlashRE.test(normalized)) {
     return path
   }

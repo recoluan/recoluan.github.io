@@ -1,5 +1,5 @@
 <template>
-  <header class="navbar">
+  <header class="navbar" ref="navbarWrapper">
     <SidebarButton @toggle-sidebar="$emit('toggle-sidebar')"/>
 
     <router-link :to="$localePath" class="home-link">
@@ -28,9 +28,9 @@
 </template>
 
 <script>
-import SidebarButton from "../SidebarButton/";
-import AlgoliaSearchBox from "../AlgoliaSearchBox/";
-import SearchBox from "../SearchBox/";
+import SidebarButton from "./components/SidebarButton/";
+import AlgoliaSearchBox from "../Search/AlgoliaSearchBox/";
+import SearchBox from "../Search/SearchBox/";
 import NavLinks from "../NavLinks/";
 
 export default {
@@ -43,6 +43,26 @@ export default {
   },
 
   mounted() {
+    // 头部导航条的滚动
+    let oldScrollY = 0
+    let oldTransformHeight = 0
+    window.addEventListener('scroll', (e) => {
+      const newScrollY = window.scrollY
+      // 判断滚动方向
+      const scrollDirection = newScrollY - oldScrollY > 0 ? 'up' : 'down'
+      
+      const navbarWrapper = this.$refs.navbarWrapper
+      const height = navbarWrapper.offsetHeight == 58 ? 58 : 58
+      const transformHeight = scrollDirection == 'up' ? height : 0
+
+      if (oldTransformHeight != transformHeight) {
+        navbarWrapper.style.top = `-${transformHeight}px`
+      }
+      
+      oldScrollY = newScrollY
+      oldTransformHeight = transformHeight
+    })
+
     const MOBILE_DESKTOP_BREAKPOINT = 719; // refer to config.styl
     const NAVBAR_VERTICAL_PADDING =
       parseInt(css(this.$el, "paddingLeft")) +
@@ -89,6 +109,7 @@ $navbar-vertical-padding = 0.7rem;
 $navbar-horizontal-padding = 1.5rem;
 
 .navbar {
+  transition all .4s
   padding: $navbar-vertical-padding $navbar-horizontal-padding;
   line-height: $navbarHeight - 1.4rem;
   position: relative;
@@ -135,6 +156,7 @@ $navbar-horizontal-padding = 1.5rem;
 
 @media (max-width: $MQMobile) {
   .navbar {
+    transition all .5s
     padding-left: 4rem;
 
     .can-hide {

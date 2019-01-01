@@ -2,6 +2,8 @@
 title: 个人信息
 tags:
  - 个人信息
+noComment: false
+sidebar: false
 ---
 
 ## 个人基本信息

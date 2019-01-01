@@ -13,18 +13,7 @@
       <slot name="sidebar-bottom" slot="bottom"/>
     </Sidebar>
 
-    <div class="custom-layout" v-if="$page.frontmatter.layout">
-      <component :is="$page.frontmatter.layout"/>
-    </div>
-
-    <Home v-else-if="$page.frontmatter.home"/>
-
-    <Page v-else :sidebar-items="sidebarItems">
-      <slot name="page-top" slot="top"/>
-      <slot name="page-bottom" slot="bottom"/>
-    </Page>
-
-    <router-view></router-view>
+    <category :category="category"></category>
 
     <SWUpdatePopup :updateEvent="swUpdateEvent"/>
   </div>
@@ -33,15 +22,14 @@
 <script>
 import Vue from "vue";
 import nprogress from "nprogress";
-import Home from "./pages/Home/";
-import Navbar from "./components/Navbar/";
-import Page from "./pages/Page/";
-import Sidebar from "./components/Sidebar/";
-import SWUpdatePopup from "./components/SWUpdatePopup/";
-import { resolveSidebarItems } from "./util/";
+import Navbar from "../../components/Navbar/";
+import Sidebar from "../../components/Sidebar/";
+import SWUpdatePopup from "../../components/SWUpdatePopup/";
+import Category from '../../components/Category/'
+import { resolveSidebarItems, categories } from "../../util/";
 
 export default {
-  components: { Home, Page, Sidebar, Navbar, SWUpdatePopup },
+  components: { Sidebar, Navbar, SWUpdatePopup, Category },
 
   data() {
     return {
@@ -67,13 +55,7 @@ export default {
     },
 
     shouldShowSidebar() {
-      const { frontmatter } = this.$page;
-      return (
-        !frontmatter.layout &&
-        !frontmatter.home &&
-        frontmatter.sidebar !== false &&
-        this.sidebarItems.length
-      );
+      return false
     },
 
     sidebarItems() {
@@ -95,6 +77,9 @@ export default {
         },
         userPageClass
       ];
+    },
+    category () {
+      return this.$route.params.category
     }
   },
 
@@ -152,4 +137,4 @@ export default {
 </script>
 
 <style src="prismjs/themes/prism-tomorrow.css"></style>
-<style src="./styles/theme.styl" lang="stylus"></style>
+<style src="../../styles/theme.styl" lang="stylus"></style>

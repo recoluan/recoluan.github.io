@@ -3,9 +3,9 @@
     <div class="hero">
       <img v-if="data.heroImage" :src="$withBase(data.heroImage)" alt="hero">
 
-      <h1>{{ data.heroText || $title || 'Hello' }}</h1>
+      <h1 v-if="data.isShowHeroImage !== false">{{ data.heroText || $title || '午后南杂' }}</h1>
 
-      <p class="description">{{ data.tagline || $description || 'Welcome to your VuePress site' }}</p>
+      <p class="description">{{ data.tagline || $description || 'Welcome to your vuePress-theme-reco site' }}</p>
 
       <p class="action" v-if="data.actionText && data.actionLink">
         <NavLink class="action-button" :item="actionLink"/>
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import NavLink from "../NavLink/";
+import NavLink from "../../components/NavLink/";
 
 export default {
   components: { NavLink },
@@ -58,9 +58,11 @@ export default {
     text-align: center;
 
     img {
-      max-height: 280px;
+      max-height: 200px;
       display: block;
-      margin: 3rem auto 1.5rem;
+      margin: 6rem auto 1.5rem;
+      border-radius 50%
+      box-shadow 0 5px 18px rgba(0,0,0,0.2)
     }
 
     h1 {

@@ -2,27 +2,22 @@
   <div class="page">
     <slot name="top"/>
     <Content :custom="false"/>
-    <categories v-if="isCategories" @currentTag="getCurrentTag"></categories>
-    <valine v-if="!isCategories && !isTags"></valine>
-    <tags v-if="isTags" :tag="currentTag"></tags>
+    <valine v-if="noComment"></valine>
 
     <div class="page-edit">
       <div
         class="edit-link"
-        v-if="editLink"
-      >
+        v-if="editLink">
         <a
           :href="editLink"
           target="_blank"
-          rel="noopener noreferrer"
-        >{{ editLinkText }}</a>
+          rel="noopener noreferrer">{{ editLinkText }}</a>
         <OutboundLink/>
       </div>
 
       <div
         class="last-updated"
-        v-if="lastUpdated"
-      >
+        v-if="lastUpdated">
         <span class="prefix">{{ lastUpdatedText }}: </span>
         <span class="time">{{ lastUpdated }}</span>
       </div>
@@ -32,26 +27,22 @@
       <p class="inner">
         <span
           v-if="prev"
-          class="prev"
-        >
+          class="prev">
           ←
           <router-link
             v-if="prev"
             class="prev"
-            :to="prev.path"
-          >
+            :to="prev.path">
             {{ prev.title || prev.path }}
           </router-link>
         </span>
 
         <span
           v-if="next"
-          class="next"
-        >
+          class="next">
           <router-link
             v-if="next"
-            :to="next.path"
-          >
+            :to="next.path">
             {{ next.title || next.path }}
           </router-link>
           →
@@ -65,9 +56,7 @@
 
 <script>
 import { resolvePage, normalize, outboundRE, endingSlashRE } from '../../util/'
-import Categories from '../Categories/'
-import Valine from '../Valine/'
-import Tags from '../Tags/'
+import Valine from '../../components/Valine/'
 
 export default {
   data () {
@@ -78,13 +67,11 @@ export default {
   props: ['sidebarItems'],
 
   computed: {
-    isCategories () {
-      return this.$page.frontmatter.isCategories
+    // 是否显示评论
+    noComment () {
+      const noComment = this.$page.frontmatter.noComment
+      return noComment == false ? false : true
     },
-    isTags () {
-      return this.$page.frontmatter.isTags
-    },
-    
     lastUpdated () {
       if (this.$page.lastUpdated) {
         return new Date(this.$page.lastUpdated).toLocaleString(this.$lang)
@@ -187,9 +174,7 @@ export default {
     }
   },
   components: {
-    Categories,
-    Valine,
-    Tags
+    Valine
   }
 }
 

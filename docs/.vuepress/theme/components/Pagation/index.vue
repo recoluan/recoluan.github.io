@@ -103,6 +103,8 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+@import '../../styles/config.styl'
+
 .pagation
   font-weight: 900; 
   text-align: center; 
@@ -133,11 +135,12 @@ export default {
           -moz-border-radius: 4px; 
           border-radius: 4px; 
           text-align: center;
+          outline none
       &.bgprimary
         cursor: default; 
         color: #fff; 
-        background: #3eaf7c; 
-        border-color: #3eaf7c; 
+        background: $accentColor; 
+        border-color: $accentColor; 
       &.ellipsis
         padding: 0px 8px; 
       &.jumppoint

@@ -30,13 +30,15 @@ export default {
   methods: {
     goTags (tag) {
       this.$emit('currentTag', tag)
-      this.$router.push({path: '/tags/'})
+      this.$router.push({path: '/tags', query: { tag }})
     }
   }
 }
 </script>
 
 <style lang="stylus" scoped>
+@import '../../styles/config.styl'
+
 .abstract-wrapper
   width 100%
   .abstract-item
@@ -62,7 +64,7 @@ export default {
         height: 2px;
         bottom: 0;
         left: 0;
-        background-color: #3eaf7c;
+        background-color: $accentColor;
         visibility: hidden;
         -webkit-transform: scaleX(0);
         transform: scaleX(0);

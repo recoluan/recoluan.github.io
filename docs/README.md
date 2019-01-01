@@ -1,6 +1,7 @@
 ---
 home: true
 heroImage: /hero.png
+isShowHeroImage: false
 actionText: About Me →
 actionLink: /views/personalInfo/
 features:
