@@ -1,5 +1,5 @@
 const categoryRoute = {
-  path: '/categories',
+  path: '/categories/:category',
   component: () => import('../pages/Categories')
 }
 

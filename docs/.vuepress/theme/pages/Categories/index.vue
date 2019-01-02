@@ -79,7 +79,7 @@ export default {
       ];
     },
     category () {
-      return this.$route.query.category
+      return this.$route.params.category
     }
   },
 

@@ -12,10 +12,10 @@ module.exports = {
       { text: 'Home', link: '/' },
       { text: 'Categories', 
         items: [
-          { text: 'FrontEnd', link: '/categories?category=frontEnd' },
-          { text: 'BackEnd', link: '/categories?category=backEnd' },
-          { text: 'Essay', link: '/categories?category=essay' },
-          { text: 'Other', link: '/categories?category=other' },
+          { text: 'FrontEnd', link: '/categories/frontEnd' },
+          { text: 'BackEnd', link: '/categories/backEnd' },
+          { text: 'Essay', link: '/categories/essay' },
+          { text: 'Other', link: '/categories/other' },
         ]
       },
       { text: 'Tags', link: '/tags' },
