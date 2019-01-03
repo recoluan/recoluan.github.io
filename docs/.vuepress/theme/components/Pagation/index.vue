@@ -97,7 +97,6 @@ export default {
       alert(`请输入小于${this.pages}的页码！`)
     },
     emit (id) {
-      console.log(id)
       this.$emit('getCurrentPage', id)
     }
   }, 
