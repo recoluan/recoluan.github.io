@@ -1,6 +1,5 @@
 <template>
   <div class="tags-wrapper">
-    <h2>标签云</h2>
     <div class="tags">
       <span 
         v-for="(tag, index) in tags" 
@@ -103,7 +102,7 @@ export default {
 .tags-wrapper
   max-width: 740px;
   margin: 0 auto;
-  padding: 4rem 2.5rem 0;
+  padding: 0 2.5rem;
   .tags
     margin-bottom 30px
     span

@@ -33,7 +33,7 @@ export default {
       this.$emit('currentTag', tag)
       if (tagClick == true) {
         // 目前通过name跳转会报错
-        this.$router.push({path: '/tags', query: { tag }})
+        this.$router.push({path: '/tags/'})
       }
     }
   }

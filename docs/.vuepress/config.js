@@ -15,10 +15,10 @@ module.exports = {
           { text: 'FrontEnd', link: '/categories/frontEnd' },
           { text: 'BackEnd', link: '/categories/backEnd' },
           { text: 'Essay', link: '/categories/essay' },
-          { text: 'Other', link: '/categories/other' },
+          { text: 'Other', link: '/categories/other' }
         ]
       },
-      { text: 'Tags', link: '/tags' },
+      { text: 'Tags', link: '/tags/' },
       { text: 'Three-Month Study', link: '/threeMonthStudy/' },
       { text: 'GitHub', link: 'https://github.com/recoluan/vuepress-theme-reco' },
     ],

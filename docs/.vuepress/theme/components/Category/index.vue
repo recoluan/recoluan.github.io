@@ -1,14 +1,12 @@
 <template>
-  <div class="categories-wrapper">
-    <h2>{{category}}</h2>
+  <div class="categories-wrapper" v-if="isCategories">
     <note-abstract 
       :data="pages"
       :currentPage="currentPage"
       @currentTag="getCurrentTag"></note-abstract>
     
     <pagation 
-      :data="pages"
-      :current-page="currentPage"
+      :data="pages" 
       @getCurrentPage="getCurrentPage"></pagation>
   </div>
 </template>
@@ -18,34 +16,32 @@ import NoteAbstract from '../NoteAbstract/'
 import Pagation from '../Pagation/'
 
 export default {
-  props: {
-    category: {
-      type: String,
-      default: ''
-    }
-  },
   data () {
     return {
       pages: [],
       currentPage: 1
     }
   },
-  watch: {
-    category () {
-      this.getPagesByCategories()
+
+  computed: {
+    isCategories () {
+      let isCategories = this.$page.frontmatter.isCategories
+      if (isCategories) {
+        this.getPagesByCategories()
+      } else {
+        this.pages = []
+      }
+      
+      return isCategories
     }
-  },
-  mounted () {
-    this.currentPage = 1
-    this.getPagesByCategories()
   },
   methods: {
     // 根据分类获取页面数据
     getPagesByCategories () {
       let pages = this.$site.pages,
-          category = this.category
+          title = this.$page.title
       pages = pages.filter(item => {
-        return item.frontmatter.categories == category
+        return item.frontmatter.categories == title
       })
       // reverse()是为了按时间最近排序排序
       this.pages = pages.length == 0 ? [] : pages.reverse()
@@ -71,11 +67,11 @@ export default {
 .categories-wrapper
   max-width: 740px;
   margin: 0 auto;
-  padding: 4rem 2.5rem 0; 
+  padding: 0 2.5rem; 
 
 @media (max-width: $MQMobile)
   .categories-wrapper
-    padding: 4rem 0.6rem 0;
+    padding: 0 0.6rem;
   .page-edit
     .edit-link
       margin-bottom .5rem

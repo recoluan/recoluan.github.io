@@ -18,17 +18,18 @@
 
 <script>
 export default {
+  watch: {
+    currentPage (val) {
+      console.log(1111, val)
+    }
+  },
   data () {
     return {
-      // currentPage: 1, // 当前页
+      currentPage: 1, // 当前页
       changePage:'', // 跳转页
     } 
   }, 
   props: {
-    currentPage: {
-      type: Number,
-      default: 1
-    },
     data: {
       type: Array,
       default () {
@@ -39,9 +40,6 @@ export default {
       type: Number,
       default: 10
     }
-  },
-  mounted () {
-    this.currentPage = 1
   },
   computed:{
      pages () {
@@ -84,26 +82,26 @@ export default {
   methods: {
     goPrev () {
       if (this.currentPage > 1) {
-        const currentPage = this.currentPage - 1
-        this.emit()
+        this.currentPage--
+        this.emit(this.currentPage)
       }
     },
     goNext () {
       if (this.currentPage < this.pages) {
-        // this.currentPage++
-        const currentPage = this.currentPage + 1
-        this.emit(currentPage)
+        this.currentPage++
+        this.emit(this.currentPage)
       }
     },
     jumpPage: function(id) {
       if (id <= this.pages) {
-        // this.currentPage = id;
+        this.currentPage = id
         this.emit(id)
         return
       }
       alert(`请输入小于${this.pages}的页码！`)
     },
     emit (id) {
+      console.log(id)
       this.$emit('getCurrentPage', id)
     }
   }, 
