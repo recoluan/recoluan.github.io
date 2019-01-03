@@ -57,11 +57,15 @@
 
 <script>
 import { resolvePage, normalize, outboundRE, endingSlashRE } from '../../util/'
+import { setStorage } from '../../util/handleStorage'
 import Valine from '../../components/Valine/'
 import Category from '../../components/Category/'
 import Tag from '../../components/Tag/'
 
 export default {
+  beforeUpdate () {
+    setStorage('currentPage', 1)
+  },
   data () {
     return {
       currentTag: '',

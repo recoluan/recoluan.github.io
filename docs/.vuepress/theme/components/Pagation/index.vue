@@ -17,12 +17,8 @@
 </template>
 
 <script>
+import { getStorage } from '../../util/handleStorage'
 export default {
-  watch: {
-    currentPage (val) {
-      console.log(1111, val)
-    }
-  },
   data () {
     return {
       currentPage: 1, // 当前页

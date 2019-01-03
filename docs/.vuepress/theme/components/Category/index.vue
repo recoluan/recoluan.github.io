@@ -14,6 +14,7 @@
 <script>
 import NoteAbstract from '../NoteAbstract/'
 import Pagation from '../Pagation/'
+import { setStorage, getStorage } from '../../util/handleStorage'
 
 export default {
   data () {
@@ -35,6 +36,9 @@ export default {
       return isCategories
     }
   },
+  updated () {
+    this.currentPage = getStorage('currentPage')
+  },
   methods: {
     // 根据分类获取页面数据
     getPagesByCategories () {
@@ -51,6 +55,7 @@ export default {
     },
     getCurrentPage (page) {
       this.currentPage = page
+      setStorage('currentPage', page)
     }
   },
   components: {
