@@ -7,7 +7,8 @@
       @currentTag="getCurrentTag"></note-abstract>
     
     <pagation 
-      :data="pages" 
+      :data="pages"
+      :current-page="currentPage"
       @getCurrentPage="getCurrentPage"></pagation>
   </div>
 </template>
@@ -35,6 +36,7 @@ export default {
     }
   },
   mounted () {
+    this.currentPage = 1
     this.getPagesByCategories()
   },
   methods: {

@@ -20,11 +20,15 @@
 export default {
   data () {
     return {
-      currentPage: 1, // 当前页
+      // currentPage: 1, // 当前页
       changePage:'', // 跳转页
     } 
   }, 
   props: {
+    currentPage: {
+      type: Number,
+      default: 1
+    },
     data: {
       type: Array,
       default () {
@@ -35,6 +39,9 @@ export default {
       type: Number,
       default: 10
     }
+  },
+  mounted () {
+    this.currentPage = 1
   },
   computed:{
      pages () {
@@ -77,19 +84,20 @@ export default {
   methods: {
     goPrev () {
       if (this.currentPage > 1) {
-        this.currentPage--
-        this.emit(this.currentPage)
+        const currentPage = this.currentPage - 1
+        this.emit()
       }
     },
     goNext () {
       if (this.currentPage < this.pages) {
-        this.currentPage++
-        this.emit(this.currentPage)
+        // this.currentPage++
+        const currentPage = this.currentPage + 1
+        this.emit(currentPage)
       }
     },
     jumpPage: function(id) {
       if (id <= this.pages) {
-        this.currentPage = id;
+        // this.currentPage = id;
         this.emit(id)
         return
       }
