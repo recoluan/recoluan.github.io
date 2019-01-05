@@ -54,6 +54,7 @@ export default {
     box-shadow: 0 2px 10px rgba(0,0,0,0.2);
     box-sizing: border-box;
     transition all .3s
+    background-color #fff
     &:hover
       box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2);
     .title

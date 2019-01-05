@@ -4,6 +4,7 @@
     :class="pageClasses"
     @touchstart="onTouchStart"
     @touchend="onTouchEnd">
+    <div class="CanvasNest" style="width: 100vw; height: 100vh;position:abso"></div>
     <Navbar v-if="shouldShowNavbar" @toggle-sidebar="toggleSidebar"/>
 
     <div class="sidebar-mask" @click="toggleSidebar(false)"></div>
@@ -39,6 +40,7 @@ import Page from "./pages/Page/";
 import Sidebar from "./components/Sidebar/";
 import SWUpdatePopup from "./components/SWUpdatePopup/";
 import { resolveSidebarItems } from "./util/";
+import CanvasNest from 'canvas-nest.js';
 
 export default {
   components: { Home, Page, Sidebar, Navbar, SWUpdatePopup },
@@ -117,6 +119,17 @@ export default {
     });
 
     this.$on("sw-updated", this.onSWUpdated);
+
+    const config = {
+      // color: '251, 155, 95',
+      count: 60,
+    };
+
+    // Using config rendering effect at 'element'.
+    const cn = new CanvasNest(document.querySelector('.CanvasNest'), config);
+
+    // destroy
+    // cn.destroy();
   },
 
   methods: {
@@ -152,4 +165,4 @@ export default {
 </script>
 
 <style src="prismjs/themes/prism-tomorrow.css"></style>
-<style src="./styles/theme.styl" lang="stylus"></style>
+<style src="./styles/theme.styl" lang="stylus"></style> 

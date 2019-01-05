@@ -37,4 +37,5 @@ export default {
   max-width: 740px;
   margin: 0 auto;
   padding: 0 2.5rem;
+  background-color #fff
 </style>
