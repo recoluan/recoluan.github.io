@@ -2,94 +2,30 @@
 title: 个人信息
 tags:
  - 个人信息
-noComment: false
+isComment: false
 sidebar: false
 ---
 
-## 个人基本信息
+## 如果觉得有缘，或者有问题需要探讨，那就联系我吧！
 
-
-- 姓名：reco_luan
-- 学历：本科（2016.06 毕业）
 - 微信：LHW19930105
 - 邮箱：1156743527@qq.com
+- 简书：https://www.jianshu.com/u/cd674a19515e
+- CSDN：https://blog.csdn.net/recoluan
+- 博客圆：http://www.cnblogs.com/luanhewei/
 
 ***
 
 
-## 项目经验
-
-
-### **1. 分销管理平台** （独立开发，2016.06-2018.01）
-
-项目描述： 
-
-a. 目的：方便商户管理会员、合伙人管理商户和会员；   
-b. 1.0版本涉及技术`Angular`、`Echarts`、`Bootstrap`、`DaterangePicker`；  
-c. 2.0版本涉及技术`Vue`、`ElementUI`、`Axios`、`腾讯地图JS API`。  
-
-项目成就：   
-
-a. 1.0 版本加强了对`Angular`的理解，同时熟悉了`Echarts`和`Bootstrap`的理解更加深刻；  
-b. 2.0 版本加强了对`Vue`的生命周期钩子以及`Vuex`理解，同时熟悉了`ElementUI`和`Axios`的使用。
-
-### **2. 某支付项目** （独立开发，2016.05-2018.01）
-
-项目描述： 
+## 个人标签
  
-a. 产品包括乐+支付公众号（商户可以查看自己的信息）、扫码支付和支付成功页；   
-b. 扫码支付包括微信支付和支付宝支付，支付时还可以使用鼓励金和满减折扣等优惠；  
-c. 支付成功页包括支付详情展示和微信卡券的展示及领取功能；  
-d. 涉及技术`Vue`、`Axios`、`Zepto`、`Better-Scroll`、`Swiper`、`微信支付和微信卡券相关`。
+`Vue全家桶` `微信JS-SDK` `微信小程序` `ES6` `Sass` `Less` `Stylus` `NodeJS` `vuepress` `fetch` `gulp` `webpack`
 
-项目成就： 
- 
-a. 了解了微信支付、支付宝支付、微信卡券创建及领取等一系列API的调用方法；  
-b. 解决了`vue-router`在history模式下刷新404的问题；  
-c. 提高了移动端页面的适配能力；  
-d. 人工键盘的开发，解决了手指对屏幕的误触。   
+## 开源项目
 
-### **3. 商品购买评论功能** （独立开发，NodeJS后端项目，2017.07-2017.08）
-项目描述：  
-
-a.  为乐加商城提供购买评论功能接口，为运营后台提供评论管理接口；  
-b. 涉及技术：`NodeJS`、`node-orm2`、`MySql`。  
-
-项目成就：
-
-了解了`node-orm2`的使用。 
-
-### **4. 小微博** （独立开发，私人，2017.06-2017.07）
-
-项目描述：  
-
-a.  功能包括：注册、登陆、上传头像、发表信息、查看某个用户发表的信息、查看用户列表等功能；  
-b. 涉及技术：`NodeJS`、`Express4.0`、`MongoDB`、`GraphicsMagick（图片剪切）`。   
-
-项目成就： 
-
-了解了`NodeJS`、`Express`和`MongoDB`的使用。   
-
-### **5. 乐+生活运营后台** （独立开发，2016.06-2018.01）
-
-项目描述：  
-
-a. 这个后台对应的是乐+商城、乐+支付以及对POS机的管理；   
-b. 涉及技术：`Bootstrap`、`Echart`、`DaterangePicker`。   
-
-项目成就：
-
-涉及很多表单，增加了对正则表达式的了解。 
-
-### **6. 移动端商城** （独立开发，2016.04-2018.01）
-
-项目描述： 
- 
-a. 用于用户消耗积分和金币，并获得线下消费的红包；   
-b. 涉及技术：`Mui`、`Swiper`，`高德地图JS API`。   
-
-项目成就： 
-
-加强了对`Mui`、`Swiper`的理解。   
+1. [vuepress-theme-reco](https://www.npmjs.com/package/vuepress-theme-reco)<br>
+   一款简介的vuepress博客主题
+2. [reco-fetch](https://www.npmjs.com/package/reco-fetch)<br>
+   针对fetch的应用型封装
 
 个人博客：[**午后南杂**](http://recoluan.gitlab.io) 

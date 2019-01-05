@@ -2,8 +2,9 @@
   <div class="page">
     <slot name="top"/>
     <Content :custom="false"/>
-    <valine v-if="noComment"></valine>
-
+    <valine v-if="isComment"></valine>
+    <category v-if="isCategories" :currentPage="currentPage" @currentTag="getCurrentTag"></category>
+    <tag v-if="isTags" :tag="currentTag"></tag>
     <div class="page-edit">
       <div
         class="edit-link"
@@ -56,21 +57,35 @@
 
 <script>
 import { resolvePage, normalize, outboundRE, endingSlashRE } from '../../util/'
+import { setStorage } from '../../util/handleStorage'
 import Valine from '../../components/Valine/'
+import Category from '../../components/Category/'
+import Tag from '../../components/Tag/'
 
 export default {
+  beforeUpdate () {
+    setStorage('currentPage', 1)
+  },
   data () {
     return {
-      currentTag: ''
+      currentTag: '',
+      currentPage: 1
     }
   },
   props: ['sidebarItems'],
 
   computed: {
+    isCategories () {
+      return this.$page.frontmatter.isCategories
+    },
+    isTags () {
+      return this.$page.frontmatter.isTags
+    },
+
     // 是否显示评论
-    noComment () {
-      const noComment = this.$page.frontmatter.noComment
-      return noComment == false ? false : true
+    isComment () {
+      const isComment = this.$page.frontmatter.isComment
+      return isComment == false ? false : true
     },
     lastUpdated () {
       if (this.$page.lastUpdated) {
@@ -141,7 +156,6 @@ export default {
       )
     },
   },
-
   methods: {
     createEditLink (repo, docsRepo, docsDir, docsBranch, path) {
       const bitbucket = /bitbucket.org/
@@ -174,7 +188,9 @@ export default {
     }
   },
   components: {
-    Valine
+    Valine,
+    Category,
+    Tag
   }
 }
 
