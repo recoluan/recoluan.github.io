@@ -1,6 +1,5 @@
 <template>
   <div class="tags-wrapper">
-    <h2>标签云</h2>
     <div class="tags">
       <span 
         v-for="(tag, index) in tags" 
@@ -21,6 +20,7 @@
 </template>
 
 <script>
+import { setStorage, getStorage } from '../../util/handleStorage'
 import NoteAbstract from '../NoteAbstract/'
 import Pagation from '../Pagation/'
 
@@ -65,6 +65,9 @@ export default {
     }
     this.currentTag = this.tag
   },
+  updated () {
+    this.currentPage = getStorage('currentPage')
+  },
   methods: {
     // 根据分类获取页面数据
     getPagesByTags (tag) {
@@ -77,8 +80,9 @@ export default {
       // reverse()是为了按时间最近排序排序
       this.pages = pages.length == 0 ? [] : pages.reverse()
     },
-    getCurrentPage () {
+    getCurrentPage (page) {
       this.currentPage = page
+      setStorage('currentPage', page)
     },
     getCurrentTag (tag) {
       this.currentTag = tag
@@ -103,7 +107,7 @@ export default {
 .tags-wrapper
   max-width: 740px;
   margin: 0 auto;
-  padding: 4rem 2.5rem 0;
+  padding: 0 2.5rem;
   .tags
     margin-bottom 30px
     span
