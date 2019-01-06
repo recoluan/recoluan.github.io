@@ -1,3 +1,1 @@
-# recoluan.gitlab.io
-
-recoluan's blog
+### recoluan's blog [website](https://recoluan.gitlab.io)
