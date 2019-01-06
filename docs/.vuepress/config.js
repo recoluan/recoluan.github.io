@@ -6,7 +6,7 @@ module.exports = {
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
   ],
-  // theme: 'reco',
+  theme: 'reco',
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
@@ -23,18 +23,26 @@ module.exports = {
       { text: 'GitHub', link: 'https://github.com/recoluan/vuepress-theme-reco' },
     ],
     logo: '/head.png',
-    //搜索
+    //search config 
     search: true,
     searchMaxSuggestions: 10,
-    // 自动生成文本
+    // auto create sidebar
     sidebar: 'auto',
+    // whether you can click the tags in the list
     tagClick: true,
-    // 最后更新时间
+    // last Updated Date
     lastUpdated: 'Last Updated', // string | boolean
-    // valine配置
+    // particles
+    showParticles: true,
+    // particlesConfig
+    particlesConfig: {
+      color: '136, 136, 136', // color of line
+      count: 66, // number of particle
+    },
+    // valine config
     valineConfig: {
-      appId: 'Q6hMeY2PSaM9FMkXetzoJoU5-gzGzoHsz',// your appId
-      appKey: 'iLQlev5jo2Cm5pLcI0z3qhtr', // your appKey
+      appId: 'xxxx',// your appId
+      appKey: 'xxxx', // your appKey
     }
-  }
-}
+  }  
+}  
