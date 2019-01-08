@@ -41,8 +41,8 @@ module.exports = {
     },
     // valine config
     valineConfig: {
-      appId: 'xxxx',// your appId
-      appKey: 'xxxx', // your appKey
+      appId: 'Q6hMeY2PSaM9FMkXetzoJoU5-gzGzoHsz',// your appId
+      appKey: 'iLQlev5jo2Cm5pLcI0z3qhtr', // your appKey
     }
   }  
 }  
