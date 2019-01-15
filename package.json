@@ -14,5 +14,8 @@
   "devDependencies": {
     "vuepress": "^0.14.4",
     "vuepress-theme-reco": "^0.1.0"
+  },
+  "dependencies": {
+    "vue-ba": "^1.2.5"
   }
 }
