@@ -147,7 +147,7 @@ export default {
 
     function clear() {
       // canvas.globalAlpha=0.04;
-      canvas.fillStyle = "#000";
+      canvas.fillStyle = "#2c3e50";
       canvas.fillRect(0, 0, tela.width, tela.height);
       // canvas.globalAlpha=1;
     }
