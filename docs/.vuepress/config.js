@@ -15,6 +15,7 @@ module.exports = {
           { text: 'FrontEnd', link: '/categories/frontEnd' },
           { text: 'BackEnd', link: '/categories/backEnd' },
           { text: 'Essay', link: '/categories/essay' },
+          { text: 'Article', link: '/categories/article' },
           { text: 'Other', link: '/categories/other' }
         ]
       },
