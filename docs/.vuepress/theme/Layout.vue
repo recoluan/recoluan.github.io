@@ -27,7 +27,6 @@
     <router-view></router-view>
 
     <SWUpdatePopup :updateEvent="swUpdateEvent"/>
-    <!-- <Star></Star> -->
   </div>
 </template>
 
@@ -38,7 +37,6 @@ import Home from "./pages/Home/";
 import Navbar from "./components/Navbar/";
 import Page from "./pages/Page/";
 import Sidebar from "./components/Sidebar/";
-// import Star from "./components/Star/";
 import SWUpdatePopup from "./components/SWUpdatePopup/";
 import { resolveSidebarItems } from "./util/"
 
