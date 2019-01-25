@@ -6,22 +6,41 @@ module.exports = {
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
   ],
-  theme: 'reco',
+  // theme: 'reco',
   themeConfig: {
     nav: [
-      { text: 'Home', link: '/' },
+      { text: 'Home', link: '/', icon: 'reco-home' },
       { text: 'Categories', 
+        icon: 'reco-category',
         items: [
-          { text: 'FrontEnd', link: '/categories/frontEnd' },
-          { text: 'BackEnd', link: '/categories/backEnd' },
-          { text: 'Essay', link: '/categories/essay' },
-          { text: 'Article', link: '/categories/article' },
-          { text: 'Other', link: '/categories/other' }
+          { items: [
+            { text: 'FrontEnd', link: '/categories/frontEnd', icon: 'reco-npm' },
+            { text: 'BackEnd', link: '/categories/backEnd' },
+          ] },
+          { items: [
+            { text: 'Essay', link: '/categories/essay' },
+            { text: 'Article', link: '/categories/article' },
+          ] },
+          {
+            items: [
+              { text: 'Other', link: '/categories/other' }
+            ]
+          }
         ]
       },
-      { text: 'Tags', link: '/tags/' },
-      { text: 'Three-Month Study', link: '/threeMonthStudy/' },
-      { text: 'GitHub', link: 'https://github.com/recoluan/vuepress-theme-reco' },
+      { text: 'Tags', link: '/tags/', icon: 'reco-tag' },
+      { text: 'Three-Month Study', link: '/threeMonthStudy/', icon: 'reco-three' },
+      { text: 'Contact', 
+        icon: 'reco-message',
+        items: [
+          { text: 'NPM', link: 'https://www.npmjs.com/~reco_luan', icon: 'reco-npm' },
+          { text: 'GitHub', link: 'https://github.com/recoluan', icon: 'reco-github' },
+          { text: '简书', link: 'https://www.jianshu.com/u/cd674a19515e', icon: 'reco-jianshu' },
+          { text: 'CSDN', link: 'https://blog.csdn.net/recoluan', icon: 'reco-csdn' },
+          { text: '博客圆', link: 'https://www.cnblogs.com/luanhewei/', icon: 'reco-bokeyuan' },
+          { text: 'WeChat', link: 'https://mp.weixin.qq.com/s/mXFqeUTegdvPliXknAAG_A', icon: 'reco-wechat' },
+        ]
+      }
     ],
     logo: '/head.png',
     //search config 
@@ -38,8 +57,10 @@ module.exports = {
     // particlesConfig
     particlesConfig: {
       color: '136, 136, 136', // color of line
-      count: 66, // number of particle
+      count: 100, // number of particle
     },
+    // author
+    author: 'reco_luan',
     // valine config
     valineConfig: {
       appId: 'Q6hMeY2PSaM9FMkXetzoJoU5-gzGzoHsz',// your appId

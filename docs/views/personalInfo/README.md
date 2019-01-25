@@ -4,8 +4,6 @@ tags:
  - 个人信息
 isComment: false
 sidebar: false
-layout: personal
-pageClass: personal
 ---
 
 #### 我做过的事

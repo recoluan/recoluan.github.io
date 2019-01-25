@@ -1,6 +1,6 @@
 <template>
 <div>
-  <canvas id="canvas" width="1349" height="404" style="position: absolute; z-index: -1;top: 0;background: #fff">
+  <canvas id="canvas" width="1349" height="404" style="position: fixed; z-index: -1;top: 0;background: #fff;opacity: 1">
   </canvas>
   <Content :custom="false"/>
 </div>

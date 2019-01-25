@@ -5,10 +5,13 @@
 @require './arrow'
 @require './wrapper'
 @require './toc'
+@require './common'
+@require '../fonts/iconfont.css'
 
 html, body
   padding 0
   margin 0
+  background-color: $bgColor
 
 body
   font-family -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
@@ -16,7 +19,9 @@ body
   -moz-osx-font-smoothing grayscale
   font-size 16px
   color $textColor
-  // background-color: #f5f5d5
+
+input 
+  background-color: $bgColor
 
 .page
   padding-left $sidebarWidth
@@ -28,7 +33,7 @@ body
   left 0
   right 0
   height $navbarHeight
-  background-color #fff
+  background-color $bgColor
   box-sizing border-box
   box-shadow: 0 1px 6px 0 rgba(32,33,36,0.28)
 
@@ -46,13 +51,12 @@ body
 
 .sidebar
   font-size 15px
-  background-color #fff
+  background-color $bgColor
   width $sidebarWidth
   position fixed
   z-index 10
   margin 0
-  top 0
-  padding-top $navbarHeight
+  top $navbarHeight
   left 0
   bottom 0
   box-sizing border-box
@@ -184,6 +188,32 @@ th, td
     .custom-layout
       padding-top 0
 
+.iconfont
+  font-size: 0.9rem;
+  color: #999;
+  &:not(:first-child)
+    margin-left: 1rem
+  span
+    margin-left: .5rem
+
+/************** 滚动条 **************/
+::-webkit-scrollbar
+  width: 5px;
+  height: 5px;
+
+::-webkit-scrollbar-track-piece
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 6px;
+
+::-webkit-scrollbar-thumb:vertical
+  height: 5px;
+  background-color: rgba(125, 125, 125, 0.7);
+  -webkit-border-radius: 6px;
+
+::-webkit-scrollbar-thumb:horizontal
+  width: 5px;
+  background-color: rgba(125, 125, 125, 0.7);
+  -webkit-border-radius: 6px;    
 
 @media (min-width: ($MQMobile + 1px))
   .theme-container.no-sidebar

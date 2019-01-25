@@ -10,13 +10,13 @@
 @import '../../../../styles/config.styl'
 
 .sidebar-button
-  display none
-  width 1.25rem
-  height 1.25rem
-  position absolute
-  padding 0.6rem
-  top 0.6rem
-  left 1rem
+  display: none;
+  width: 1.25rem;
+  height: 1.25rem;
+  position: absolute;
+  padding: 1.2rem;
+  top: 0;
+  left: 0;
   .icon
     display block
     width 1.25rem

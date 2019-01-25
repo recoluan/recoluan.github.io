@@ -13,12 +13,12 @@
       @keyup.up="onUp"
       @keyup.down="onDown"
     >
+    <i class="iconfont reco-search"></i>
     <ul
       class="suggestions"
       v-if="showSuggestions"
       :class="{ 'align-right': alignRight }"
-      @mouseleave="unfocus"
-    >
+      @mouseleave="unfocus">
       <li
         class="suggestion"
         v-for="(s, i) in suggestions"
@@ -152,7 +152,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 @import '../../../styles/config.styl'
 
 .search-box
@@ -171,11 +171,12 @@ export default {
     padding 0 0.5rem 0 2rem
     outline none
     transition all .2s ease
-    background #fff url(./images/search.svg) 0.6rem 0.5rem no-repeat
-    background-size 1rem
     &:focus
       cursor auto
       border-color $accentColor
+  .iconfont
+    position absolute
+    left: -0.3rem
   .suggestions
     background #fff
     width 20rem
@@ -226,7 +227,7 @@ export default {
   .search-box
     margin-right 0
     input
-      left 1rem
+      // left 1rem
     .suggestions
       right 0
 

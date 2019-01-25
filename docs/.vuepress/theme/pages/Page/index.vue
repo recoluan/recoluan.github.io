@@ -1,6 +1,27 @@
 <template>
   <div class="page">
     <slot name="top"/>
+    <h1 class="page-title" v-if="!(isCategories || isTags)">
+      {{pageInfo.title}}
+      <div>
+          <i
+            class="iconfont reco-account"
+            v-if="pageInfo.frontmatter.author || siteInfo.themeConfig.author || siteInfo.title">
+            <span>{{ pageInfo.frontmatter.author || siteInfo.themeConfig.author || siteInfo.title }}</span>
+          </i>
+          <i class="iconfont reco-date" v-if="pageInfo.frontmatter.date"><span>{{ pageInfo.frontmatter.date }}</span></i>
+          <i class="iconfont reco-tag tags" v-if="pageInfo.frontmatter.tags">
+            <span
+              v-for="(subItem, subIndex) in pageInfo.frontmatter.tags"
+              :key="subIndex"
+              class="tag-item"
+              :class="{ 'active': currentTag == subItem }"
+              @click="goTags(subItem)">
+              {{subItem}}
+            </span>
+          </i>
+        </div>
+    </h1>
     <Content :custom="false"/>
     <valine v-if="isComment"></valine>
     <category v-if="isCategories" :currentPage="currentPage" @currentTag="getCurrentTag"></category>
@@ -74,6 +95,12 @@ export default {
   props: ['sidebarItems'],
 
   computed: {
+    siteInfo () {
+      return this.$site
+    },
+    pageInfo () {
+      return this.$page
+    },
     isCategories () {
       return this.$page.frontmatter.isCategories
     },
@@ -225,7 +252,10 @@ function find (page, items, offset) {
 
 .page
   padding-bottom 2rem
-  background-color #fff
+
+.page-title
+  max-width: 740px;
+  margin: 6rem auto 0;
 
 .page-edit
   @extend $wrapper
