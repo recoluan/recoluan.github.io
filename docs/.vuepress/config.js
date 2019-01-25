@@ -14,7 +14,7 @@ module.exports = {
         icon: 'reco-category',
         items: [
           { items: [
-            { text: 'FrontEnd', link: '/categories/frontEnd', icon: 'reco-npm' },
+            { text: 'FrontEnd', link: '/categories/frontEnd' },
             { text: 'BackEnd', link: '/categories/backEnd' },
           ] },
           { items: [
