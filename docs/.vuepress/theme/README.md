@@ -1,8 +1,25 @@
 # vuepress-theme-reco
 
-> 1. This is a vuepress theme aimed at adding the categories, TAB walls, pagination, comments and other features required for blogging;<br>
+> 1. It's a vuepress theme aimed at adding the categories, TAB walls, pagination, comments and other features required for blogging, suitable for `vuepress 0.x`<br>
 > 2. The theme itself is minimalist and is modified based on the default theme of the vuepress.<br>
-> 3. You can click [vuepress-theme-reco](htttps://recoluan.gitlab.io) to see it.
+> 3. You can open https://recoluan.gitlab.io to see it.
+
+## Preview
+
+#### Home Page
+![home.png](https://upload-images.jianshu.io/upload_images/4660406-becd33be1de7391c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+#### Categories Page
+![category.png](https://upload-images.jianshu.io/upload_images/4660406-acdd68dfa730e5a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+#### Tags page
+![tag.png](https://upload-images.jianshu.io/upload_images/4660406-d3b1ec44b870fbd6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+
+#### Article Page
+![article.png](https://upload-images.jianshu.io/upload_images/4660406-00303788bc2edcaa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## Installation and use
 
@@ -61,7 +78,7 @@
     sidebar: false  
     ---
 
-    ## frontEnd
+    ## FrontEnd
     ```
 
     **`/docs/categories/backEnd.md`**
@@ -73,7 +90,7 @@
     sidebar: false
     ---
 
-    ## backEnd
+    ## BackEnd
     ```
 
     > Why do you set sidebar false? Because you enable classification, that's a little bit of a conflict with the custom sidebar feature, so you globally turn on the auto sidebar feature, and then close it where you don't need a side marker
@@ -87,6 +104,8 @@
     categories: frontEnd
     ---
     ```
+
+    > Remember, `categories` corresponding value to file and the corresponding classification `title` values are consistent.
     
 ## Add tag cloud
 
@@ -129,6 +148,18 @@
     - webpack
     ---
     ```
+
+## Add abstract
+
+Effect：
+
+![2.png](https://upload-images.jianshu.io/upload_images/4660406-a15ae55c1e77bef1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+The corresponding markdown：
+
+![1.png](https://upload-images.jianshu.io/upload_images/4660406-54a9168672d45d1d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
+In the markdown code, you will see a comment, and the code in front of the comment will be displayed in the article abstract on the list page.
 
 ## Comment(valine)
 

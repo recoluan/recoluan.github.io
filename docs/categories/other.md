@@ -6,3 +6,7 @@ isComment: false
 ---
 
 ## Other
+
+:::tip Other
+哎，就是喜欢瞎折腾。
+:::

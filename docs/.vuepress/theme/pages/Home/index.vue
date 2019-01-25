@@ -73,10 +73,8 @@ export default {
 
     .description {
       max-width: 35rem;
-      background-color #fff
       font-size: 1.6rem;
       line-height: 1.3;
-      background-color #fff
       color: lighten($textColor, 40%);
     }
 
@@ -118,12 +116,10 @@ export default {
       font-weight: 500;
       border-bottom: none;
       padding-bottom: 0;
-      background-color #fff
       color: lighten($textColor, 10%);
     }
 
     p {
-      background-color #fff
       color: lighten($textColor, 25%);
     }
 

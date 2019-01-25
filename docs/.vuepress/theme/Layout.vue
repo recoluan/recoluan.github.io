@@ -25,8 +25,9 @@
     </Page>
 
     <router-view></router-view>
-
+    <Particles></Particles>
     <SWUpdatePopup :updateEvent="swUpdateEvent"/>
+    <BackToTop></BackToTop>
   </div>
 </template>
 
@@ -39,9 +40,11 @@ import Page from "./pages/Page/";
 import Sidebar from "./components/Sidebar/";
 import SWUpdatePopup from "./components/SWUpdatePopup/";
 import { resolveSidebarItems } from "./util/"
+import Particles from "./components/Particles/"
+import BackToTop from "./components/BackToTop/"
 
 export default {
-  components: { Home, Page, Sidebar, Navbar, SWUpdatePopup },
+  components: { Home, Page, Sidebar, Navbar, SWUpdatePopup, Particles, BackToTop },
 
   data() {
     return {
@@ -117,15 +120,6 @@ export default {
     });
 
     this.$on("sw-updated", this.onSWUpdated);
-
-    const { themeConfig } = this.$site;
-
-    if (!(themeConfig.showParticles != undefined && !themeConfig.showParticles)) {
-      localStorage.setItem('particle', JSON.stringify(themeConfig.particlesConfig || {}))
-      var script = document.createElement('script')
-      script.src = 'https://blog-static.cnblogs.com/files/luanhewei/particle.js'
-      document.querySelector('body').appendChild(script)
-    }
   },
 
   methods: {

@@ -6,3 +6,7 @@ isComment: false
 ---
 
 ## Essay
+
+:::tip Essay
+随便写写，开心就好。
+:::
