@@ -22,13 +22,13 @@ export default {
       type: Object,
       default: function() {
         return {
-          right: '50px',
-          bottom: '50px',
-          width: '40px',
-          height: '40px',
-          'border-radius': '4px',
-          'line-height': '45px',
-          background: '#e7eaf1'
+          right: '1rem',
+          bottom: '3rem',
+          width: '2.5rem',
+          height: '2.5rem',
+          'border-radius': '.25rem',
+          'line-height': '2.5rem',
+          backgroundColor: 'rgba(231, 234, 241,.5)'
         }
       }
     },

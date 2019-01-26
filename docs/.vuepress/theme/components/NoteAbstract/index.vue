@@ -10,32 +10,16 @@
       </div>
       <div class="abstract" v-html="item.excerpt"></div>
       <hr>
-      <div class="flex-wrapper">
-        <div>
-          <i
-            class="iconfont reco-account"
-            v-if="item.frontmatter.author || siteInfo.themeConfig.author || siteInfo.title">
-            <span>{{ item.frontmatter.author || siteInfo.themeConfig.author || siteInfo.title }}</span>
-          </i>
-          <i class="iconfont reco-date" v-if="item.frontmatter.date"><span>{{ item.frontmatter.date }}</span></i>
-          <i class="iconfont reco-tag tags" v-if="item.frontmatter.tags">
-            <span
-              v-for="(subItem, subIndex) in item.frontmatter.tags"
-              :key="subIndex"
-              class="tag-item"
-              :class="{ 'active': currentTag == subItem }"
-              @click="goTags(subItem)">
-              {{subItem}}
-            </span>
-          </i>
-        </div>
-      </div>
+      <PageInfo :pageInfo="item" :currentTag="currentTag" @currentTag="getCurrentTag"></PageInfo>
     </div>
   </div>
 </template>
 
 <script>
+import PageInfo from '../PageInfo/'
+
 export default {
+  components: { PageInfo },
   props: ['data', 'currentPage', 'currentTag'],
   computed: {
     siteInfo () {
@@ -48,13 +32,8 @@ export default {
     }
   },
   methods: {
-    goTags (tag) {
-      const tagClick = this.$site.themeConfig.tagClick
+    getCurrentTag (tag) {
       this.$emit('currentTag', tag)
-      if (tagClick == true) {
-        // 目前通过name跳转会报错
-        this.$router.push({path: '/tags/'})
-      }
     }
   }
 }

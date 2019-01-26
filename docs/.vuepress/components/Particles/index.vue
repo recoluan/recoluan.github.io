@@ -467,10 +467,9 @@ export default {
       var w, b;
       new y(
         document.body,
-        ((w = document.getElementsByTagName("script")),
+        ((w = document.getElementsByTagName("script"), b = this.particlesConfig),
         {
-          zIndex:
-            (b = this.particlesConfig).zIndex || -1,
+          zIndex: b.zIndex || 0,
           opacity: b.opacity || 0.5,
           color: b.color || "0, 0, 0",
           pointColor: b.pointColor || "0, 0, 0",

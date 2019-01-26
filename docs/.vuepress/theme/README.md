@@ -192,28 +192,8 @@ module.exports = {
 }  
 ```
 
-2. If you don't like the particle effect, you can turn it off. If you like it, you can also set the count and color of particles.
 
-```javascript
-module.exports = {
-  title: "午后南杂",
-  theme: 'reco',
-  themeConfig: {
-    // particles
-    showParticles: true,
-    // particlesConfig
-    particlesConfig: {
-      color: '0, 0, 0', //color of lines, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
-      pointColor: '0, 0, 0', //color of points, default: '0,0,0'; RGB values: (R,G,B).(note: use ',' to separate.)
-      opacity: 0.5, // the opacity of line (0~1), default: 0.5.
-      count: 60, // the number of lines, default: 66.
-      zIndex: -1,  // z-index property of the background, default: -1.
-    },
-  }  
-}
-``` 
-
-3. If you want to click the tags in the list, you can set themeConfig's value of tagClick true 
+2. If you want to click the tags in the list, you can set themeConfig's value of tagClick true 
 
 ```javascript
 module.exports = {

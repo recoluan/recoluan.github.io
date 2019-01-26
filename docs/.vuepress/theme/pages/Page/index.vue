@@ -1,27 +1,11 @@
 <template>
   <div class="page">
     <slot name="top"/>
-    <h1 class="page-title" v-if="!(isCategories || isTags)">
-      {{pageInfo.title}}
-      <div>
-          <i
-            class="iconfont reco-account"
-            v-if="pageInfo.frontmatter.author || siteInfo.themeConfig.author || siteInfo.title">
-            <span>{{ pageInfo.frontmatter.author || siteInfo.themeConfig.author || siteInfo.title }}</span>
-          </i>
-          <i class="iconfont reco-date" v-if="pageInfo.frontmatter.date"><span>{{ pageInfo.frontmatter.date }}</span></i>
-          <i class="iconfont reco-tag tags" v-if="pageInfo.frontmatter.tags">
-            <span
-              v-for="(subItem, subIndex) in pageInfo.frontmatter.tags"
-              :key="subIndex"
-              class="tag-item"
-              :class="{ 'active': currentTag == subItem }"
-              @click="goTags(subItem)">
-              {{subItem}}
-            </span>
-          </i>
-        </div>
-    </h1>
+    <div class="page-title" v-if="!(isCategories || isTags)">
+      <h1>{{pageInfo.title}}</h1>
+      <hr>
+      <PageInfo :pageInfo="pageInfo" @currentTag="getCurrentTag"></PageInfo>
+    </div>
     <Content :custom="false"/>
     <valine v-if="isComment"></valine>
     <category v-if="isCategories" :currentPage="currentPage" @currentTag="getCurrentTag"></category>
@@ -80,6 +64,7 @@
 import { resolvePage, normalize, outboundRE, endingSlashRE } from '../../util/'
 import Valine from '../../components/Valine/'
 import Category from '../../components/Category/'
+import PageInfo from '../../components/PageInfo/'
 import Tag from '../../components/Tag/'
 
 export default {
@@ -216,7 +201,8 @@ export default {
   components: {
     Valine,
     Category,
-    Tag
+    Tag,
+    PageInfo
   }
 }
 
@@ -246,7 +232,7 @@ function find (page, items, offset) {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 @import '../../styles/config.styl'
 @require '../../styles/wrapper.styl'
 
@@ -298,4 +284,10 @@ function find (page, items, offset) {
       font-size .8em
       float none
       text-align left
+  .page-title
+    padding: 0 1rem;    
+    .tags
+      display block
+      margin-top 1rem;
+      margin-left: 0!important;    
 </style>
