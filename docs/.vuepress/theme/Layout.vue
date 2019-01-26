@@ -25,7 +25,6 @@
     </Page>
 
     <router-view></router-view>
-    <Particles></Particles>
     <SWUpdatePopup :updateEvent="swUpdateEvent"/>
     <BackToTop></BackToTop>
   </div>
@@ -40,11 +39,10 @@ import Page from "./pages/Page/";
 import Sidebar from "./components/Sidebar/";
 import SWUpdatePopup from "./components/SWUpdatePopup/";
 import { resolveSidebarItems } from "./util/"
-import Particles from "./components/Particles/"
 import BackToTop from "./components/BackToTop/"
 
 export default {
-  components: { Home, Page, Sidebar, Navbar, SWUpdatePopup, Particles, BackToTop },
+  components: { Home, Page, Sidebar, Navbar, SWUpdatePopup, BackToTop },
 
   data() {
     return {
@@ -156,3 +154,4 @@ export default {
 
 <style src="prismjs/themes/prism-tomorrow.css"></style>
 <style src="./styles/theme.styl" lang="stylus"></style> 
+

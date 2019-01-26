@@ -52,13 +52,6 @@ module.exports = {
     tagClick: true,
     // last Updated Date
     lastUpdated: 'Last Updated', // string | boolean
-    // particles
-    showParticles: true,
-    // particlesConfig
-    particlesConfig: {
-      color: '136, 136, 136', // color of line
-      count: 100, // number of particle
-    },
     // author
     author: 'reco_luan',
     // valine config
