@@ -154,7 +154,6 @@ $navbar-horizontal-padding = 1.5rem;
 @media (max-width: $MQMobile) {
   .navbar {
     transition all .5s
-    padding-left: 3.5rem;
 
     .can-hide {
       display: none;

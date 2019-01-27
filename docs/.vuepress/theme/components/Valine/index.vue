@@ -1,11 +1,18 @@
 <template>
-  <div id="valine"></div>
+  <div id="valine" v-show="isComment"></div>
 </template>
 
 <script>
 
 
 export default {
+  computed: {
+    // 是否显示评论
+    isComment () {
+      const frontmatter = this.$page.frontmatter
+      return (!frontmatter.isComment || frontmatter.home) ? false : true
+    }
+  }, 
   mounted: function(){
     const valineConfig = this.$site.themeConfig.valineConfig
     if (valineConfig) {
@@ -21,9 +28,10 @@ export default {
         el: '#valine' ,
         appId: valineConfig.appId,// your appId
         appKey: valineConfig.appKey, // your appKey
-        notify:false, 
         verify:false, 
-        avatar:'mm', 
+        visitor: true,
+        avatar:'retro', 
+        path: window.location.pathname,
         placeholder: 'just go go' 
       });
     }
@@ -36,6 +44,6 @@ export default {
 #valine
   max-width: 740px;
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding: 0 1rem;
   background-color $bgColor
 </style>

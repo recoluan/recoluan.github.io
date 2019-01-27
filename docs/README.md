@@ -18,5 +18,5 @@ features:
   details: In a city? On earth? Or in a small part of space?
 - title: What am I going to do？
   details: Work? Struggle? Or go to a destination I don't know?
-footer: 'by reco_luan'
+# footer: 'reco_luan'
 ---

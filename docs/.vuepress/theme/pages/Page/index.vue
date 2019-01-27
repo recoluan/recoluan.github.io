@@ -7,7 +7,6 @@
       <PageInfo :pageInfo="pageInfo" @currentTag="getCurrentTag"></PageInfo>
     </div>
     <Content :custom="false"/>
-    <valine v-if="isComment"></valine>
     <category v-if="isCategories" :currentPage="currentPage" @currentTag="getCurrentTag"></category>
     <tag v-if="isTags" :tag="currentTag"></tag>
     <div class="page-edit">
@@ -62,7 +61,6 @@
 
 <script>
 import { resolvePage, normalize, outboundRE, endingSlashRE } from '../../util/'
-import Valine from '../../components/Valine/'
 import Category from '../../components/Category/'
 import PageInfo from '../../components/PageInfo/'
 import Tag from '../../components/Tag/'
@@ -80,9 +78,6 @@ export default {
   props: ['sidebarItems'],
 
   computed: {
-    siteInfo () {
-      return this.$site
-    },
     pageInfo () {
       return this.$page
     },
@@ -199,7 +194,6 @@ export default {
     }
   },
   components: {
-    Valine,
     Category,
     Tag,
     PageInfo
