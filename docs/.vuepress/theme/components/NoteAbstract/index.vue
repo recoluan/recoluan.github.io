@@ -22,9 +22,6 @@ export default {
   components: { PageInfo },
   props: ['data', 'currentPage', 'currentTag'],
   computed: {
-    siteInfo () {
-      return this.$site
-    },
     formatData () {
       const data = this.data
       const currentPage = this.currentPage

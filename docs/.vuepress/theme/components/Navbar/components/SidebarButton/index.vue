@@ -14,7 +14,7 @@
   position: absolute;
   padding: 0.8rem;
   top: 0;
-  left: 0;
+  right: 0;
   i
     font-size 1.8rem
 
