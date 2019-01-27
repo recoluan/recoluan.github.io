@@ -7,10 +7,14 @@
 <script>
 export default {
   props: ['idVal'],
-  computed: {
-    id () {
-      return this.idVal || window.location.pathname
-    },
+  data () {
+    return {
+      id: ''
+    }
+    
+  },
+  mounted () {
+    this.id = this.idVal || window.location.pathname
   }
 }
 </script>
