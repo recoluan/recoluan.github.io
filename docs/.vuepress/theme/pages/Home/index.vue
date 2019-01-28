@@ -35,7 +35,7 @@
         <a>{{ year }}</a>
       </span>
       <span>
-        <AccessNumber></AccessNumber>
+        <AccessNumber idVal="/"></AccessNumber>
       </span>
     </div>
   </div>
