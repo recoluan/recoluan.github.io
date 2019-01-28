@@ -2,14 +2,13 @@
   <div class="page">
     <slot name="top"/>
     <div class="page-title" v-if="!(isCategories || isTags)">
-      <h1>{{pageInfo.title}}</h1>
+      <h1>{{$page.title}}</h1>
       <hr>
-      <PageInfo :pageInfo="pageInfo" @currentTag="getCurrentTag"></PageInfo>
+      <PageInfo :pageInfo="$page" @currentTag="getCurrentTag"></PageInfo>
     </div>
     <Content :custom="false"/>
-    <valine></valine>
     <category v-if="isCategories" :currentPage="currentPage" @currentTag="getCurrentTag"></category>
-    <tag v-if="isTags" :tag="currentTag"></tag>
+    <tag v-if="isTags" :tag="currentTag" @tagChange="$emit('tagChange')"></tag>
     <div class="page-edit">
       <div
         class="edit-link"
@@ -65,7 +64,6 @@ import { resolvePage, normalize, outboundRE, endingSlashRE } from '../../util/'
 import Category from '../../components/Category/'
 import PageInfo from '../../components/PageInfo/'
 import Tag from '../../components/Tag/'
-import Valine from '../../components/Valine/'
 
 export default {
   beforeUpdate () {
@@ -78,22 +76,12 @@ export default {
     }
   },
   props: ['sidebarItems'],
-
   computed: {
-    pageInfo () {
-      return this.$page
-    },
     isCategories () {
       return this.$page.frontmatter.isCategories
     },
     isTags () {
       return this.$page.frontmatter.isTags
-    },
-
-    // 是否显示评论
-    isComment () {
-      const isComment = this.$page.frontmatter.isComment
-      return isComment == false ? false : true
     },
     lastUpdated () {
       if (this.$page.lastUpdated) {
@@ -198,8 +186,7 @@ export default {
   components: {
     Category,
     Tag,
-    PageInfo,
-    Valine
+    PageInfo
   }
 }
 

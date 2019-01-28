@@ -2,7 +2,7 @@
   <div class="abstract-wrapper">
     <div
       v-for="(item, index) in formatData"
-      :key="index"
+      :key="item.path"
       class="abstract-item">
       <div class="title">
         <router-link
@@ -25,6 +25,7 @@ export default {
     formatData () {
       const data = this.data
       const currentPage = this.currentPage
+      console.log(data.slice(currentPage * 10 - 10, currentPage * 10))
       return data.slice(currentPage * 10 - 10, currentPage * 10)
     }
   },
