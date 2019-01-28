@@ -76,6 +76,7 @@ export default {
   methods: {
     // 根据分类获取页面数据
     getPagesByTags (tag) {
+      this.$emit('tagChange')
       let pages = this.$site.pages
       this.currentTag = tag
       pages = pages.filter(item => {

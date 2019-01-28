@@ -19,10 +19,12 @@
 
     <Home v-else-if="$page.frontmatter.home"/>
 
-    <Page v-else :sidebar-items="sidebarItems">
+    <Page v-else :sidebar-items="sidebarItems" @tagChange="tagChange">
       <slot name="page-top" slot="top"/>
       <slot name="page-bottom" slot="bottom"/>
     </Page>
+
+    <Valine :valineRefresh="valineRefresh"></Valine>
 
     <router-view></router-view>
     <SWUpdatePopup :updateEvent="swUpdateEvent"/>
@@ -40,14 +42,16 @@ import Sidebar from "./components/Sidebar/";
 import SWUpdatePopup from "./components/SWUpdatePopup/";
 import { resolveSidebarItems } from "./util/"
 import BackToTop from "./components/BackToTop/"
+import Valine from './components/Valine/'
 
 export default {
-  components: { Home, Page, Sidebar, Navbar, SWUpdatePopup, BackToTop },
+  components: { Home, Page, Sidebar, Navbar, SWUpdatePopup, BackToTop, Valine },
 
   data() {
     return {
       isSidebarOpen: false,
-      swUpdateEvent: null
+      swUpdateEvent: null,
+      valineRefresh: false
     };
   },
 
@@ -121,6 +125,12 @@ export default {
   },
 
   methods: {
+    tagChange () {
+      this.valineRefresh = true
+      setTimeout(() => {
+        this.valineRefresh = false
+      }, 300)
+    },
     toggleSidebar(to) {
       this.isSidebarOpen = typeof to === "boolean" ? to : !this.isSidebarOpen;
     },

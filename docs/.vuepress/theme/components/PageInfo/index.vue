@@ -5,7 +5,8 @@
       v-if="pageInfo.frontmatter.author || $site.themeConfig.author || $site.title">
       <span>{{ pageInfo.frontmatter.author || $site.themeConfig.author || $site.title }}</span>
     </i>
-    <i class="iconfont reco-date" v-if="pageInfo.frontmatter.date"><span>{{ pageInfo.frontmatter.date }}</span></i>
+    <i class="iconfont reco-date" v-if="pageInfo.frontmatter.date"><span>{{ new Date(pageInfo.frontmatter.date).toLocaleDateString() }}</span></i>
+    <AccessNumber :idVal="pageInfo.path" :numStyle="numStyle"></AccessNumber>
     <i class="iconfont reco-tag tags" v-if="pageInfo.frontmatter.tags">
       <span
         v-for="(subItem, subIndex) in pageInfo.frontmatter.tags"
@@ -20,9 +21,20 @@
 </template>
 
 <script>
+import AccessNumber from '../Valine/AccessNumber'
 
 export default {
+  data () {
+    return {
+      numStyle: {
+        fontSize: '.9rem',
+        fontWeight: 'normal',
+        color: '#999'
+      }
+    }
+  },
   props: ['pageInfo', 'currentTag'],
+  components: { AccessNumber },
   methods: {
     goTags (tag) {
       const tagClick = this.$site.themeConfig.tagClick
@@ -39,6 +51,13 @@ export default {
 <style lang="stylus" scoped>
 @import '../../styles/config.styl'
 
+.iconfont
+  display inline-block
+  line-height 1.5rem
+  &:not(:last-child)
+    margin-right 1rem
+  span 
+    margin-left .5rem
 .tags
   .tag-item
     cursor: pointer;
@@ -47,9 +66,9 @@ export default {
     &:hover 
       color $accentColor
 
-@media (max-width: $MQMobile)
-  .tags
-    display block
-    margin-top 1rem;
-    margin-left: 0!important;
+// @media (max-width: $MQMobile)
+//   .tags
+//     display block
+//     margin-top 1rem;
+//     margin-left: 0!important;
 </style>
