@@ -7,6 +7,7 @@
       <PageInfo :pageInfo="pageInfo" @currentTag="getCurrentTag"></PageInfo>
     </div>
     <Content :custom="false"/>
+    <valine></valine>
     <category v-if="isCategories" :currentPage="currentPage" @currentTag="getCurrentTag"></category>
     <tag v-if="isTags" :tag="currentTag"></tag>
     <div class="page-edit">
@@ -64,6 +65,7 @@ import { resolvePage, normalize, outboundRE, endingSlashRE } from '../../util/'
 import Category from '../../components/Category/'
 import PageInfo from '../../components/PageInfo/'
 import Tag from '../../components/Tag/'
+import Valine from '../../components/Valine/'
 
 export default {
   beforeUpdate () {
@@ -196,7 +198,8 @@ export default {
   components: {
     Category,
     Tag,
-    PageInfo
+    PageInfo,
+    Valine
   }
 }
 

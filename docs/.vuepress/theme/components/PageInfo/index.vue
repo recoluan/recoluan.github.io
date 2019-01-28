@@ -6,7 +6,6 @@
       <span>{{ pageInfo.frontmatter.author || $site.themeConfig.author || $site.title }}</span>
     </i>
     <i class="iconfont reco-date" v-if="pageInfo.frontmatter.date"><span>{{ pageInfo.frontmatter.date }}</span></i>
-    <AccessNumber style="margin-left: 1rem"></AccessNumber>
     <i class="iconfont reco-tag tags" v-if="pageInfo.frontmatter.tags">
       <span
         v-for="(subItem, subIndex) in pageInfo.frontmatter.tags"
@@ -21,11 +20,9 @@
 </template>
 
 <script>
-import AccessNumber from "../Valine/AccessNumber"
 
 export default {
   props: ['pageInfo', 'currentTag'],
-  components: { AccessNumber },
   methods: {
     goTags (tag) {
       const tagClick = this.$site.themeConfig.tagClick

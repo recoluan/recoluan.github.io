@@ -10,7 +10,7 @@ export default {
     // 是否显示评论
     isComment () {
       const frontmatter = this.$page.frontmatter
-      return (!frontmatter.isComment || frontmatter.home) ? false : true
+      return frontmatter.isComment == false || frontmatter.home == true ? false : true
     }
   }, 
   mounted: function(){
