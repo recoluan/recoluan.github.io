@@ -10,7 +10,7 @@ export default {
     // 是否显示评论
     isComment () {
       const frontmatter = this.$page.frontmatter
-      return (!frontmatter.isComment || frontmatter.home) ? false : true
+      return frontmatter.isComment == false || frontmatter.home == true ? false : true
     }
   }, 
   mounted: function(){
@@ -29,7 +29,7 @@ export default {
         appId: valineConfig.appId,// your appId
         appKey: valineConfig.appKey, // your appKey
         verify:false, 
-        visitor: true,
+        visitor: false,
         avatar:'retro', 
         path: window.location.pathname,
         placeholder: 'just go go' 

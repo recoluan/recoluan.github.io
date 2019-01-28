@@ -24,8 +24,6 @@
       <slot name="page-bottom" slot="bottom"/>
     </Page>
 
-    <valine></valine>
-
     <router-view></router-view>
     <SWUpdatePopup :updateEvent="swUpdateEvent"/>
     <BackToTop></BackToTop>
@@ -40,12 +38,11 @@ import Navbar from "./components/Navbar/";
 import Page from "./pages/Page/";
 import Sidebar from "./components/Sidebar/";
 import SWUpdatePopup from "./components/SWUpdatePopup/";
-import Valine from './components/Valine/'
 import { resolveSidebarItems } from "./util/"
 import BackToTop from "./components/BackToTop/"
 
 export default {
-  components: { Home, Page, Sidebar, Navbar, SWUpdatePopup, BackToTop, Valine },
+  components: { Home, Page, Sidebar, Navbar, SWUpdatePopup, BackToTop },
 
   data() {
     return {

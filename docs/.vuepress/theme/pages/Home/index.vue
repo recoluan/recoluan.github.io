@@ -34,19 +34,15 @@
         <i class="iconfont reco-copyright"></i>
         <a>{{ year }}</a>
       </span>
-      <span>
-        <AccessNumber></AccessNumber>
-      </span>
     </div>
   </div>
 </template>
 
 <script>
 import NavLink from "../../components/NavLink/";
-import AccessNumber from "../../components/Valine/AccessNumber"
 
 export default {
-  components: { NavLink, AccessNumber },
+  components: { NavLink },
   computed: {
     year () {
       return new Date().getFullYear()
