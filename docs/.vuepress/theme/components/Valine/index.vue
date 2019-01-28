@@ -29,7 +29,7 @@ export default {
         appId: valineConfig.appId,// your appId
         appKey: valineConfig.appKey, // your appKey
         verify:false, 
-        visitor: true,
+        visitor: false,
         avatar:'retro', 
         path: window.location.pathname,
         placeholder: 'just go go' 
