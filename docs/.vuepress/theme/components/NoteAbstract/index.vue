@@ -25,7 +25,6 @@ export default {
     formatData () {
       const data = this.data
       const currentPage = this.currentPage
-      console.log(data.slice(currentPage * 10 - 10, currentPage * 10))
       return data.slice(currentPage * 10 - 10, currentPage * 10)
     }
   },

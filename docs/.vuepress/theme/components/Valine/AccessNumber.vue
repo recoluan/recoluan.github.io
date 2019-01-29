@@ -1,6 +1,7 @@
 <template>
   <span v-if="$site.themeConfig.valineConfig" :id="idVal" class="leancloud-visitors" data-flag-title="Your Article Title">
-    <i class="iconfont reco-eye" style="margin-right: .5rem"><a class="leancloud-visitors-count" :style="numStyle"></a></i> 
+    <i class="iconfont reco-eye" style="margin-right: .5rem"></i>
+    <a class="leancloud-visitors-count" :style="numStyle"></a>
   </span>
 </template>
 
@@ -11,7 +12,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-.leancloud-visitors-count
-  margin-left .5rem
+.leancloud-visitors
+  margin-right .5rem
 </style>
 

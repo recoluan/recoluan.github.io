@@ -6,7 +6,7 @@ module.exports = {
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
   ],
-  // theme: 'reco',
+  theme: 'reco',
   themeConfig: {
     nav: [
       { text: 'Home', link: '/', icon: 'reco-home' },
@@ -48,8 +48,6 @@ module.exports = {
     searchMaxSuggestions: 10,
     // auto create sidebar
     sidebar: 'auto',
-    // whether you can click the tags in the list
-    tagClick: true,
     // last Updated Date
     lastUpdated: 'Last Updated', // string | boolean
     // author

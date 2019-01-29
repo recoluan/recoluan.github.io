@@ -37,12 +37,8 @@ export default {
   components: { AccessNumber },
   methods: {
     goTags (tag) {
-      const tagClick = this.$site.themeConfig.tagClick
       this.$emit('currentTag', tag)
-      if (tagClick == true) {
-        // 目前通过name跳转会报错
-        this.$router.push({path: '/tags/'})
-      }
+      this.$router.push({path: '/tags/'})
     }
   }
 }
