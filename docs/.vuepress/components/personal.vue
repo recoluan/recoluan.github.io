@@ -202,12 +202,12 @@ export default {
   left: 20px;
   bottom: 20px;
   z-index: 10;
-  font-family: 'Montserrat';
+  font-family: Ubuntu, 'Montserrat';
   font-size: 12px;
 }
 
 a.white-mode, a.white-mode:link, a.white-mode:visited, a.white-mode:active {
-  font-family: 'Montserrat';
+  font-family: Ubuntu, 'Montserrat';
   font-size: 12px;
   text-decoration: none;
   background: #212121;
@@ -227,7 +227,7 @@ a.white-mode:hover, a.white-mode:link:hover, a.white-mode:visited:hover, a.white
   left: 50%;
   top: 50%;
   transform: translateX(-50%) translateY(-50%);
-  font-family: 'Montserrat';
+  font-family: Ubuntu, 'Montserrat';
   text-align: center;
   width: 100%;
 }
