@@ -1,6 +1,6 @@
 ---
 title: Three-Month
-date: 2018-10-16 15:03
+date: 2018-10-16
 isCategories: true
 sidebar: false
 isComment: false
