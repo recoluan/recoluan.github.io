@@ -7,10 +7,6 @@
 @require './toc'
 // @require './common'
 @require '../fonts/iconfont.css'
-@font-face
-  font-family Ubuntu
-  font-weight bold
-  src url(https://fonts.gstatic.com/s/ubuntu/v13/4iCs6KVjbNBYlgoKfw72nU6AFw.woff2)
 
 html, body
   padding 0
@@ -19,7 +15,7 @@ html, body
   overflow-x: hidden
 
 body
-  font-family Ubuntu, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+  font-family -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
   -webkit-font-smoothing antialiased
   -moz-osx-font-smoothing grayscale
   font-size 16px
@@ -27,7 +23,7 @@ body
 
 input 
   background-color: $bgColor
-  -webkit-appearance: none
+  -webkit-appearance: none;
 
 .page
   padding-left $sidebarWidth
@@ -51,9 +47,7 @@ input
   width 100vw
   height 100vh
   display none
-  background-color $accentColor
-  opacity .85
-  // background-color: rgba(0, 0, 0, .7)
+  background-color: rgba(0, 0, 0, .65)
 
 .sidebar
   font-size 15px
@@ -118,7 +112,7 @@ strong
   font-weight 600
 
 h1, h2, h3, h4, h5, h6
-  font-weight 600
+  font-weight 500
   line-height 1.25
   .content:not(.custom) > &
     margin-top (0.5rem - $navbarHeight)

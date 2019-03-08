@@ -1,7 +1,7 @@
 <template>
   <div class="abstract-wrapper">
     <div
-      v-for="(item, index) in formatData"
+      v-for="item in formatData"
       :key="item.path"
       class="abstract-item">
       <div class="title">
