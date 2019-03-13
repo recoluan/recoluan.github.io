@@ -23,8 +23,7 @@ module.exports = {
           ] },
           {
             items: [
-              { text: 'Other', link: '/categories/other' },
-              { text: 'Work', link: 'https://recoluan.gitlab.io/work/' }
+              { text: 'Other', link: '/categories/other' }
             ]
           }
         ]
