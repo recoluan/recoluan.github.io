@@ -10,7 +10,7 @@
 <script>
 export default {
   mounted() {
-    let max_particles = 100;
+    let max_particles = 200;
     let particles = [];
     let frequency = 100;
     let init_num = max_particles;

@@ -6,7 +6,7 @@ module.exports = {
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
   ],
-  theme: 'reco',
+  // theme: 'reco',
   themeConfig: {
     nav: [
       { text: 'Home', link: '/', icon: 'reco-home' },
@@ -43,19 +43,25 @@ module.exports = {
       }
     ],
     logo: '/head.png',
-    //search config 
+    // 搜索设置
     search: true,
     searchMaxSuggestions: 10,
-    // auto create sidebar
+    // 自动形成侧边导航
     sidebar: 'auto',
-    // last Updated Date
+    // 最后更新时间
     lastUpdated: 'Last Updated', // string | boolean
-    // author
+    // 作者
     author: 'reco_luan',
-    // valine config
+    // valine 设置
     valineConfig: {
       appId: 'Q6hMeY2PSaM9FMkXetzoJoU5-gzGzoHsz',// your appId
       appKey: 'iLQlev5jo2Cm5pLcI0z3qhtr', // your appKey
+    },
+    // 密钥
+    keyPage: {
+      keys: ['930105'],
+      color: '#fb9b5f',
+      lineColor: '#fb9b5f'
     }
   },
   markdown: {
