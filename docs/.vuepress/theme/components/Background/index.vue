@@ -112,7 +112,7 @@ export default {
 </script>
 <style lang="stylus" scoped>
 #particles-oli-wrapper {
-  height: 100vh;
+  height: 99vh;
 }
 </style>
 

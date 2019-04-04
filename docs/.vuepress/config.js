@@ -6,7 +6,7 @@ module.exports = {
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }]
   ],
-  // theme: 'reco',
+  theme: 'reco',
   themeConfig: {
     nav: [
       { text: 'Home', link: '/', icon: 'reco-home' },
@@ -29,6 +29,7 @@ module.exports = {
         ]
       },
       { text: 'Tags', link: '/tags/', icon: 'reco-tag' },
+      { text: 'TimeLine', link: '/timeLine/', icon: 'reco-date' },
       { text: 'Three-Month Study', link: '/threeMonthStudy/', icon: 'reco-three' },
       { text: 'Contact', 
         icon: 'reco-message',
