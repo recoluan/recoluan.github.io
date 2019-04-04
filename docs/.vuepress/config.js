@@ -58,12 +58,6 @@ module.exports = {
       appId: 'Q6hMeY2PSaM9FMkXetzoJoU5-gzGzoHsz',// your appId
       appKey: 'iLQlev5jo2Cm5pLcI0z3qhtr', // your appKey
     },
-    // 密钥
-    keyPage: {
-      keys: ['930105'],
-      color: '#fb9b5f',
-      lineColor: '#fb9b5f'
-    }
   },
   markdown: {
     lineNumbers: true
