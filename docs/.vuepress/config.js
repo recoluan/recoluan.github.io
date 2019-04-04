@@ -29,6 +29,7 @@ module.exports = {
         ]
       },
       { text: 'Tags', link: '/tags/', icon: 'reco-tag' },
+      { text: 'TimeLine', link: '/timeLine/', icon: 'reco-date' },
       { text: 'Three-Month Study', link: '/threeMonthStudy/', icon: 'reco-three' },
       { text: 'Contact', 
         icon: 'reco-message',
@@ -43,19 +44,25 @@ module.exports = {
       }
     ],
     logo: '/head.png',
-    //search config 
+    // 搜索设置
     search: true,
     searchMaxSuggestions: 10,
-    // auto create sidebar
+    // 自动形成侧边导航
     sidebar: 'auto',
-    // last Updated Date
+    // 最后更新时间
     lastUpdated: 'Last Updated', // string | boolean
-    // author
+    // 作者
     author: 'reco_luan',
-    // valine config
+    // valine 设置
     valineConfig: {
       appId: 'Q6hMeY2PSaM9FMkXetzoJoU5-gzGzoHsz',// your appId
       appKey: 'iLQlev5jo2Cm5pLcI0z3qhtr', // your appKey
+    },
+    // 密钥
+    keyPage: {
+      keys: ['930105'],
+      color: '#fb9b5f',
+      lineColor: '#fb9b5f'
     }
   },
   markdown: {
