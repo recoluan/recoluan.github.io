@@ -10,6 +10,7 @@ module.exports = {
     nav: [
       { text: 'Home', link: '/', icon: 'reco-home' },
       { text: 'TimeLine', link: '/timeLine/', icon: 'reco-date' },
+      { text: 'Three-Month Study', link: '/_posts/threeMonthStudy/', icon: 'reco-three' },
       { text: 'Contact', 
         icon: 'reco-message',
         items: [

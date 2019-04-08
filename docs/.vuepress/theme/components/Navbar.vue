@@ -4,31 +4,26 @@
 
     <router-link
       :to="$localePath"
-      class="home-link"
-    >
+      class="home-link">
       <img
         class="logo"
         v-if="$site.themeConfig.logo"
         :src="$withBase($site.themeConfig.logo)"
-        :alt="$siteTitle"
-      >
+        :alt="$siteTitle">
       <span
         ref="siteName"
         class="site-name"
-        v-if="$siteTitle"
-      >{{ $siteTitle }}</span>
+        v-if="$siteTitle">{{ $siteTitle }}</span>
     </router-link>
 
     <div
       class="links"
       :style="linksWrapMaxWidth ? {
         'max-width': linksWrapMaxWidth + 'px'
-      } : {}"
-    >
+      } : {}">
       <AlgoliaSearchBox
         v-if="isAlgoliaSearch"
-        :options="algolia"
-      />
+        :options="algolia"/>
       <SearchBox v-else-if="$site.themeConfig.search !== false && $page.frontmatter.search !== false"/>
       <NavLinks class="can-hide"/>
     </div>

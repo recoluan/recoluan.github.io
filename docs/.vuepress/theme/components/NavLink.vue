@@ -3,8 +3,7 @@
     class="nav-link"
     :to="link"
     v-if="!isExternal(link)"
-    :exact="exact"
-  >
+    :exact="exact">
     <i :class="`iconfont ${item.icon}`"></i>
     {{ item.text }}
   </router-link>

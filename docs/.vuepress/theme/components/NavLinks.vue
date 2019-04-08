@@ -7,16 +7,13 @@
     <div
       class="nav-item"
       v-for="item in userLinks"
-      :key="item.link"
-    >
+      :key="item.link">
       <DropdownLink
         v-if="item.type === 'links'"
-        :item="item"
-      />
+        :item="item"/>
       <NavLink
         v-else
-        :item="item"
-      />
+        :item="item"/>
     </div>
 
     <!-- repo link -->
@@ -25,8 +22,7 @@
       :href="repoLink"
       class="repo-link"
       target="_blank"
-      rel="noopener noreferrer"
-    >
+      rel="noopener noreferrer">
       {{ repoLabel }}
       <OutboundLink/>
     </a>
