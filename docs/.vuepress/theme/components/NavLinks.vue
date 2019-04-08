@@ -80,9 +80,12 @@ export default {
       const isHasTag = this.userNav.some(item => {
         return item.text === 'Tag'
       })
+      const blogConfig = this.$themeConfig.blogConfig,
+            categoryLocation = parseInt(blogConfig.category.location) - 1,
+            tagLocation = parseInt(blogConfig.tag.location) - 1
 
       if (!isHasCategory) {
-        this.userNav.push({
+        this.userNav.splice(categoryLocation, 0, {
           items: this.$categories.list.map(item => {
             item.link = item.path
             item.text = item.name
@@ -94,7 +97,7 @@ export default {
         })
       }
       if (!isHasTag) {
-        this.userNav.push({
+        this.userNav.splice(tagLocation, 0, {
           link: '/tag/',
           text: "Tag",
           type: "links",

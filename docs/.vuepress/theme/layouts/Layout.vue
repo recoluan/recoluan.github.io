@@ -48,10 +48,6 @@ export default {
     }
   },
 
-  mounted () {
-    console.log(this)
-  },
-
   methods: {
     tagChange () {
       this.valineRefresh = true

@@ -2,13 +2,15 @@
   <main class="page">
     <slot name="top"/>
 
-    <div class="page-title" v-if="!(isCategories || isTags || isTimeLine)">
+    <div class="page-title" v-if="!(isTimeLine)">
       <h1>{{$page.title}}</h1>
       <hr>
       <PageInfo :pageInfo="$page"></PageInfo>
     </div>
 
     <Content/>
+
+    <TimeLine v-if="isTimeLine"></TimeLine>
 
     <footer class="page-edit">
       <div
@@ -70,19 +72,14 @@
 <script>
 import PageInfo from '@theme/components/PageInfo'
 import { resolvePage, outboundRE, endingSlashRE } from '../util'
+import TimeLine from './TimeLine'
 
 export default {
-  components: { PageInfo },
+  components: { PageInfo, TimeLine },
 
   props: ['sidebarItems'],
 
   computed: {
-    isCategories () {
-      return this.$page.frontmatter.isCategories
-    },
-    isTags () {
-      return this.$page.frontmatter.isTags
-    },
     isTimeLine () {
       return this.$page.frontmatter.isTimeLine
     },

@@ -9,6 +9,18 @@ module.exports = {
   themeConfig: {
     nav: [
       { text: 'Home', link: '/', icon: 'reco-home' },
+      { text: 'TimeLine', link: '/timeLine/', icon: 'reco-date' },
+      { text: 'Contact', 
+        icon: 'reco-message',
+        items: [
+          { text: 'NPM', link: 'https://www.npmjs.com/~reco_luan', icon: 'reco-npm' },
+          { text: 'GitHub', link: 'https://github.com/recoluan', icon: 'reco-github' },
+          { text: '简书', link: 'https://www.jianshu.com/u/cd674a19515e', icon: 'reco-jianshu' },
+          { text: 'CSDN', link: 'https://blog.csdn.net/recoluan', icon: 'reco-csdn' },
+          { text: '博客圆', link: 'https://www.cnblogs.com/luanhewei/', icon: 'reco-bokeyuan' },
+          { text: 'WeChat', link: 'https://mp.weixin.qq.com/s/mXFqeUTegdvPliXknAAG_A', icon: 'reco-wechat' },
+        ]
+      }
     ],
     logo: '/head.png',
     // 搜索设置
@@ -18,6 +30,15 @@ module.exports = {
     sidebar: 'auto',
     // 最后更新时间
     lastUpdated: 'Last Updated', // string | boolean
+    // 博客设置
+    blogConfig: {
+      category: {
+        location: 2
+      },
+      tag: {
+        location: 3
+      }
+    },
     // 作者
     author: 'reco_luan',
     // valine 设置
