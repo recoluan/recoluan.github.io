@@ -2,8 +2,6 @@ export const hashRE = /#.*$/
 export const extRE = /\.(md|html)$/
 export const endingSlashRE = /\/$/
 export const outboundRE = /^(https?:|mailto:|tel:)/
-export const categories = /categories/
-export const tags = /tags/
 
 export function normalize (path) {
   return decodeURI(path)
@@ -37,9 +35,7 @@ export function ensureExt (path) {
   const hashMatch = path.match(hashRE)
   const hash = hashMatch ? hashMatch[0] : ''
   const normalized = normalize(path)
-  if (categories.test(normalized) || tags.test(normalized)) {
-    return path
-  }
+
   if (endingSlashRE.test(normalized)) {
     return path
   }
@@ -63,10 +59,10 @@ export function resolvePage (pages, rawPath, base) {
   }
   const path = normalize(rawPath)
   for (let i = 0; i < pages.length; i++) {
-    if (normalize(pages[i].path) === path) {
+    if (normalize(pages[i].regularPath) === path) {
       return Object.assign({}, pages[i], {
         type: 'page',
-        path: ensureExt(rawPath)
+        path: ensureExt(pages[i].path)
       })
     }
   }
@@ -112,7 +108,14 @@ function resolvePath (relative, base, append) {
   return stack.join('/')
 }
 
-export function resolveSidebarItems (page, route, site, localePath) {
+/**
+ * @param { Page } page
+ * @param { string } regularPath
+ * @param { SiteData } site
+ * @param { string } localePath
+ * @returns { SidebarGroup }
+ */
+export function resolveSidebarItems (page, regularPath, site, localePath) {
   const { pages, themeConfig } = site
 
   const localeConfig = localePath && themeConfig.locales
@@ -128,19 +131,24 @@ export function resolveSidebarItems (page, route, site, localePath) {
   if (!sidebarConfig) {
     return []
   } else {
-    const { base, config } = resolveMatchingConfig(route, sidebarConfig)
+    const { base, config } = resolveMatchingConfig(regularPath, sidebarConfig)
     return config
       ? config.map(item => resolveItem(item, pages, base))
       : []
   }
 }
 
+/**
+ * @param { Page } page
+ * @returns { SidebarGroup }
+ */
 function resolveHeaders (page) {
   const headers = groupHeaders(page.headers || [])
   return [{
     type: 'group',
     collapsable: false,
     title: page.title,
+    path: null,
     children: headers.map(h => ({
       type: 'auto',
       title: h.title,
@@ -171,7 +179,12 @@ export function resolveNavLinkItem (linkItem) {
   })
 }
 
-export function resolveMatchingConfig (route, config) {
+/**
+ * @param { Route } route
+ * @param { Array<string|string[]> | Array<SidebarGroup> | [link: string]: SidebarConfig } config
+ * @returns { base: string, config: SidebarConfig }
+ */
+export function resolveMatchingConfig (regularPath, config) {
   if (Array.isArray(config)) {
     return {
       base: '/',
@@ -179,7 +192,7 @@ export function resolveMatchingConfig (route, config) {
     }
   }
   for (const base in config) {
-    if (ensureEndingSlash(route.path).indexOf(base) === 0) {
+    if (ensureEndingSlash(regularPath).indexOf(encodeURI(base)) === 0) {
       return {
         base,
         config: config[base]
@@ -195,7 +208,7 @@ function ensureEndingSlash (path) {
     : path + '/'
 }
 
-function resolveItem (item, pages, base, isNested) {
+function resolveItem (item, pages, base, groupDepth = 1) {
   if (typeof item === 'string') {
     return resolvePage(pages, item, base)
   } else if (Array.isArray(item)) {
@@ -203,17 +216,23 @@ function resolveItem (item, pages, base, isNested) {
       title: item[1]
     })
   } else {
-    if (isNested) {
+    if (groupDepth > 3) {
       console.error(
-        '[vuepress] Nested sidebar groups are not supported. ' +
-        'Consider using navbar + categories instead.'
+        '[vuepress] detected a too deep nested sidebar group.'
       )
     }
     const children = item.children || []
+    if (children.length === 0 && item.path) {
+      return Object.assign(resolvePage(pages, item.path, base), {
+        title: item.title
+      })
+    }
     return {
       type: 'group',
+      path: item.path,
       title: item.title,
-      children: children.map(child => resolveItem(child, pages, base, true)),
+      sidebarDepth: item.sidebarDepth,
+      children: children.map(child => resolveItem(child, pages, base, groupDepth + 1)),
       collapsable: item.collapsable !== false
     }
   }
