@@ -10,7 +10,7 @@
       </div>
       <div class="abstract" v-html="item.excerpt"></div>
       <hr>
-      <PageInfo :pageInfo="item" :currentTag="currentTag" @currentTag="getCurrentTag"></PageInfo>
+      <PageInfo :pageInfo="item" :currentTag="currentTag"></PageInfo>
     </div>
   </div>
 </template>
@@ -26,11 +26,6 @@ export default {
       const data = this.data
       const currentPage = this.currentPage
       return data.slice(currentPage * 10 - 10, currentPage * 10)
-    }
-  },
-  methods: {
-    getCurrentTag (tag) {
-      this.$emit('currentTag', tag)
     }
   }
 }

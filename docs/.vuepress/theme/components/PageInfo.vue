@@ -37,8 +37,7 @@ export default {
   },
   methods: {
     goTags (tag) {
-      this.$emit('currentTag', tag)
-      this.$router.push({path: '/tags/'})
+      window.location.href = `/tag/?tag=${tag}`
     }
   }
 }

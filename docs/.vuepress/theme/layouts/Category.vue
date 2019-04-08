@@ -4,7 +4,7 @@
     <Common :sidebar="false"></Common>
 
     <!-- 页面标题 -->
-    <h2 class="title">{{ $page.frontmatter.title }}</h2>
+    <h2 class="title">{{ title }}</h2>
 
     <!-- 博客列表 -->
     <note-abstract 
@@ -39,10 +39,14 @@ export default {
     // 时间降序后的博客列表
     posts () {
       let posts = this.$category.posts
-      posts.sort(function (a, b) {
+      posts.sort((a, b) => {
         return this._getTimeNum(b) - this._getTimeNum(a)
       })
       return posts
+    },
+    // 标题只显示分类名称
+    title () {
+      return this.$page.frontmatter.title.split('|')[0]
     }
   },
 

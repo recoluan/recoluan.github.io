@@ -7,11 +7,12 @@
         :key="index"
         :class="{'active': item.name == currentTag}"
         :style="{ 'backgroundColor': item.color }"
-        @click="getPagesByTags(index, item.name)">{{item.name}}</span>
+        @click="getPagesByTags(item.name)">{{item.name}}</span>
     </div>
     <note-abstract 
       :data="posts"
       :currentPage="currentPage"
+      :currentTag="currentTag"
       @currentTag="getCurrentTag"></note-abstract>
     
     <pagation 
@@ -39,6 +40,7 @@ export default {
   },
 
   created () {
+    const currentTag = this.$route.query.tag ? this.$route.query.tag : this.$tags.list[0].name
     let tags = this.$tags.list
     tags.map(item => {
       const color = this._tagColor()
@@ -47,19 +49,18 @@ export default {
     })
     this.tags = tags
 
-    const firstTag = this.$tags.list[0].name
-    this.getPagesByTags(0, firstTag ? firstTag : '')
+    this.getPagesByTags(currentTag)
   },
 
   methods: {
 
     // 根据分类获取页面数据
-    getPagesByTags (index, tagName) {
+    getPagesByTags (currentTag) {
 
-      this.currentTag = tagName
+      this.currentTag = currentTag
 
       this.$emit('tagChange')
-      let posts = this.$tags.list[index].posts
+      let posts = this.$tags.map[currentTag].posts
       posts.sort((a, b) => {
         return this._getTimeNum(b) - this._getTimeNum(a)
       })
