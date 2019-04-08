@@ -1,22 +1,22 @@
 <template>
   <div class="categories-wrapper">
     <!-- 公共布局 -->
-    <Common :sidebar="false"></Common>
+    <Common :sidebar="false">
+      <!-- 页面标题 -->
+      <h2 class="title">{{ title }}</h2>
 
-    <!-- 页面标题 -->
-    <h2 class="title">{{ title }}</h2>
-
-    <!-- 博客列表 -->
-    <note-abstract 
-      :data="posts"
-      :currentPage="currentPage"
-      @currentTag="getCurrentTag"></note-abstract>
-    
-    <!-- 分页 -->
-    <pagation 
-      :data="posts"
-      :currentPage="currentPage"
-      @getCurrentPage="getCurrentPage"></pagation>
+      <!-- 博客列表 -->
+      <note-abstract 
+        :data="posts"
+        :currentPage="currentPage"
+        @currentTag="getCurrentTag"></note-abstract>
+      
+      <!-- 分页 -->
+      <pagation 
+        :data="posts"
+        :currentPage="currentPage"
+        @getCurrentPage="getCurrentPage"></pagation>
+    </Common>
   </div>
 </template>
 

@@ -9,7 +9,7 @@ heroImageStyle: {
   boxShadow: '0 5px 18px rgba(0,0,0,0.2)'
 }
 isShowTitleInHome: false
-actionText: About Me →
+actionText: About Me
 actionLink: /views/personalInfo/
 features:
 - title: Who am I？

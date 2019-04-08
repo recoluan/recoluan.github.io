@@ -1,22 +1,18 @@
 <template>
   <div>
-    <Common></Common>
-
-    <Home v-if="$page.frontmatter.home"/>
-
-    <Page
-      v-else
-      :sidebar-items="sidebarItems"
-    >
-      <slot
-        name="page-top"
-        slot="top"
-      />
-      <slot
-        name="page-bottom"
-        slot="bottom"
-      />
-    </Page>
+    <Common>
+      <Home v-if="$page.frontmatter.home"/>
+      <Page
+        v-else
+        :sidebar-items="sidebarItems">
+        <slot
+          name="page-top"
+          slot="top"/>
+        <slot
+          name="page-bottom"
+          slot="bottom"/>
+      </Page>
+    </Common>
     <Valine :valineRefresh="valineRefresh"></Valine>
   </div>
 </template>

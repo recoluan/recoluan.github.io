@@ -74,32 +74,34 @@ export default {
         }
         return [...this.userNav, languageDropdown]
       }
-      const isHasCategory = this.userNav.some(item => {
-        return item.text === 'Category'
-      })
-      const isHasTag = this.userNav.some(item => {
-        return item.text === 'Tag'
-      })
-      const blogConfig = this.$themeConfig.blogConfig,
-            categoryLocation = parseInt(blogConfig.category.location) - 1,
-            tagLocation = parseInt(blogConfig.tag.location) - 1
 
-      if (!isHasCategory) {
-        this.userNav.splice(categoryLocation, 0, {
+      // blogConfig 的处理，根绝配置自动添加分类和标签
+      const blogConfig = this.$themeConfig.blogConfig || {},
+            isHasCategory = this.userNav.some(item => {
+              return item.text === 'Category'
+            }),
+            isHasTag = this.userNav.some(item => {
+              return item.text === 'Tag'
+            })      
+
+      if (!isHasCategory && blogConfig.hasOwnProperty('category')) {
+        const category = blogConfig.category
+        this.userNav.splice( parseInt(category.location || 2) - 1, 0, {
           items: this.$categories.list.map(item => {
             item.link = item.path
             item.text = item.name
             return item
           }),
-          text: "Category",
+          text: category.text || '分类',
           type: "links",
           icon: "reco-category"
         })
       }
-      if (!isHasTag) {
-        this.userNav.splice(tagLocation, 0, {
+      if (!isHasTag && blogConfig.hasOwnProperty('tag')) {
+        const tag = blogConfig.tag
+        this.userNav.splice(parseInt(tag.location || 3) - 1, 0, {
           link: '/tag/',
-          text: "Tag",
+          text: tag.text || '标签',
           type: "links",
           icon: "reco-tag"
         })
@@ -154,6 +156,8 @@ export default {
     color inherit
     &:hover, &.router-link-active
       color $accentColor
+      .iconfont
+        color $accentColor
   .nav-item
     position relative
     display inline-block

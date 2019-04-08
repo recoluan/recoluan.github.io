@@ -22,6 +22,17 @@ module.exports = {
         ]
       }
     ],
+    // 博客设置
+    blogConfig: {
+      category: {
+        location: 2, // 在导航栏菜单中所占的位置
+        text: 'Category'
+      },
+      tag: {
+        location: 3, // 在导航栏菜单中所占的位置
+        text: 'Tag'
+      }
+    },
     logo: '/head.png',
     // 搜索设置
     search: true,
@@ -30,15 +41,6 @@ module.exports = {
     sidebar: 'auto',
     // 最后更新时间
     lastUpdated: 'Last Updated', // string | boolean
-    // 博客设置
-    blogConfig: {
-      category: {
-        location: 2
-      },
-      tag: {
-        location: 3
-      }
-    },
     // 作者
     author: 'reco_luan',
     // valine 设置

@@ -7,27 +7,23 @@
   >
     <Navbar
       v-if="shouldShowNavbar"
-      @toggle-sidebar="toggleSidebar"
-    />
+      @toggle-sidebar="toggleSidebar"/>
 
     <div
       class="sidebar-mask"
-      @click="toggleSidebar(false)"
-    ></div>
+      @click="toggleSidebar(false)"></div>
 
     <Sidebar
       :items="sidebarItems"
-      @toggle-sidebar="toggleSidebar"
-    >
+      @toggle-sidebar="toggleSidebar">
       <slot
         name="sidebar-top"
-        slot="top"
-      />
+        slot="top"/>
       <slot
         name="sidebar-bottom"
-        slot="bottom"
-      />
+        slot="bottom"/>
     </Sidebar>
+    <slot></slot>
   </div>
 </template>
 

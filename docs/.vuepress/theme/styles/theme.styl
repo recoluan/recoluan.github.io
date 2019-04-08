@@ -29,7 +29,6 @@ body
   height $navbarHeight
   background-color #fff
   box-sizing border-box
-  border-bottom 1px solid $borderColor
 
 .sidebar-mask
   position fixed
@@ -39,6 +38,7 @@ body
   width 100vw
   height 100vh
   display none
+  background-color: rgba(0,0,0,.65);
 
 .sidebar
   font-size 16px
@@ -175,7 +175,6 @@ th, td
         padding-top 0
     .sidebar
       top 0
-
 
 @media (min-width: ($MQMobile + 1px))
   .theme-container.no-sidebar
