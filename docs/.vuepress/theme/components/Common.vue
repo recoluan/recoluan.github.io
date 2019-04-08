@@ -3,27 +3,29 @@
     class="theme-container"
     :class="pageClasses"
     @touchstart="onTouchStart"
-    @touchend="onTouchEnd"
-  >
-    <Navbar
+    @touchend="onTouchEnd">
+    <Password v-if="!isHasKey"></Password>
+    <div v-else>
+      <Navbar
       v-if="shouldShowNavbar"
       @toggle-sidebar="toggleSidebar"/>
 
-    <div
-      class="sidebar-mask"
-      @click="toggleSidebar(false)"></div>
+      <div
+        class="sidebar-mask"
+        @click="toggleSidebar(false)"></div>
 
-    <Sidebar
-      :items="sidebarItems"
-      @toggle-sidebar="toggleSidebar">
-      <slot
-        name="sidebar-top"
-        slot="top"/>
-      <slot
-        name="sidebar-bottom"
-        slot="bottom"/>
-    </Sidebar>
-    <slot></slot>
+      <Sidebar
+        :items="sidebarItems"
+        @toggle-sidebar="toggleSidebar">
+        <slot
+          name="sidebar-top"
+          slot="top"/>
+        <slot
+          name="sidebar-bottom"
+          slot="bottom"/>
+      </Sidebar>
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -31,15 +33,17 @@
 import Navbar from '@theme/components/Navbar.vue'
 import Sidebar from '@theme/components/Sidebar.vue'
 import { resolveSidebarItems } from '../util'
+import Password from '@theme/components/Password'
 
 export default {
-  components: { Sidebar, Navbar },
+  components: { Sidebar, Navbar, Password },
 
   props: ['sidebar'],
 
   data () {
     return {
-      isSidebarOpen: false
+      isSidebarOpen: false,
+      isHasKey: true
     }
   },
 
@@ -97,6 +101,14 @@ export default {
     this.$router.afterEach(() => {
       this.isSidebarOpen = false
     })
+
+    const keyPage = this.$site.themeConfig.keyPage
+    if (!keyPage) {
+      this.isHasKey =  true
+    }
+    
+    const {keys} = keyPage
+    this.isHasKey = keys.indexOf(sessionStorage.getItem('key')) > -1
   },
 
   methods: {

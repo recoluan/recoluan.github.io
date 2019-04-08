@@ -72,7 +72,7 @@ export default {
   max-width: 740px;
   margin: 0 auto;
   background-color $bgColor
-  padding-left $sidebarWidth
+  padding: 0 2.5rem;
 @media (max-width: $MQMobile)
   .valine-wrapper
     padding 1rem

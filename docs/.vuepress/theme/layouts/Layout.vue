@@ -13,7 +13,6 @@
           slot="bottom"/>
       </Page>
     </Common>
-    <Valine :valineRefresh="valineRefresh"></Valine>
   </div>
 </template>
 
@@ -22,16 +21,9 @@ import Home from '@theme/components/Home.vue'
 import Page from '@theme/components/Page.vue'
 import Common from '@theme/components/Common.vue'
 import { resolveSidebarItems } from '../util'
-import Valine from '@theme/components/Valine/'
 
 export default {
-  components: { Home, Page, Common, Valine },
-
-  data () {
-    return {
-      valineRefresh: false
-    }
-  },
+  components: { Home, Page, Common },
 
   computed: {
     sidebarItems () {
@@ -42,15 +34,6 @@ export default {
         this.$localePath
       )
     }
-  },
-
-  methods: {
-    tagChange () {
-      this.valineRefresh = true
-      setTimeout(() => {
-        this.valineRefresh = false
-      }, 300)
-    },
   }
 }
 </script>

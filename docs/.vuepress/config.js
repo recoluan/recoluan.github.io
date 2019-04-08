@@ -44,11 +44,17 @@ module.exports = {
     lastUpdated: 'Last Updated', // string | boolean
     // 作者
     author: 'reco_luan',
+    // 密钥
+    keyPage: {
+      keys: ['930105'],
+      color: '#42b983',
+      lineColor: '#42b983'
+    },
     // valine 设置
-    // valineConfig: {
-    //   appId: 'Q6hMeY2PSaM9FMkXetzoJoU5-gzGzoHsz',
-    //   appKey: 'iLQlev5jo2Cm5pLcI0z3qhtr',
-    // },
+    valineConfig: {
+      appId: 'Q6hMeY2PSaM9FMkXetzoJoU5-gzGzoHsz',
+      appKey: 'iLQlev5jo2Cm5pLcI0z3qhtr',
+    },
   },
   markdown: {
     lineNumbers: true
