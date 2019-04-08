@@ -1,42 +1,64 @@
 <template>
   <div class="categories-wrapper">
+    <!-- 公共布局 -->
     <Common :sidebar="false"></Common>
+
+    <!-- 页面标题 -->
     <h2 class="title">{{ $page.frontmatter.title }}</h2>
+
+    <!-- 博客列表 -->
     <note-abstract 
-      :data="$category.posts"
+      :data="posts"
       :currentPage="currentPage"
       @currentTag="getCurrentTag"></note-abstract>
     
+    <!-- 分页 -->
     <pagation 
-      :data="$category.posts"
+      :data="posts"
       :currentPage="currentPage"
       @getCurrentPage="getCurrentPage"></pagation>
   </div>
 </template>
 
 <script>
+import Common from '@theme/components/Common.vue'
 import NoteAbstract from '../components//NoteAbstract.vue'
 import Pagation from '../components//Pagation.vue'
-import Common from '@theme/components/Common.vue'
 
 export default {
   components: { Common, NoteAbstract, Pagation },
 
   data () {
     return {
+      // 当前页码
       currentPage: 1
     }
   },
 
-  methods: {
+  computed: {
+    // 时间降序后的博客列表
+    posts () {
+      let posts = this.$category.posts
+      posts.sort(function (a, b) {
+        return this._getTimeNum(b) - this._getTimeNum(a)
+      })
+      return posts
+    }
+  },
 
+  methods: {
+    // 获取当前tag
     getCurrentTag (tag) {
       this.$emit('currentTag', tag)
     },
-
+    // 获取当前页码
     getCurrentPage (page) {
       this.currentPage = page
       this.$page.currentPage = page
+    },
+    // 获取时间的数字类型
+    _getTimeNum (date) {
+      return parseInt(new Date(date.frontmatter.date).getTime())
     }
   }
 }

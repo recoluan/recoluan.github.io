@@ -10,28 +10,28 @@
         @click="getPagesByTags(index, item.name)">{{item.name}}</span>
     </div>
     <note-abstract 
-      :data="pages"
+      :data="posts"
       :currentPage="currentPage"
       @currentTag="getCurrentTag"></note-abstract>
     
     <pagation 
-      :data="pages"
+      :data="posts"
       :currentPage="currentPage"
       @getCurrentPage="getCurrentPage"></pagation>
   </div>
 </template>
 
 <script>
+import Common from '@theme/components/Common.vue'
 import NoteAbstract from '../components//NoteAbstract.vue'
 import Pagation from '../components//Pagation.vue'
-import Common from '@theme/components/Common.vue'
 
 export default {
   components: { Common, NoteAbstract, Pagation },
 
   data () {
     return {
-      pages: [],
+      posts: [],
       tags: [],
       currentTag: '',
       currentPage: 1
@@ -39,13 +39,13 @@ export default {
   },
 
   created () {
-    let pages = this.$tags.list
-    pages.map(item => {
-      const color = this.tagColor()
+    let tags = this.$tags.list
+    tags.map(item => {
+      const color = this._tagColor()
       item.color = color
-      return pages
+      return tags
     })
-    this.tags = pages
+    this.tags = tags
 
     const firstTag = this.$tags.list[0].name
     this.getPagesByTags(0, firstTag ? firstTag : '')
@@ -59,9 +59,12 @@ export default {
       this.currentTag = tagName
 
       this.$emit('tagChange')
-      let pages = this.$tags.list[index].posts
+      let posts = this.$tags.list[index].posts
+      posts.sort((a, b) => {
+        return this._getTimeNum(b) - this._getTimeNum(a)
+      })
       // reverse()是为了按时间最近排序排序
-      this.pages = pages.length == 0 ? [] : pages.reverse()
+      this.posts = posts.length == 0 ? [] : posts
       
       this.getCurrentPage(1);
     },
@@ -75,11 +78,16 @@ export default {
       this.$page.currentPage = page
     },
 
-    tagColor () {
+    _tagColor () {
       // 红、蓝、绿、橙、灰
       const tagColorArr = ['#f26d6d', '#3498db', '#67cc86', '#fb9b5f', '#838282']
       const index = Math.floor(Math.random() * tagColorArr.length)
       return tagColorArr[index]
+    },
+
+    // 获取时间的数字类型
+    _getTimeNum (date) {
+      return parseInt(new Date(date.frontmatter.date).getTime())
     }
   }
 }
