@@ -1,6 +1,6 @@
 <template>
   <div class="tags-wrapper">
-    <Common :sidebar="false"></Common>
+    <Common :sidebar="false" :isComment="false"></Common>
     <div class="tags">
       <span 
         v-for="(item, index) in tags" 

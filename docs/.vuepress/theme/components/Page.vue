@@ -66,8 +66,6 @@
     </div>
 
     <slot name="bottom"/>
-
-    <Valine :valineRefresh="valineRefresh"></Valine>
   </main>
 </template>
 
@@ -75,18 +73,11 @@
 import PageInfo from '@theme/components/PageInfo'
 import { resolvePage, outboundRE, endingSlashRE } from '../util'
 import TimeLine from '@theme/components/TimeLine'
-import Valine from '@theme/components/Valine/'
 
 export default {
-  components: { PageInfo, TimeLine, Valine },
+  components: { PageInfo, TimeLine},
 
   props: ['sidebarItems'],
-
-  data () {
-    return {
-      valineRefresh: false
-    }
-  },
 
   mountedb () {
     console.log(1)
@@ -185,12 +176,6 @@ export default {
         + (docsDir ? docsDir.replace(endingSlashRE, '') + '/' : '')
         + path
       )
-    },
-    tagChange () {
-      this.valineRefresh = true
-      setTimeout(() => {
-        this.valineRefresh = false
-      }, 300)
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
   <div class="valine-wrapper">
-    <div id="valine" v-show="isComment"></div>
+    <div id="valine" v-show="isShowComment"></div>
   </div>
 </template>
 
@@ -8,12 +8,12 @@
 
 
 export default {
-  props: ['valineRefresh'],
+  props: ['isComment'],
   computed: {
     // 是否显示评论
-    isComment () {
+    isShowComment () {
       const frontmatter = this.$page.frontmatter
-      return frontmatter.isComment == false || frontmatter.home == true ? false : true
+      return this.isComment == false || frontmatter.isComment == false || frontmatter.home == true ? false : true
     }
   }, 
   mounted: function(){
@@ -40,7 +40,6 @@ export default {
           path: window.location.pathname,
           placeholder: 'just go go' 
         });
-        this.valineRefresh = false
       }
     }
   },
@@ -54,13 +53,6 @@ export default {
         }, 300)
         
       }
-    },
-    'valineRefresh' (val) {
-      if (val) {
-        setTimeout(() => {
-          this.createValine()
-        }, 300)
-      }
     }
   },
 };
@@ -68,12 +60,24 @@ export default {
 
 <style lang="stylus" scoped>
 
+.theme-container.no-sidebar
+  .valine-wrapper
+    padding-left 0
+
 .valine-wrapper
-  max-width: 740px;
-  margin: 0 auto;
   background-color $bgColor
-  padding: 0 2.5rem;
+  padding-left: 20rem;
+  #valine
+    padding 2rem
+    max-width: 740px;
+    margin: 0 auto;
+@media (max-width: $MQNarrow)
+  .theme-container.no-sidebar
+    .valine-wrapper
+      padding-left 0
+  .valine-wrapper
+    padding-left: 16.4rem;
 @media (max-width: $MQMobile)
   .valine-wrapper
-    padding 1rem
+    padding-left: 0;    
 </style>

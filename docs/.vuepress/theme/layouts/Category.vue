@@ -1,7 +1,7 @@
 <template>
   <div class="categories-wrapper">
     <!-- 公共布局 -->
-    <Common :sidebar="false">
+    <Common :sidebar="false" :isComment="false">
       <!-- 页面标题 -->
       <h2 class="title">{{ title }}</h2>
 

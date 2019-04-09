@@ -25,6 +25,7 @@
           slot="bottom"/>
       </Sidebar>
       <slot></slot>
+      <Valine :isComment="isComment"></Valine>
     </div>
   </div>
 </template>
@@ -34,11 +35,12 @@ import Navbar from '@theme/components/Navbar.vue'
 import Sidebar from '@theme/components/Sidebar.vue'
 import { resolveSidebarItems } from '../util'
 import Password from '@theme/components/Password'
+import Valine from '@theme/components/Valine/'
 
 export default {
-  components: { Sidebar, Navbar, Password },
+  components: { Sidebar, Navbar, Password, Valine },
 
-  props: ['sidebar'],
+  props: ['sidebar', 'isComment'],
 
   data () {
     return {
