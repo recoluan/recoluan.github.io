@@ -6155,9 +6155,9 @@ vuepress-plugin-container@^2.0.0:
   dependencies:
     markdown-it-container "^2.0.0"
 
-vuepress-theme-reco@^1.0.0-alpha.3:
-  version "1.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-reco/-/vuepress-theme-reco-1.0.0-alpha.3.tgz#5ef151e50473d4477a173a481cb1bfc78d756d83"
+vuepress-theme-reco@^1.0.0-alpha.6:
+  version "1.0.0-alpha.6"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-reco/-/vuepress-theme-reco-1.0.0-alpha.6.tgz#8eeb5404adf4f68c3d8ecf5c106c2c168879707c"
   dependencies:
     "@vuepress/plugin-blog" "^1.0.0-alpha.46"
     leancloud-storage "^3.10.1"

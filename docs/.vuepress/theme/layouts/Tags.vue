@@ -40,16 +40,18 @@ export default {
   },
 
   created () {
-    const currentTag = this.$route.query.tag ? this.$route.query.tag : this.$tags.list[0].name
-    let tags = this.$tags.list
-    tags.map(item => {
-      const color = this._tagColor()
-      item.color = color
-      return tags
-    })
-    this.tags = tags
+    if (this.$tags) {
+      const currentTag = this.$route.query.tag ? this.$route.query.tag : this.$tags.list[0].name
+      let tags = this.$tags.list
+      tags.map(item => {
+        const color = this._tagColor()
+        item.color = color
+        return tags
+      })
+      this.tags = tags
 
-    this.getPagesByTags(currentTag)
+      this.getPagesByTags(currentTag)
+    }
   },
 
   methods: {
