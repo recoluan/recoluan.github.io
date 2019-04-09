@@ -57,7 +57,7 @@ module.exports = {
     valineConfig: {
       appId: 'Q6hMeY2PSaM9FMkXetzoJoU5-gzGzoHsz',// your appId
       appKey: 'iLQlev5jo2Cm5pLcI0z3qhtr', // your appKey
-    },
+    }
   },
   markdown: {
     lineNumbers: true
