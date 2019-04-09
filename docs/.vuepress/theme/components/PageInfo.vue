@@ -35,9 +35,7 @@ export default {
       }
     }
   },
-  mounted () {
-    console.log('3333', this.pageInfo)
-  },
+  
   methods: {
     goTags (tag) {
       window.location.href = `/tag/?tag=${tag}`

@@ -79,10 +79,6 @@ export default {
 
   props: ['sidebarItems'],
 
-  mountedb () {
-    console.log(1)
-  },
-
   computed: {
     isTimeLine () {
       return this.$page.frontmatter.isTimeLine
