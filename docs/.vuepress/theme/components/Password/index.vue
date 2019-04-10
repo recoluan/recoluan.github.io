@@ -33,7 +33,6 @@
 
 <script>
 import Background from '../Background/'
-import key from '../../util/handleKey'
 
 export default {
   components: {Background},
@@ -48,14 +47,11 @@ export default {
     year () {
       return new Date().getFullYear()
     }
-  },  
-  mounted () {
-    console.log(this.$site)
   },
   methods: {
     inter () {
       const keyVal = this.key.trim()
-      key.set(keyVal)
+      sessionStorage.setItem('key', keyVal)
       if (!this.isHasKey()) {
         this.warningText = 'Key Error'
         return
@@ -71,8 +67,8 @@ export default {
     },
     isHasKey () {
       const keyPage = this.$site.themeConfig.keyPage
-      const {keys} = keyPage
-      return key.isHasKey(keys)
+      const keys = keyPage.keys
+      return keys && keys.indexOf(sessionStorage.getItem('key')) > -1
     },
     inputFocus () {
       this.warningText = 'Input Your Key'

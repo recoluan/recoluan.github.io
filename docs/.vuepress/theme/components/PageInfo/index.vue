@@ -6,7 +6,7 @@
       <span>{{ pageInfo.frontmatter.author || $site.themeConfig.author || $site.title }}</span>
     </i>
     <i class="iconfont reco-date" v-if="pageInfo.frontmatter.date"><span>{{ new Date(pageInfo.frontmatter.date).toLocaleDateString() }}</span></i>
-    <AccessNumber :idVal="pageInfo.path" :numStyle="numStyle"></AccessNumber>
+    <AccessNumber :idVal="getIdVal(pageInfo.path)" :numStyle="numStyle"></AccessNumber>
     <i class="iconfont reco-tag tags" v-if="pageInfo.frontmatter.tags">
       <span
         v-for="(subItem, subIndex) in pageInfo.frontmatter.tags"
@@ -34,11 +34,17 @@ export default {
     }
   },
   props: ['pageInfo', 'currentTag'],
+
   components: { AccessNumber },
+  
   methods: {
     goTags (tag) {
       this.$emit('currentTag', tag)
       this.$router.push({path: '/tags/'})
+    },
+    getIdVal (path) {
+      const base = this.$site.base
+      return base.slice(0, base.length - 1) + path
     }
   }
 }
