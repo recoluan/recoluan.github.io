@@ -7,8 +7,11 @@ sections:
 - type: document
   path: docs/README.md
   label: 首页
+- type: directory
+  path: docs/views/frontEnd
+  label: blog-frontEnd
+  create: all
   match: "**/*"
-  read_only: false
 - type: directory
   path: docs/views
   label: blog
