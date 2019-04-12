@@ -5,7 +5,7 @@ admin_path: ''
 webhook_url: 
 sections:
 - type: directory
-  path: views
+  path: docs/views
   label: blog
   create: all
   match: "**/*"
