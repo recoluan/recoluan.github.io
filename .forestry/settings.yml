@@ -4,6 +4,11 @@ auto_deploy: false
 admin_path: ''
 webhook_url: 
 sections:
+- type: document
+  path: docs/README.md
+  label: 首页
+  match: "**/*"
+  read_only: false
 - type: directory
   path: docs/views
   label: blog
