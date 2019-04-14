@@ -36,7 +36,7 @@ import Background from '@theme/components/Background'
 
 export default {
   components: {Background},
-  name: 'BackToTop',
+  name: 'Password',
   data() {
     return {
       warningText: 'Konck! Knock!',
@@ -67,8 +67,8 @@ export default {
     },
     isHasKey () {
       const keyPage = this.$site.themeConfig.keyPage
-      const {keys} = keyPage
-      return keys.indexOf(sessionStorage.getItem('key')) > -1
+      const keys = keyPage.keys
+      return keys && keys.indexOf(sessionStorage.getItem('key')) > -1
     },
     inputFocus () {
       this.warningText = 'Input Your Key'

@@ -47,7 +47,8 @@ export default {
   data () {
     return {
       isSidebarOpen: false,
-      isHasKey: true
+      isHasKey: true,
+      nightMode: false
     }
   },
 
@@ -94,7 +95,8 @@ export default {
         {
           'no-navbar': !this.shouldShowNavbar,
           'sidebar-open': this.isSidebarOpen,
-          'no-sidebar': !this.shouldShowSidebar
+          'no-sidebar': !this.shouldShowSidebar,
+          'night-mode': this.nightMode
         },
         userPageClass
       ]
@@ -106,13 +108,19 @@ export default {
       this.isSidebarOpen = false
     })
 
+    if (localStorage.getItem('nightMode')) {
+      document.documentElement.style.background = "#000"
+      this.nightMode = true
+    }
+
     const keyPage = this.$site.themeConfig.keyPage
     if (!keyPage) {
       this.isHasKey =  true
+      return
     }
-    
+
     const keys = keyPage.keys
-    this.isHasKey = keys && keys.indexOf(sessionStorage.getItem('key')) > -1
+    return keys && keys.indexOf(sessionStorage.getItem('key')) > -1
   },
 
   methods: {

@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /hero.png
+heroImage: /hero_write.png
 heroImageStyle: {
   maxHeight: '200px',
   display: block,
@@ -16,7 +16,7 @@ features:
   details: A programmer? A human being? Or a matter combination?
 - title: Where am I？
   details: In a city? On earth? Or in a small part of space?
-- title: What am I going to do？
+- title: What am I gona do？
   details: Work? Struggle? Or go to a destination I don't know?
 # footer: 'reco_luan'
 ---

@@ -83,7 +83,6 @@ export default {
       if (!isHasCategory && blogConfig.hasOwnProperty('category')) {
         const category = blogConfig.category
         const $categories = this.$categories
-
         this.userNav.splice( parseInt(category.location || 2) - 1, 0, {
           items: $categories.list.map(item => {
             item.link = item.path
