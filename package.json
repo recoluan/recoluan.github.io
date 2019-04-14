@@ -13,6 +13,6 @@
   },
   "dependencies": {
     "vuepress": "^1.0.0-alpha.46",
-    "vuepress-theme-reco": "^1.0.0-alpha.10"
+    "vuepress-theme-reco": "^1.0.0-alpha.11"
   }
 }
