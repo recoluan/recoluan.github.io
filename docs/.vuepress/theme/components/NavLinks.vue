@@ -86,7 +86,7 @@ export default {
               } else {
                 return true
               }
-            })   
+            })
 
       if (!isHasCategory && blogConfig.hasOwnProperty('category')) {
         const category = blogConfig.category
