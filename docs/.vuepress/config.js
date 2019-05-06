@@ -56,6 +56,8 @@ module.exports = {
       appId: 'Q6hMeY2PSaM9FMkXetzoJoU5-gzGzoHsz',
       appKey: 'iLQlev5jo2Cm5pLcI0z3qhtr',
     },
+    // 备案号
+    num: '京ICP备17067634号-1'
   },
   markdown: {
     lineNumbers: true
