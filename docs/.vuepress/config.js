@@ -57,7 +57,9 @@ module.exports = {
       appKey: 'iLQlev5jo2Cm5pLcI0z3qhtr',
     },
     // 备案号
-    num: '京ICP备17067634号-1'
+    record: '京ICP备17067634号-1',
+    // 项目开始时间
+    startYear: '2017'
   },
   markdown: {
     lineNumbers: true
