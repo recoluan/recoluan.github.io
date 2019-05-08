@@ -55,6 +55,9 @@ module.exports = {
     valineConfig: {
       appId: 'Q6hMeY2PSaM9FMkXetzoJoU5-gzGzoHsz',
       appKey: 'iLQlev5jo2Cm5pLcI0z3qhtr',
+      placeholder: '填写邮箱可以收到回复提醒哦！',
+      notify: true,
+      recordIP: true
     },
     // 备案号
     record: '京ICP备17067634号-1',
