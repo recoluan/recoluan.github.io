@@ -762,7 +762,7 @@
   dependencies:
     lodash.throttle "^4.1.1"
 
-"@vuepress/plugin-blog@^1.0.0-alpha.47":
+"@vuepress/plugin-blog@1.0.0-alpha.47":
   version "1.0.0-alpha.47"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-blog/-/plugin-blog-1.0.0-alpha.47.tgz#d453e79c1cd945ac9e4549984d9f0813219a8c1e"
 
@@ -772,7 +772,7 @@
   dependencies:
     cross-spawn "^6.0.5"
 
-"@vuepress/plugin-medium-zoom@^1.0.0-alpha.0":
+"@vuepress/plugin-medium-zoom@1.0.0-alpha.0":
   version "1.0.0-alpha.0"
   resolved "https://registry.yarnpkg.com/@vuepress/plugin-medium-zoom/-/plugin-medium-zoom-1.0.0-alpha.0.tgz#efb6bd10d41c64161e3e25d6108fe527ebd4abad"
   dependencies:
@@ -3863,7 +3863,7 @@ leancloud-realtime@^4.2.0:
     uuid "^3.0.0"
     ws "^5.2.1"
 
-leancloud-storage@^3.13.0:
+leancloud-storage@3.13.0:
   version "3.13.0"
   resolved "https://registry.yarnpkg.com/leancloud-storage/-/leancloud-storage-3.13.0.tgz#c6383568797fc64babb700d05260ddb57aa9a1a0"
   dependencies:
@@ -6651,7 +6651,7 @@ uuid@^3.0.0, uuid@^3.0.1, uuid@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
 
-valine@^1.3.6:
+valine@1.3.6:
   version "1.3.6"
   resolved "https://registry.yarnpkg.com/valine/-/valine-1.3.6.tgz#e39ba279a63eaf7c03fcbb23766226d03909b0cc"
 
@@ -6677,7 +6677,7 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
-vue-click-outside@^1.0.7:
+vue-click-outside@1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/vue-click-outside/-/vue-click-outside-1.0.7.tgz#cdd2b1605e3c4944784e1794eae4a12a0f700bd6"
 
@@ -6752,22 +6752,22 @@ vuepress-plugin-container@^2.0.0:
   dependencies:
     markdown-it-container "^2.0.0"
 
-vuepress-plugin-flowchart@^1.4.3:
+vuepress-plugin-flowchart@1.4.3:
   version "1.4.3"
   resolved "https://registry.yarnpkg.com/vuepress-plugin-flowchart/-/vuepress-plugin-flowchart-1.4.3.tgz#1692807257c9ba02f764ced0caf930c627f65bdb"
   dependencies:
     flowchart.js "^1.11.3"
 
-vuepress-theme-reco@^1.0.0-alpha.18:
-  version "1.0.0-alpha.18"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-reco/-/vuepress-theme-reco-1.0.0-alpha.18.tgz#db7cc1aee243eec0e3b51a092d34950a8bb9a591"
+vuepress-theme-reco@1.0.0-alpha.21:
+  version "1.0.0-alpha.21"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-reco/-/vuepress-theme-reco-1.0.0-alpha.21.tgz#9f932be3665990f5ec34d233b73a725d85b2476b"
   dependencies:
-    "@vuepress/plugin-blog" "^1.0.0-alpha.47"
-    leancloud-storage "^3.13.0"
-    valine "^1.3.6"
-    vue-click-outside "^1.0.7"
+    "@vuepress/plugin-blog" "1.0.0-alpha.47"
+    leancloud-storage "3.13.0"
+    valine "1.3.6"
+    vue-click-outside "1.0.7"
 
-vuepress@^1.0.0-alpha.47:
+vuepress@1.0.0-alpha.47:
   version "1.0.0-alpha.47"
   resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-1.0.0-alpha.47.tgz#b6f06a5569aaf0b4016f9eb1da5fd4e01f295d45"
   dependencies:

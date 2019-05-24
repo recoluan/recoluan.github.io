@@ -1,7 +1,7 @@
 module.exports = [
   { text: 'Home', link: '/', icon: 'reco-home' },
   { text: 'TimeLine', link: '/timeline/', icon: 'reco-date' },
-  { text: 'Three-Month Study', link: '/views/threeMonthStudy/', icon: 'reco-three' },
+  // { text: 'Three-Month Study', link: '/views/threeMonthStudy/', icon: 'reco-three' },
   { text: 'Contact', 
     icon: 'reco-message',
     items: [
