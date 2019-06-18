@@ -1,4 +1,5 @@
 const path = require('path')
+console.log('@vuepress/plugin-blog')
 
 // Theme API.
 module.exports = (options, ctx) => ({
@@ -20,7 +21,29 @@ module.exports = (options, ctx) => ({
   plugins: [
     '@vuepress/active-header-links',
     ['@vuepress/plugin-blog', {
-      permalink: '/:regular'
+      directories: [
+        {
+          id: 'post',
+          dirname: 'views',
+          path: '/',
+          pagination: {
+            perPagePosts: 2,
+          },
+        },
+      ],
+      frontmatters: [
+        {
+          id: "tag",
+          keys: ['tag', 'tags'],
+          path: '/tag/',
+          layout: 'Tag',
+          frontmatter: { title: 'Tag' },
+          itemlayout: 'Tag',
+          pagination: {
+            perPagePosts: 3
+          }
+        },
+      ]
     }],
     '@vuepress/search',
     '@vuepress/plugin-nprogress',

@@ -1,24 +1,41 @@
 <template>
-  <div class="home" :class="recoShow?'reco-show': 'reco-hide'">
-    <div class="hero">
-      <img v-if="data.heroImage" :style="heroImageStyle" :src="$withBase(data.heroImage)" alt="hero">
-
-      <h1 v-if="data.isShowTitleInHome !== false">{{ data.heroText || $title || '午后南杂' }}</h1>
+  <div class="home-blog" :class="recoShow?'reco-show': 'reco-hide'">
+    <div class="hero" :style="{background: `url(${$page.frontmatter.bgImage || require('../images/home-bg.jpg')}) center/cover no-repeat`}">
+      <h1>{{ data.heroText || $title || '午后南杂' }}</h1>
 
       <p class="description">{{ data.tagline || $description || 'Welcome to your vuePress-theme-reco site' }}</p>
       <p class="huawei" v-if="$themeConfig.huawei !== false"><i class="iconfont reco-huawei" style="color: #fc2d38"></i>&nbsp;&nbsp;&nbsp;华为，为中华而为之！</p>
-
-      <p class="action" v-if="data.actionText && data.actionLink">
-        <NavLink class="action-button" :item="actionLink"/>
-      </p>
     </div>
 
-    <div class="features" v-if="data.features && data.features.length">
+    <!-- <div class="features" v-if="data.features && data.features.length">
       <div v-for="(feature, index) in data.features" :key="index" class="feature">
         <h2>{{ feature.title }}</h2>
         <p>{{ feature.details }}</p>
       </div>
     </div>
+
+    <h1 class="home-blog-title">最近</h1> -->
+    <div class="home-blog">
+      <!-- 博客列表 -->
+      <note-abstract 
+        class="blog-list"
+        :data="posts"
+        :currentPage="1"></note-abstract>
+      <div class="info-wrapper">
+         <img class="personal-img" :src="$page.frontmatter.faceImage || $themeConfig.logo" alt="hero"> 
+         <h3 class="name" v-if="$themeConfig.author || $site.title">{{ $themeConfig.author || $site.title }}</h3>
+         <div class="num">
+           <div>
+             <i class="iconfont reco-category"></i> {{$categories.length}}
+           </div>
+           <div>
+             <i class="iconfont reco-tag"></i> {{$tags.length}}
+           </div>
+         </div>
+      </div>  
+    </div>
+
+    
 
     <Content class="home-center" custom/>
 
@@ -27,10 +44,6 @@
         <i class="iconfont reco-theme"></i>
         <a target="blank" href="https://vuepress-theme-reco.recoluan.com">VuePress-theme-reco</a>
       </span>
-      <!-- <span>
-        <i class="iconfont reco-other"></i>
-        <a>{{ $themeConfig.author || $site.title }}</a>
-      </span> -->
       <span v-if="$themeConfig.record">
         <i class="iconfont reco-beian"></i>
         <a>{{ $themeConfig.record }}</a>
@@ -54,17 +67,33 @@
 <script>
 import NavLink from "@theme/components/NavLink/";
 import AccessNumber from '@theme/components/Valine/AccessNumber'
+import NoteAbstract from '@theme/components/NoteAbstract.vue'
+import { constants } from 'fs';
 
 export default {
-  components: { NavLink, AccessNumber },
+  components: { NavLink, AccessNumber, NoteAbstract },
   data () {
     return {
       recoShow: false
     }
   },
+  created () {
+    console.log(this)
+  },
   computed: {
+    // 时间降序后的博客列表
+    posts () {
+      let posts = this.$site.pages
+      posts = posts.filter(item => {
+        const { home, isTimeLine, date } = item.frontmatter
+        return !(home == true || isTimeLine == true || date === undefined)
+      })
+      posts.sort((a, b) => {
+        return this._getTimeNum(b) - this._getTimeNum(a)
+      })
+      return posts
+    },
     year () {
-      console.log(this)
       return new Date().getFullYear()
     },
     data() {
@@ -87,6 +116,22 @@ export default {
   },
   mounted () {
     this.recoShow = true
+  },
+  methods: {
+    // 根据分类获取页面数据
+    getPages () {
+      let pages = this.$site.pages
+      pages = pages.filter(item => {
+        const { home, isTimeLine, date } = item.frontmatter
+        return !(home == true || isTimeLine == true || date === undefined)
+      })
+      // reverse()是为了按时间最近排序排序
+      this.pages = pages.length == 0 ? [] : pages
+    },
+    // 获取时间的数字类型
+    _getTimeNum (data) {
+      return parseInt(new Date(data.frontmatter.date).getTime())
+    }
   }
 };
 </script>
@@ -94,52 +139,85 @@ export default {
 <style lang="stylus">
 @require '../styles/loadMixin.styl'
 
-.home {
-  padding: $navbarHeight 2rem 0;
-  max-width: 960px;
+.home-blog {
+  padding: $navbarHeight 0 0;
   margin: 0px auto;
 
   .hero {
+    min-height 350px
     text-align: center;
-    img {
-      background-color: $accentColor;
-    }
-    h1 {
-      font-size: 2.5rem;
+    overflow hidden
+    figure {
+      position absolute
+      background yellow
     }
 
-    h1, .description, .action {
-      margin: 1.8rem auto;
+    h1 {
+      margin: 4rem auto 1.8rem ;
+      font-size: 2.5rem;
+      color #fff
+    }
+
+    h1, .description, .action, .huawei {
+      color #fff!important
     }
 
     .description {
-      max-width: 35rem;
+      margin: 1.8rem auto;
       font-size: 1.6rem;
       line-height: 1.3;
       color: lighten($textColor, 20%);
     }
-
-    .action-button {
-      display: inline-block;
-      font-size: 1.2rem;
-      color: #fff;
-      background-color: $accentColor;
-      padding: 0.6rem 1.2rem;
-      border-radius: 4px;
-      transition: background-color 0.1s ease;
-      box-sizing: border-box;
-      load-start()
-
+  }
+  .home-blog-title {
+    margin 0 auto 10px
+    max-width 960px
+  }
+  .home-blog {
+    display flex
+    align-items: flex-start;
+    margin 20px auto 0
+    max-width 1126px
+    .info-wrapper {
+      transition all .3s
+      margin-left 15px;
+      width 380px;  
+      height auto;
+      box-shadow 0 2px 10px rgba(0,0,0,0.2);
       &:hover {
-        background-color: lighten($accentColor, 10%);
+        box-shadow: 0 4px 20px 0 rgba(0,0,0,0.2);
+      }
+      .personal-img {
+        display block
+        margin 2rem auto
+        width 8rem
+        height 8rem
+      }
+      .name {
+        text-align center
+      }
+      .num {
+        display flex
+        margin 0 auto 1rem
+        width 80%
+        > div {
+          text-align center
+          flex auto
+          &:first-child {
+            border-right 1px solid #333
+          }
+          i {
+            margin-right .2rem
+          }
+        }
       }
     }
   }
 
   .features {
-    border-top: 1px solid $borderColor;
+    max-width 1126px
     padding: 1.2rem 0;
-    margin-top: 2.5rem;
+    margin: 2.5rem auto 0;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
@@ -150,8 +228,12 @@ export default {
   .feature {
     flex-grow: 1;
     flex-basis: 30%;
-    max-width: 30%;
+    max-width: 32%;
     transition: all .5s
+    box-sizing border-box
+    margin-bottom 10px
+    padding 0 15px
+    box-shadow 0 2px 10px rgba(0,0,0,0.2)
     h2 {
       font-size: 1.6rem;
       font-weight: 500;
@@ -245,6 +327,34 @@ export default {
 
 @media (max-width: $MQMobile) {
   .home {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    .hero {
+      margin 0 -1.5rem
+      min-height 350px
+      img {
+        max-height: 210px;
+        margin: 2rem auto 1.2rem;
+      }
+
+      h1 {
+        margin: 6rem auto 1.8rem ;
+        font-size: 2rem;
+      }
+
+      h1, .description, .action {
+        // margin: 1.2rem auto;
+      }
+
+      .description {
+        font-size: 1.2rem;
+      }
+
+      .action-button {
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+      }
+    }
     .features {
       flex-direction: column;
     }
@@ -252,6 +362,11 @@ export default {
     .feature {
       max-width: 100%;
       padding: 0 2.5rem;
+    }
+    .home-blog {
+      .info-wrapper {
+        display none
+      }
     }
   }
   .footer {
@@ -270,17 +385,20 @@ export default {
     padding-right: 1.5rem;
 
     .hero {
+      margin 0 -1.5rem
+      min-height 350px
       img {
         max-height: 210px;
         margin: 2rem auto 1.2rem;
       }
 
       h1 {
+        margin: 6rem auto 1.8rem ;
         font-size: 2rem;
       }
 
       h1, .description, .action {
-        margin: 1.2rem auto;
+        // margin: 1.2rem auto;
       }
 
       .description {
@@ -296,6 +414,12 @@ export default {
     .feature {
       h2 {
         font-size: 1.25rem;
+      }
+    }
+
+    .home-blog {
+      .info-wrapper {
+        display none
       }
     }
   }
