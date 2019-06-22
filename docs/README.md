@@ -1,5 +1,7 @@
 ---
 home: true
+bgImage: '/bg.png'
+faceImage: '/head.png'
 heroImage: /hero_write.png
 heroImageStyle: {
   maxHeight: '200px',
