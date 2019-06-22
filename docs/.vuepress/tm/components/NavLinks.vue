@@ -149,6 +149,9 @@ export default {
 
       return 'Source'
     }
+  },
+  created () {
+    console.log(this)
   }
 }
 </script>
