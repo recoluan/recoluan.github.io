@@ -14,7 +14,10 @@ Platform:
   darwin x64
 
 Trace: 
-  Error: EINVAL: invalid argument, unlink '/Users/reco/workSpace/git/personal/recoluan.gitlab.io/node_modules/chalk/node_modules/supports-color'
+  Error: https://registry.yarnpkg.com/vuepress-theme-reco/-/vuepress-theme-reco-1.0.0-alpha.29.tgz: ETIMEDOUT
+      at Timeout._onTimeout (/usr/local/lib/node_modules/yarn/lib/cli.js:135339:19)
+      at listOnTimeout (timers.js:324:15)
+      at processTimers (timers.js:268:5)
 
 npm manifest: 
   {
@@ -32,7 +35,7 @@ npm manifest:
     },
     "dependencies": {
       "vuepress": "1.0.1",
-      "vuepress-theme-reco": "1.0.0-alpha.26",
+      "vuepress-theme-reco": "1.0.0-alpha.29",
       "@vuepress/plugin-medium-zoom": "1.0.0-alpha.0",
       "vuepress-plugin-flowchart": "1.4.3"
     }
@@ -826,11 +829,9 @@ Lockfile:
     dependencies:
       lodash.throttle "^4.1.1"
   
-  "@vuepress/plugin-blog@1.1.0":
-    version "1.1.0"
-    resolved "https://registry.yarnpkg.com/@vuepress/plugin-blog/-/plugin-blog-1.1.0.tgz#9efff77acad87c84d78988e3bd9f5c9d9b5b3bae"
-    dependencies:
-      vuejs-paginate "^2.1.0"
+  "@vuepress/plugin-blog@1.0.0-alpha.49":
+    version "1.0.0-alpha.49"
+    resolved "https://registry.yarnpkg.com/@vuepress/plugin-blog/-/plugin-blog-1.0.0-alpha.49.tgz#dfd0bcc60e76ffd00be781916d9b6b7c2d3f642c"
   
   "@vuepress/plugin-last-updated@^1.0.1":
     version "1.0.1"
@@ -3793,9 +3794,9 @@ Lockfile:
       uuid "^3.0.0"
       ws "^5.2.1"
   
-  leancloud-storage@3.13.0:
-    version "3.13.0"
-    resolved "https://registry.yarnpkg.com/leancloud-storage/-/leancloud-storage-3.13.0.tgz#c6383568797fc64babb700d05260ddb57aa9a1a0"
+  leancloud-storage@3.13.2:
+    version "3.13.2"
+    resolved "https://registry.yarnpkg.com/leancloud-storage/-/leancloud-storage-3.13.2.tgz#82f1e4f60ef0a1028bd66abe6f9eafb085f7cf55"
     dependencies:
       debug "^3.1.0"
       es6-promise "4.2.3"
@@ -6302,9 +6303,9 @@ Lockfile:
     version "3.3.2"
     resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
   
-  valine@1.3.6:
-    version "1.3.6"
-    resolved "https://registry.yarnpkg.com/valine/-/valine-1.3.6.tgz#e39ba279a63eaf7c03fcbb23766226d03909b0cc"
+  valine@1.3.7:
+    version "1.3.7"
+    resolved "https://registry.yarnpkg.com/valine/-/valine-1.3.7.tgz#6d0cec75c967029b89ff75487efc341cc2b7fccb"
   
   vary@~1.1.2:
     version "1.1.2"
@@ -6385,10 +6386,6 @@ Lockfile:
     version "2.6.9"
     resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.9.tgz#415c1cc1a5ed00c8f0acdd0a948139d12b7ea6b3"
   
-  vuejs-paginate@^2.1.0:
-    version "2.1.0"
-    resolved "https://registry.yarnpkg.com/vuejs-paginate/-/vuejs-paginate-2.1.0.tgz#93e1ad1539b713a688c7a2d3080bda60fcc6c77d"
-  
   vuepress-html-webpack-plugin@^3.2.0:
     version "3.2.0"
     resolved "https://registry.yarnpkg.com/vuepress-html-webpack-plugin/-/vuepress-html-webpack-plugin-3.2.0.tgz#219be272ad510faa8750d2d4e70fd028bfd1c16e"
@@ -6413,13 +6410,13 @@ Lockfile:
     dependencies:
       flowchart.js "^1.11.3"
   
-  vuepress-theme-reco@1.0.0-alpha.24:
-    version "1.0.0-alpha.24"
-    resolved "https://registry.yarnpkg.com/vuepress-theme-reco/-/vuepress-theme-reco-1.0.0-alpha.24.tgz#ab571d77ced3b48373d7677b46d7f0ea28b58460"
+  vuepress-theme-reco@1.0.0-alpha.28:
+    version "1.0.0-alpha.28"
+    resolved "https://registry.yarnpkg.com/vuepress-theme-reco/-/vuepress-theme-reco-1.0.0-alpha.28.tgz#10c79d41da563c05b2b7abbaa35364fc504f43dd"
     dependencies:
-      "@vuepress/plugin-blog" "1.1.0"
-      leancloud-storage "3.13.0"
-      valine "1.3.6"
+      "@vuepress/plugin-blog" "1.0.0-alpha.49"
+      leancloud-storage "3.13.2"
+      valine "1.3.7"
       vue-click-outside "1.0.7"
   
   vuepress@1.0.1:
