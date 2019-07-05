@@ -1,6 +1,9 @@
 ---
 home: true
 bgImage: '/bg.png'
+bgImageStyle: {
+  height: '500px'
+}
 faceImage: '/head.png'
 heroImage: /hero_write.png
 heroImageStyle: {
