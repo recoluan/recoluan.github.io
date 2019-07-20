@@ -182,7 +182,7 @@ export default {
         cursor pointer
       }
     }
-  }
+  } 
 @media (max-width: $MQMobile)
   .timeline-wrapper
     margin: 0 1.2rem;
