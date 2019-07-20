@@ -1,10 +1,10 @@
 <template>
   <div class="home-blog" :class="recoShow?'reco-show': 'reco-hide'">
-    <div class="hero" :style="{background: `url(${$page.frontmatter.bgImage || require('../images/home-bg.jpg')}) center/cover no-repeat`, ...bgImageStyle}">
+    <div class="hero" :style="{background: `url(${$frontmatter.bgImage || require('../images/home-bg.jpg')}) center/cover no-repeat`, ...bgImageStyle}">
       <h1>{{ data.heroText || $title || '午后南杂' }}</h1>
 
       <p class="description">{{ data.tagline || $description || 'Welcome to your vuePress-theme-reco site' }}</p>
-      <p class="huawei" v-if="$themeConfig.huawei !== false"><i class="iconfont reco-huawei" style="color: #fc2d38"></i>&nbsp;&nbsp;&nbsp;华为，为中华而为之！</p>
+      <p class="huawei" v-if="$themeConfig.huawei === true"><i class="iconfont reco-huawei" style="color: #fc2d38"></i>&nbsp;&nbsp;&nbsp;华为，为中华而为之！</p>
     </div>
 
     <div class="home-blog-wrapper">
@@ -13,13 +13,14 @@
         v-if="showList"
         class="blog-list"
         :data="posts"
+        :isHome="true"
         :currentPage="1"></note-abstract>
       <div class="info-wrapper">
-         <img class="personal-img" :src="$page.frontmatter.faceImage || $themeConfig.logo" alt="hero"> 
+         <img class="personal-img" :src="$frontmatter.faceImage || $themeConfig.logo" alt="hero"> 
          <h3 class="name" v-if="$themeConfig.author || $site.title">{{ $themeConfig.author || $site.title }}</h3>
          <div class="num">
            <div>
-             <h3>{{$site.pages.length}}</h3>
+             <h3>{{getPagesLength}}</h3>
              <h6>文章</h6>
            </div>
            <div>
@@ -30,7 +31,7 @@
          <hr>
          <h4><i class="iconfont reco-category"></i> 分类</h4>
          <ul class="category-wrapper">
-          <li class="category-item" v-for="(item, index) in this.$categories.list">
+          <li class="category-item" v-for="(item, index) in this.$categories.list" :key="index">
             <a :href="item.path">
               <span class="category-name">{{ item.name }}</span>
               <span class="post-num">{{ item.posts.length }}</span>
@@ -106,14 +107,18 @@ export default {
     },
 
     // 分类信息
-    categoryList () {
-      console.log(this)
+    getPagesLength () {
+      let num = 0
+      this.$categories.list.map(v => {
+        num += v.posts.length
+      })
+      return num
     },
     year () {
       return new Date().getFullYear()
     },
     data() {
-      return this.$page.frontmatter;
+      return this.$frontmatter;
     },
 
     actionLink() {
@@ -196,9 +201,9 @@ export default {
     }
 
     h1 {
-      margin: 4rem auto 1.8rem ;
+      margin:10% auto 1.8rem ;
       font-size: 2.5rem;
-      color #fff
+      color #fff;
     }
 
     h1, .description, .action, .huawei {

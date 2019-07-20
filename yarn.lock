@@ -6363,9 +6363,9 @@ vuepress-plugin-flowchart@1.4.3:
   dependencies:
     flowchart.js "^1.11.3"
 
-vuepress-theme-reco@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-reco/-/vuepress-theme-reco-1.0.2.tgz#b880d09e0c9c0db31cc6502b40ac7ae6826c0b09"
+vuepress-theme-reco@1.0.3-alpha.1:
+  version "1.0.3-alpha.1"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-reco/-/vuepress-theme-reco-1.0.3-alpha.1.tgz#3f968d7563dce8d071eee25dae8d523b1ff7019c"
   dependencies:
     "@vuepress/plugin-blog" "1.0.0-alpha.49"
     leancloud-storage "3.13.2"
