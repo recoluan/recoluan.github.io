@@ -58,6 +58,27 @@ color-mode(accountColor , colorName)
             a 
               span.post-num
                 color accountColor!important
+    .color-picker
+      .color-button
+        .iconfont
+          color accountColor!important;
+    a
+      color accountColor;
+    a.sidebar-link
+      color $textColor
+    a.sidebar-link:hover
+      color accountColor!important;
+    .password-shadow
+      .inputBox
+        background: accountColor!important
+        input
+          color #fff!important
+          &:focus~span
+            color accountColor!important
+        button
+          border 1px solid accountColor!important
+          color accountColor!important;
+
 
 
     @media (min-width: 765px)
