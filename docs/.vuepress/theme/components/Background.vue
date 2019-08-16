@@ -21,7 +21,7 @@ export default {
       particlesJS("particles-oli-wrapper", {
         particles: {
           number: {
-            value: 40,
+            value: 20,
             density: {
               enable: true,
               value_area: 800
@@ -31,27 +31,27 @@ export default {
             value: color
           },
           shape: {
-            type: "circle",
+            type: 'circle',
             stroke: {
               width: 0,
-              color: "#000000"
+              color: '#000000'
             },
             polygon: {
               nb_sides: 5
             }
           },
           opacity: {
-            value: 0.3,
+            value: 0.9,
             random: false,
             anim: {
               enable: false,
               speed: 1,
-              opacity_min: 0.1,
+              opacity_min: 0.6,
               sync: false
             }
           },
           size: {
-            value: 20,
+            value: 3,
             random: true,
             anim: {
               enable: false,
@@ -64,16 +64,16 @@ export default {
             enable: true,
             distance: 250,
             color: lineColor,
-            opacity: 0.2,
+            opacity: 0.4,
             width: 1
           },
           move: {
             enable: true,
             speed: 3,
-            direction: "none",
+            direction: 'none',
             random: true,
             straight: false,
-            out_mode: "out",
+            out_mode: 'out',
             bounce: true,
             attract: {
               enable: false,
