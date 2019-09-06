@@ -1,6 +1,6 @@
 <template>
   <div class="home-blog" :class="recoShow?'reco-show': 'reco-hide'">
-    <div class="hero" :style="{background: `url(${$withBase($frontmatter.bgImage) || require('../images/home-bg.jpg')}) center/cover no-repeat`, ...bgImageStyle}">
+     <div class="hero" :style="{background: `url(${$frontmatter.bgImage ? $withBase($frontmatter.bgImage) : require('../images/home-bg.jpg')}) center/cover no-repeat`, ...bgImageStyle}">
       <h1>{{ data.heroText || $title || '午后南杂' }}</h1>
 
       <p class="description">{{ data.tagline || $description || 'Welcome to your vuePress-theme-reco site' }}</p>
@@ -15,7 +15,7 @@
         :isHome="true"
         :currentPage="1"></note-abstract>
       <div class="info-wrapper">
-         <img class="personal-img" :src="$withBase($frontmatter.faceImage || $themeConfig.logo)" alt="hero"> 
+         <img class="personal-img" :src="$frontmatter.faceImage ? $withBase($frontmatter.faceImage) : require('../images/home-head.png')" alt="hero"> 
          <h3 class="name" v-if="$themeConfig.author || $site.title">{{ $themeConfig.author || $site.title }}</h3>
          <div class="num">
            <div>

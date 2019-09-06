@@ -4,24 +4,26 @@
 
 <script>
 export default {
-  mounted() {
+  mounted () {
     const keyPage = this.$themeConfig.keyPage
     let color = '#424242'
     let lineColor = '#424242'
+    const num = 20
     if (keyPage) {
       color = keyPage.color || color
       lineColor = keyPage.lineColor || lineColor
     }
-    
-    const script = document.createElement("script");
-    script.src = "https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js";
 
-    document.body.append(script);
-    script.onload = function() {
-      particlesJS("particles-oli-wrapper", {
+    const script = document.createElement('script')
+    script.src = 'https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js'
+
+    document.body.append(script)
+    script.onload = function () {
+      const particlesJS = window.particlesJS
+      particlesJS('particles-oli-wrapper', {
         particles: {
           number: {
-            value: 20,
+            value: num,
             density: {
               enable: true,
               value_area: 800
@@ -83,15 +85,15 @@ export default {
           }
         },
         interactivity: {
-          detect_on: "canvas",
+          detect_on: 'canvas',
           events: {
             onhover: {
               enable: true,
-              mode: "grab"
+              mode: 'grab'
             },
             onclick: {
               enable: true,
-              mode: "push"
+              mode: 'push'
             },
             resize: true
           },
@@ -105,13 +107,17 @@ export default {
           }
         },
         retina_detect: true
-      });
-    };
+      })
+    }
   }
-};
+}
 </script>
-<style lang="stylus" scoped>
+<style lang='stylus' scoped>
 #particles-oli-wrapper {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  width: 100%;
   height: 99vh;
 }
 </style>
