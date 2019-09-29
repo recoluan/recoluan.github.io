@@ -1,6 +1,6 @@
 ---
 home: true
-bgImage: '/banner.jpg'
+bgImage: '/banner-layan-dark.png'
 bgImageStyle: {
   height: '450px'
 }
