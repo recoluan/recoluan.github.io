@@ -1,23 +1,20 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn install
+  E:\workFile\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js
 
 PATH: 
-  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/Library/Apple/bin:/usr/local/aria2/bin
+  C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;E:\workFile\nodejs\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;D:\softs\Microsoft VS Code\bin;C:\Program Files (x86)\Yarn\bin\;D:\softs\Git\cmd;C:\Users\luanh\AppData\Local\Microsoft\WindowsApps;C:\Users\luanh\AppData\Roaming\npm;;D:\softs\Microsoft VS Code\bin;C:\Users\luanh\AppData\Local\Yarn\bin
 
 Yarn version: 
-  1.7.0
+  1.13.0
 
 Node version: 
-  11.4.0
+  8.9.4
 
 Platform: 
-  darwin x64
+  win32 x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/vuepress-theme-reco/-/vuepress-theme-reco-1.0.0-alpha.29.tgz: ETIMEDOUT
-      at Timeout._onTimeout (/usr/local/lib/node_modules/yarn/lib/cli.js:135339:19)
-      at listOnTimeout (timers.js:324:15)
-      at processTimers (timers.js:268:5)
+  Error: ENOENT: no such file or directory, copyfile 'C:\Users\luanh\AppData\Local\Yarn\Cache\v4\npm-electron-to-chromium-1.3.116-1dbfee6a592a0c14ade77dbdfe54fef86387d702\node_modules\electron-to-chromium\CHANGELOG.md' -> 'D:\work\git\recoluan.gitlab.io\node_modules\@babel\preset-env\node_modules\electron-to-chromium\CHANGELOG.md'
 
 npm manifest: 
   {
@@ -34,10 +31,11 @@ npm manifest:
       "build": "vuepress build docs"
     },
     "dependencies": {
-      "vuepress": "1.0.1",
-      "vuepress-theme-reco": "1.0.0-alpha.29",
+      "vuepress": "1.0.3",
+      "vuepress-theme-reco": "1.0.9-alpha.3",
       "@vuepress/plugin-medium-zoom": "1.0.0-alpha.0",
-      "vuepress-plugin-flowchart": "1.4.3"
+      "vuepress-plugin-flowchart": "1.4.3",
+      "@vuepress/plugin-pwa": "1.0.0-alpha.3"
     }
   }
 
@@ -6303,9 +6301,9 @@ Lockfile:
     version "3.3.2"
     resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
   
-  valine@1.3.7:
-    version "1.3.7"
-    resolved "https://registry.yarnpkg.com/valine/-/valine-1.3.7.tgz#6d0cec75c967029b89ff75487efc341cc2b7fccb"
+  valine@1.3.6:
+    version "1.3.6"
+    resolved "https://registry.yarnpkg.com/valine/-/valine-1.3.6.tgz#e39ba279a63eaf7c03fcbb23766226d03909b0cc"
   
   vary@~1.1.2:
     version "1.1.2"
@@ -6410,13 +6408,13 @@ Lockfile:
     dependencies:
       flowchart.js "^1.11.3"
   
-  vuepress-theme-reco@1.0.0-alpha.28:
-    version "1.0.0-alpha.28"
-    resolved "https://registry.yarnpkg.com/vuepress-theme-reco/-/vuepress-theme-reco-1.0.0-alpha.28.tgz#10c79d41da563c05b2b7abbaa35364fc504f43dd"
+  vuepress-theme-reco@1.0.3-alpha.1:
+    version "1.0.3-alpha.1"
+    resolved "https://registry.yarnpkg.com/vuepress-theme-reco/-/vuepress-theme-reco-1.0.3-alpha.1.tgz#3f968d7563dce8d071eee25dae8d523b1ff7019c"
     dependencies:
       "@vuepress/plugin-blog" "1.0.0-alpha.49"
       leancloud-storage "3.13.2"
-      valine "1.3.7"
+      valine "1.3.6"
       vue-click-outside "1.0.7"
   
   vuepress@1.0.1:

@@ -13,5 +13,5 @@ module.exports = {
   markdown: {
     lineNumbers: true
   },
-  plugins: ['@vuepress/medium-zoom', 'flowchart', require('./plugins/Pagation/index.js')] 
+  plugins: ['@vuepress/medium-zoom', 'flowchart'] 
 }  
