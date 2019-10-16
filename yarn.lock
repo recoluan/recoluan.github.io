@@ -627,6 +627,48 @@
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/@types/q/-/q-1.5.2.tgz#690a1475b84f2a884fd07cd797c00f5f31356ea8"
 
+"@vssue/api-bitbucket-v2@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@vssue/api-bitbucket-v2/-/api-bitbucket-v2-1.1.1.tgz#b46c278a34492ea24c78816b8550ee1eee932aeb"
+  dependencies:
+    "@vssue/utils" "^1.1.1"
+    axios "^0.18.1"
+
+"@vssue/api-gitee-v5@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@vssue/api-gitee-v5/-/api-gitee-v5-1.1.1.tgz#b3065c34da441baa6e3409ebcc0cd6992794e40a"
+  dependencies:
+    "@vssue/utils" "^1.1.1"
+    axios "^0.18.1"
+
+"@vssue/api-github-v3@^1.1.2":
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/@vssue/api-github-v3/-/api-github-v3-1.1.2.tgz#24467a6f62eaae29091e986160b58aa859d877f4"
+  dependencies:
+    "@vssue/utils" "^1.1.1"
+    axios "^0.18.1"
+
+"@vssue/api-github-v4@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@vssue/api-github-v4/-/api-github-v4-1.2.0.tgz#f79ff8c1b06aef9299a5078d3303419ab2ccbcc0"
+  dependencies:
+    "@vssue/utils" "^1.1.1"
+    axios "^0.18.1"
+
+"@vssue/api-gitlab-v4@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@vssue/api-gitlab-v4/-/api-gitlab-v4-1.1.1.tgz#4e75b9fdbba98254ae73d35ff7007ace18047c8d"
+  dependencies:
+    "@vssue/utils" "^1.1.1"
+    axios "^0.18.1"
+
+"@vssue/utils@^1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@vssue/utils/-/utils-1.1.1.tgz#77ee2ef25e02ce49505a218d736aebc0d4050519"
+  dependencies:
+    date-fns "^1.29.0"
+    qs "^6.6.0"
+
 "@vue/babel-helper-vue-jsx-merge-props@^1.0.0-beta.2":
   version "1.0.0-beta.2"
   resolved "https://registry.yarnpkg.com/@vue/babel-helper-vue-jsx-merge-props/-/babel-helper-vue-jsx-merge-props-1.0.0-beta.2.tgz#f3e20d77b89ddb7a4b9b7a75372f05cd3ac22d92"
@@ -700,9 +742,9 @@
     "@vue/babel-plugin-transform-vue-jsx" "^1.0.0-beta.2"
     camelcase "^5.0.0"
 
-"@vue/component-compiler-utils@^2.5.1":
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/@vue/component-compiler-utils/-/component-compiler-utils-2.6.0.tgz#aa46d2a6f7647440b0b8932434d22f12371e543b"
+"@vue/component-compiler-utils@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@vue/component-compiler-utils/-/component-compiler-utils-3.0.0.tgz#d16fa26b836c06df5baaeb45f3d80afc47e35634"
   dependencies:
     consolidate "^0.15.1"
     hash-sum "^1.0.2"
@@ -718,6 +760,23 @@
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@vuepress-reco/vuepress-plugin-back-to-top/-/vuepress-plugin-back-to-top-1.0.3.tgz#a5758d04b1314d02a6bc39fc75d9c8a239a54b98"
 
+"@vuepress-reco/vuepress-plugin-comments@1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@vuepress-reco/vuepress-plugin-comments/-/vuepress-plugin-comments-1.0.1.tgz#20cc67b5414d92698fe4409fe9e51066426929fd"
+  dependencies:
+    "@vssue/api-bitbucket-v2" "^1.1.1"
+    "@vssue/api-gitee-v5" "^1.1.1"
+    "@vssue/api-github-v3" "^1.1.2"
+    "@vssue/api-github-v4" "^1.2.0"
+    "@vssue/api-gitlab-v4" "^1.1.1"
+    leancloud-storage "^3.13.2"
+    valine "^1.3.6"
+    vssue "^1.2.0"
+
+"@vuepress-reco/vuepress-plugin-ga@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@vuepress-reco/vuepress-plugin-ga/-/vuepress-plugin-ga-1.0.2.tgz#3cab6b24ca66d383d585276517a01c98578f7821"
+
 "@vuepress-reco/vuepress-plugin-loading-page@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@vuepress-reco/vuepress-plugin-loading-page/-/vuepress-plugin-loading-page-1.0.0.tgz#6f4412e303e1c4e150889eee8f7e86fffc88de07"
@@ -732,17 +791,17 @@
   dependencies:
     screenfull "4.2.1"
 
-"@vuepress/core@^1.0.3":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@vuepress/core/-/core-1.1.0.tgz#32fd2b65a4613085cbd2b812bf67afe3a037dc65"
+"@vuepress/core@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/core/-/core-1.2.0.tgz#8e0c636b7f8676202fdd1ecfbe31bfe245dab2a8"
   dependencies:
     "@babel/core" "^7.0.0"
     "@vue/babel-preset-app" "^3.1.1"
-    "@vuepress/markdown" "^1.1.0"
-    "@vuepress/markdown-loader" "^1.1.0"
-    "@vuepress/plugin-last-updated" "^1.1.0"
-    "@vuepress/plugin-register-components" "^1.1.0"
-    "@vuepress/shared-utils" "^1.1.0"
+    "@vuepress/markdown" "^1.2.0"
+    "@vuepress/markdown-loader" "^1.2.0"
+    "@vuepress/plugin-last-updated" "^1.2.0"
+    "@vuepress/plugin-register-components" "^1.2.0"
+    "@vuepress/shared-utils" "^1.2.0"
     autoprefixer "^9.5.1"
     babel-loader "^8.0.4"
     cache-loader "^3.0.0"
@@ -761,32 +820,32 @@
     postcss-safe-parser "^4.0.1"
     toml "^3.0.0"
     url-loader "^1.0.1"
-    vue "^2.5.16"
-    vue-loader "^15.2.4"
-    vue-router "^3.0.2"
-    vue-server-renderer "^2.5.16"
-    vue-template-compiler "^2.5.16"
+    vue "^2.6.10"
+    vue-loader "^15.7.1"
+    vue-router "^3.1.3"
+    vue-server-renderer "^2.6.10"
+    vue-template-compiler "^2.6.10"
     vuepress-html-webpack-plugin "^3.2.0"
-    vuepress-plugin-container "^2.0.0"
+    vuepress-plugin-container "^2.0.2"
     webpack "^4.8.1"
     webpack-chain "^4.6.0"
     webpack-dev-server "^3.5.1"
     webpack-merge "^4.1.2"
     webpackbar "3.2.0"
 
-"@vuepress/markdown-loader@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@vuepress/markdown-loader/-/markdown-loader-1.1.0.tgz#ab8ac2d286c255f9fa39ecb2f4542053314825ac"
+"@vuepress/markdown-loader@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/markdown-loader/-/markdown-loader-1.2.0.tgz#f8972014616b4ab46a99c9aaac2dd414d437411c"
   dependencies:
-    "@vuepress/markdown" "^1.1.0"
+    "@vuepress/markdown" "^1.2.0"
     loader-utils "^1.1.0"
     lru-cache "^5.1.1"
 
-"@vuepress/markdown@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@vuepress/markdown/-/markdown-1.1.0.tgz#f9095c91019d21dbc3daedfd3773c6d5c29117ec"
+"@vuepress/markdown@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/markdown/-/markdown-1.2.0.tgz#7c457e0fab52ef8ac4dd1898ae450bc3aec30746"
   dependencies:
-    "@vuepress/shared-utils" "^1.1.0"
+    "@vuepress/shared-utils" "^1.2.0"
     markdown-it "^8.4.1"
     markdown-it-anchor "^5.0.2"
     markdown-it-chain "^1.3.0"
@@ -794,11 +853,11 @@
     markdown-it-table-of-contents "^0.4.0"
     prismjs "^1.13.0"
 
-"@vuepress/plugin-active-header-links@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@vuepress/plugin-active-header-links/-/plugin-active-header-links-1.1.0.tgz#cd62c1712040676035f34fed16a088e1c08811d8"
+"@vuepress/plugin-active-header-links@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-active-header-links/-/plugin-active-header-links-1.2.0.tgz#46495c89e51a95e57139be007dffbcae4b229260"
   dependencies:
-    lodash.throttle "^4.1.1"
+    lodash.debounce "^4.0.8"
 
 "@vuepress/plugin-blog@1.3.0":
   version "1.3.0"
@@ -806,9 +865,9 @@
   dependencies:
     vuejs-paginate "^2.1.0"
 
-"@vuepress/plugin-last-updated@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@vuepress/plugin-last-updated/-/plugin-last-updated-1.1.0.tgz#65f2de734f3744026297b4667f3b5276ef99fd06"
+"@vuepress/plugin-last-updated@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-last-updated/-/plugin-last-updated-1.2.0.tgz#7b34065b793848b0482a222b7a6f1b7df3668cdc"
   dependencies:
     cross-spawn "^6.0.5"
 
@@ -818,9 +877,9 @@
   dependencies:
     medium-zoom "^0.4.0"
 
-"@vuepress/plugin-nprogress@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@vuepress/plugin-nprogress/-/plugin-nprogress-1.1.0.tgz#ca7106adc7016ed0d90a22555066c11da597ef59"
+"@vuepress/plugin-nprogress@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-nprogress/-/plugin-nprogress-1.2.0.tgz#ff6166946a0b118a39a562acb57983529afce4d2"
   dependencies:
     nprogress "^0.2.0"
 
@@ -832,17 +891,17 @@
     register-service-worker "^1.5.2"
     workbox-build "^3.1.0"
 
-"@vuepress/plugin-register-components@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@vuepress/plugin-register-components/-/plugin-register-components-1.1.0.tgz#42ea75bcad3fb562fbb86c424136f86e13641162"
+"@vuepress/plugin-register-components@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-register-components/-/plugin-register-components-1.2.0.tgz#95aa0e0af94b2758b26ab98814c43b0f7bcd502b"
   dependencies:
-    "@vuepress/shared-utils" "^1.1.0"
+    "@vuepress/shared-utils" "^1.2.0"
 
-"@vuepress/plugin-search@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@vuepress/plugin-search/-/plugin-search-1.1.0.tgz#3b7a344a7df1bab27f10a46e6b57680c8f5d4c7e"
+"@vuepress/plugin-search@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-search/-/plugin-search-1.2.0.tgz#0b27c467b7fd42bd4d9e32de0fe2fb81a24bd311"
 
-"@vuepress/shared-utils@^1.0.0-alpha.3", "@vuepress/shared-utils@^1.1.0":
+"@vuepress/shared-utils@^1.0.0-alpha.3":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@vuepress/shared-utils/-/shared-utils-1.1.0.tgz#9d220ffe54f2d698c56ca5348ba2cb9dd72800da"
   dependencies:
@@ -856,18 +915,33 @@
     semver "^6.0.0"
     upath "^1.1.0"
 
-"@vuepress/theme-default@^1.0.3":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@vuepress/theme-default/-/theme-default-1.1.0.tgz#915c97bb69985d6fccd815f829532d67d828e10a"
+"@vuepress/shared-utils@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/shared-utils/-/shared-utils-1.2.0.tgz#8d9ab40c24f75f027ef32c2ad0169f0f08e949fa"
   dependencies:
-    "@vuepress/plugin-active-header-links" "^1.1.0"
-    "@vuepress/plugin-nprogress" "^1.1.0"
-    "@vuepress/plugin-search" "^1.1.0"
+    chalk "^2.3.2"
+    diacritics "^1.3.0"
+    escape-html "^1.0.3"
+    fs-extra "^7.0.1"
+    globby "^9.2.0"
+    gray-matter "^4.0.1"
+    hash-sum "^1.0.2"
+    semver "^6.0.0"
+    upath "^1.1.0"
+
+"@vuepress/theme-default@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@vuepress/theme-default/-/theme-default-1.2.0.tgz#3303af21a00031a3482ed1c494508234f545cbf1"
+  dependencies:
+    "@vuepress/plugin-active-header-links" "^1.2.0"
+    "@vuepress/plugin-nprogress" "^1.2.0"
+    "@vuepress/plugin-search" "^1.2.0"
     docsearch.js "^2.5.2"
     lodash "^4.17.15"
     stylus "^0.54.5"
     stylus-loader "^3.0.2"
-    vuepress-plugin-container "^2.0.0"
+    vuepress-plugin-container "^2.0.2"
+    vuepress-plugin-smooth-scroll "^0.0.3"
 
 "@webassemblyjs/ast@1.8.5":
   version "1.8.5"
@@ -1261,6 +1335,13 @@ axios@^0.18.0:
   dependencies:
     follow-redirects "^1.3.0"
     is-buffer "^1.1.5"
+
+axios@^0.18.1:
+  version "0.18.1"
+  resolved "https://registry.yarnpkg.com/axios/-/axios-0.18.1.tgz#ff3f0de2e7b5d180e757ad98000f1081b87bcea3"
+  dependencies:
+    follow-redirects "1.5.10"
+    is-buffer "^2.0.2"
 
 babel-extract-comments@^1.0.0:
   version "1.0.0"
@@ -1947,7 +2028,7 @@ cookie@0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/cookie/-/cookie-0.4.0.tgz#beb437e7022b3b6d49019d088665303ebe9c14ba"
 
-cookiejar@^2.1.0:
+cookiejar@^2.1.0, cookiejar@^2.1.2:
   version "2.1.2"
   resolved "https://registry.yarnpkg.com/cookiejar/-/cookiejar-2.1.2.tgz#dd8a235530752f988f9a0844f3fc589e3111125c"
 
@@ -2232,6 +2313,10 @@ dashdash@^1.12.0:
   dependencies:
     assert-plus "^1.0.0"
 
+date-fns@^1.29.0:
+  version "1.30.1"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-1.30.1.tgz#2e71bf0b119153dbb4cc4e88d9ea5acfb50dc05c"
+
 date-now@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/date-now/-/date-now-0.1.4.tgz#eaf439fd4d4848ad74e5cc7dbef200672b9e345b"
@@ -2249,6 +2334,12 @@ debug@*, debug@^4.1.0, debug@^4.1.1:
 debug@2.6.9, debug@^2.1.2, debug@^2.2.0, debug@^2.3.3, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
+  dependencies:
+    ms "2.0.0"
+
+debug@=3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
   dependencies:
     ms "2.0.0"
 
@@ -2842,6 +2933,12 @@ flush-write-stream@^1.0.0:
     inherits "^2.0.3"
     readable-stream "^2.3.6"
 
+follow-redirects@1.5.10:
+  version "1.5.10"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.10.tgz#7b7a9f9aea2fdff36786a94ff643ed07f4ff5e2a"
+  dependencies:
+    debug "=3.1.0"
+
 follow-redirects@^1.0.0, follow-redirects@^1.3.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.7.0.tgz#489ebc198dc0e7f64167bd23b03c4c19b5784c76"
@@ -2863,6 +2960,14 @@ forever-agent@~0.6.1:
 form-data@^2.3.1, form-data@~2.3.2:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/form-data/-/form-data-2.3.3.tgz#dcce52c05f644f298c6a7ab936bd724ceffbf3a6"
+  dependencies:
+    asynckit "^0.4.0"
+    combined-stream "^1.0.6"
+    mime-types "^2.1.12"
+
+form-data@^2.3.3:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/form-data/-/form-data-2.5.1.tgz#f2cbec57b5e59e23716e128fe44d4e5dd23895f4"
   dependencies:
     asynckit "^0.4.0"
     combined-stream "^1.0.6"
@@ -2975,6 +3080,10 @@ getpass@^0.1.1:
   resolved "https://registry.yarnpkg.com/getpass/-/getpass-0.1.7.tgz#5eff8e3e684d569ae4cb2b1282604e8ba62149fa"
   dependencies:
     assert-plus "^1.0.0"
+
+github-markdown-css@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/github-markdown-css/-/github-markdown-css-3.0.1.tgz#d08db1060d2e182025e0d07d547cfe2afed30205"
 
 glob-parent@^3.1.0:
   version "3.1.0"
@@ -3469,6 +3578,10 @@ is-buffer@^1.1.5, is-buffer@~1.1.1:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-1.1.6.tgz#efaa2ea9daa0d7ab2ea13a97b2b8ad51fefbe8be"
 
+is-buffer@^2.0.2:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/is-buffer/-/is-buffer-2.0.4.tgz#3e572f23c8411a5cfd9557c849e3665e0b290623"
+
 is-callable@^1.1.4:
   version "1.1.4"
   resolved "https://registry.yarnpkg.com/is-callable/-/is-callable-1.1.4.tgz#1e1adf219e1eeb684d691f9d6a05ff0d30a24d75"
@@ -3820,6 +3933,10 @@ leancloud-realtime-plugin-live-query@^1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/leancloud-realtime-plugin-live-query/-/leancloud-realtime-plugin-live-query-1.1.2.tgz#16c4ba1babe0b907bcf63c4ec85462a0ab349662"
 
+leancloud-realtime-plugin-live-query@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/leancloud-realtime-plugin-live-query/-/leancloud-realtime-plugin-live-query-1.2.0.tgz#1e07da1b5b99e44cddbc3b052234422f278c4ab9"
+
 leancloud-realtime@^4.2.0:
   version "4.3.0"
   resolved "https://registry.yarnpkg.com/leancloud-realtime/-/leancloud-realtime-4.3.0.tgz#383e7958ec082fb7918dff800651300497febb7a"
@@ -3835,6 +3952,21 @@ leancloud-realtime@^4.2.0:
     uuid "^3.0.0"
     ws "^5.2.1"
 
+leancloud-realtime@^5.0.0-alpha.3:
+  version "5.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/leancloud-realtime/-/leancloud-realtime-5.0.0-alpha.3.tgz#61e7e455f265ba5b6bd032e1afdc6bd929ee158c"
+  dependencies:
+    "@babel/runtime" "^7.0.0"
+    base64-arraybuffer "^0.1.5"
+    debug "^3.1.0"
+    eventemitter3 "^3.0.0"
+    javascript-state-machine "^2.3.5"
+    lodash "^4.17.10"
+    protobufjs "^5.0.1"
+    superagent "^4.1.0"
+    uuid "^3.0.0"
+    ws "^5.2.1"
+
 leancloud-storage@3.13.2:
   version "3.13.2"
   resolved "https://registry.yarnpkg.com/leancloud-storage/-/leancloud-storage-3.13.2.tgz#82f1e4f60ef0a1028bd66abe6f9eafb085f7cf55"
@@ -3844,6 +3976,21 @@ leancloud-storage@3.13.2:
     eventemitter3 "^2.0.3"
     leancloud-realtime "^4.2.0"
     leancloud-realtime-plugin-live-query "^1.1.2"
+    localstorage-memory "^1.0.1"
+    md5 "^2.0.0"
+    superagent "^3.3.1"
+    underscore "^1.8.3"
+    uuid "^3.3.2"
+
+leancloud-storage@^3.13.2:
+  version "3.15.0"
+  resolved "https://registry.yarnpkg.com/leancloud-storage/-/leancloud-storage-3.15.0.tgz#6d3b010a313189985bb69ab08c75c7ad74bd1788"
+  dependencies:
+    debug "^3.1.0"
+    es6-promise "4.2.3"
+    eventemitter3 "^2.0.3"
+    leancloud-realtime "^5.0.0-alpha.3"
+    leancloud-realtime-plugin-live-query "^1.2.0"
     localstorage-memory "^1.0.1"
     md5 "^2.0.0"
     superagent "^3.3.1"
@@ -3900,6 +4047,10 @@ lodash.clonedeep@^4.5.0:
   version "4.5.0"
   resolved "https://registry.yarnpkg.com/lodash.clonedeep/-/lodash.clonedeep-4.5.0.tgz#e23f3f9c4f8fbdde872529c1071857a086e5ccef"
 
+lodash.debounce@^4.0.8:
+  version "4.0.8"
+  resolved "https://registry.yarnpkg.com/lodash.debounce/-/lodash.debounce-4.0.8.tgz#82d79bff30a67c4005ffd5e2515300ad9ca4d7af"
+
 lodash.kebabcase@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.kebabcase/-/lodash.kebabcase-4.1.1.tgz#8489b1cb0d29ff88195cceca448ff6d6cc295c36"
@@ -3920,10 +4071,6 @@ lodash.templatesettings@^4.0.0:
   resolved "https://registry.yarnpkg.com/lodash.templatesettings/-/lodash.templatesettings-4.1.0.tgz#2b4d4e95ba440d915ff08bc899e4553666713316"
   dependencies:
     lodash._reinterpolate "~3.0.0"
-
-lodash.throttle@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/lodash.throttle/-/lodash.throttle-4.1.1.tgz#c23e91b710242ac70c37f1e1cda9274cc39bf2f4"
 
 lodash.uniq@^4.5.0:
   version "4.5.0"
@@ -4145,7 +4292,7 @@ mime@^2.0.3:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/mime/-/mime-2.4.0.tgz#e051fd881358585f3279df333fe694da0bcffdd6"
 
-mime@^2.4.2:
+mime@^2.4.0, mime@^2.4.2:
   version "2.4.4"
   resolved "https://registry.yarnpkg.com/mime/-/mime-2.4.4.tgz#bd7b91135fc6b01cde3e9bae33d659b63d8857e5"
 
@@ -5235,6 +5382,10 @@ qs@6.7.0, qs@^6.5.1:
   version "6.7.0"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
 
+qs@^6.6.0:
+  version "6.9.0"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.9.0.tgz#d1297e2a049c53119cb49cca366adbbacc80b409"
+
 qs@~6.5.2:
   version "6.5.2"
   resolved "https://registry.yarnpkg.com/qs/-/qs-6.5.2.tgz#cb3ae806e8740444584ef154ce8ee98d403f3e36"
@@ -5695,6 +5846,10 @@ slash@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/slash/-/slash-2.0.0.tgz#de552851a1759df3a8f206535442f5ec4ddeab44"
 
+smoothscroll-polyfill@^0.4.3:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/smoothscroll-polyfill/-/smoothscroll-polyfill-0.4.4.tgz#3a259131dc6930e6ca80003e1cb03b603b69abf8"
+
 snapdragon-node@^2.0.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/snapdragon-node/-/snapdragon-node-2.1.1.tgz#6c175f86ff14bdb0724563e8f3c1b021a286853b"
@@ -6018,6 +6173,20 @@ superagent@^3.3.1:
     mime "^1.4.1"
     qs "^6.5.1"
     readable-stream "^2.3.5"
+
+superagent@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/superagent/-/superagent-4.1.0.tgz#c465c2de41df2b8d05c165cbe403e280790cdfd5"
+  dependencies:
+    component-emitter "^1.2.0"
+    cookiejar "^2.1.2"
+    debug "^4.1.0"
+    form-data "^2.3.3"
+    formidable "^1.2.0"
+    methods "^1.1.1"
+    mime "^2.4.0"
+    qs "^6.6.0"
+    readable-stream "^3.0.6"
 
 supports-color@^2.0.0:
   version "2.0.0"
@@ -6389,6 +6558,10 @@ valine@1.3.6:
   version "1.3.6"
   resolved "https://registry.yarnpkg.com/valine/-/valine-1.3.6.tgz#e39ba279a63eaf7c03fcbb23766226d03909b0cc"
 
+valine@^1.3.6:
+  version "1.3.10"
+  resolved "https://registry.yarnpkg.com/valine/-/valine-1.3.10.tgz#f42b5409e822290b0d8fea75db5c1a67b56fe552"
+
 vary@~1.1.2:
   version "1.1.2"
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
@@ -6411,6 +6584,20 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vssue@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/vssue/-/vssue-1.2.0.tgz#820f68f7131a93ec1d2187b8ef1de1751127a1f7"
+  dependencies:
+    "@vssue/utils" "^1.1.1"
+    github-markdown-css "^3.0.1"
+    vue "^2.6.10"
+    vue-i18n "^8.11.2"
+    vue-property-decorator "^8.1.1"
+
+vue-class-component@^7.0.1:
+  version "7.1.0"
+  resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-7.1.0.tgz#b33efcb10e17236d684f70b1e96f1946ec793e87"
+
 vue-click-outside@1.0.7:
   version "1.0.7"
   resolved "https://registry.yarnpkg.com/vue-click-outside/-/vue-click-outside-1.0.7.tgz#cdd2b1605e3c4944784e1794eae4a12a0f700bd6"
@@ -6419,23 +6606,33 @@ vue-hot-reload-api@^2.3.0:
   version "2.3.3"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.3.tgz#2756f46cb3258054c5f4723de8ae7e87302a1ccf"
 
-vue-loader@^15.2.4:
-  version "15.7.0"
-  resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-15.7.0.tgz#27275aa5a3ef4958c5379c006dd1436ad04b25b3"
+vue-i18n@^8.11.2:
+  version "8.15.0"
+  resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-8.15.0.tgz#9b11ef8e7a124f67cdf788c8c90a81f3606240ed"
+
+vue-loader@^15.7.1:
+  version "15.7.1"
+  resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-15.7.1.tgz#6ccacd4122aa80f69baaac08ff295a62e3aefcfd"
   dependencies:
-    "@vue/component-compiler-utils" "^2.5.1"
+    "@vue/component-compiler-utils" "^3.0.0"
     hash-sum "^1.0.2"
     loader-utils "^1.1.0"
     vue-hot-reload-api "^2.3.0"
     vue-style-loader "^4.1.0"
 
-vue-router@^3.0.2:
-  version "3.0.2"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.2.tgz#dedc67afe6c4e2bc25682c8b1c2a8c0d7c7e56be"
+vue-property-decorator@^8.1.1:
+  version "8.2.2"
+  resolved "https://registry.yarnpkg.com/vue-property-decorator/-/vue-property-decorator-8.2.2.tgz#ac895e9508ee1bf86e3a28568d94d842c2c8e42f"
+  dependencies:
+    vue-class-component "^7.0.1"
 
-vue-server-renderer@^2.5.16:
-  version "2.6.9"
-  resolved "https://registry.yarnpkg.com/vue-server-renderer/-/vue-server-renderer-2.6.9.tgz#74b970be513887ad255b2132daa1720a16af69ed"
+vue-router@^3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.1.3.tgz#e6b14fabc0c0ee9fda0e2cbbda74b350e28e412b"
+
+vue-server-renderer@^2.6.10:
+  version "2.6.10"
+  resolved "https://registry.yarnpkg.com/vue-server-renderer/-/vue-server-renderer-2.6.10.tgz#cb2558842ead360ae2ec1f3719b75564a805b375"
   dependencies:
     chalk "^1.1.3"
     hash-sum "^1.0.2"
@@ -6453,9 +6650,9 @@ vue-style-loader@^4.1.0:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
 
-vue-template-compiler@^2.5.16:
-  version "2.6.9"
-  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.6.9.tgz#26600415ff81a7a241aebc2d4e0abaa0f1a07915"
+vue-template-compiler@^2.6.10:
+  version "2.6.10"
+  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.6.10.tgz#323b4f3495f04faa3503337a82f5d6507799c9cc"
   dependencies:
     de-indent "^1.0.2"
     he "^1.1.0"
@@ -6464,9 +6661,9 @@ vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.9.1.tgz#1ee3bc9a16ecbf5118be334bb15f9c46f82f5825"
 
-vue@^2.5.16:
-  version "2.6.9"
-  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.9.tgz#415c1cc1a5ed00c8f0acdd0a948139d12b7ea6b3"
+vue@^2.6.10:
+  version "2.6.10"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.6.10.tgz#a72b1a42a4d82a721ea438d1b6bf55e66195c637"
 
 vuejs-paginate@^2.1.0:
   version "2.1.0"
@@ -6484,9 +6681,9 @@ vuepress-html-webpack-plugin@^3.2.0:
     toposort "^1.0.0"
     util.promisify "1.0.0"
 
-vuepress-plugin-container@^2.0.0:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/vuepress-plugin-container/-/vuepress-plugin-container-2.0.1.tgz#b20ef97dd91f137c8be119460927c5ffd64e0f77"
+vuepress-plugin-container@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-container/-/vuepress-plugin-container-2.0.2.tgz#3489cc732c7a210b31f202556e1346125dffeb73"
   dependencies:
     markdown-it-container "^2.0.0"
 
@@ -6496,11 +6693,19 @@ vuepress-plugin-flowchart@1.4.3:
   dependencies:
     flowchart.js "^1.11.3"
 
-vuepress-theme-reco@1.0.9-alpha.8:
-  version "1.0.9-alpha.8"
-  resolved "https://registry.yarnpkg.com/vuepress-theme-reco/-/vuepress-theme-reco-1.0.9-alpha.8.tgz#13f2bcb77507f4ef72ea09639f0e6a14986fede4"
+vuepress-plugin-smooth-scroll@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-smooth-scroll/-/vuepress-plugin-smooth-scroll-0.0.3.tgz#6eff2d4c186cca917cc9f7df2b0af7de7c8c6438"
+  dependencies:
+    smoothscroll-polyfill "^0.4.3"
+
+vuepress-theme-reco@1.0.9-alpha.13:
+  version "1.0.9-alpha.13"
+  resolved "https://registry.yarnpkg.com/vuepress-theme-reco/-/vuepress-theme-reco-1.0.9-alpha.13.tgz#88a7597660cc1128bba6f8c9807cd97fdc83f268"
   dependencies:
     "@vuepress-reco/vuepress-plugin-back-to-top" "^1.0.3"
+    "@vuepress-reco/vuepress-plugin-comments" "1.0.1"
+    "@vuepress-reco/vuepress-plugin-ga" "^1.0.2"
     "@vuepress-reco/vuepress-plugin-loading-page" "^1.0.0"
     "@vuepress-reco/vuepress-plugin-pagation" "^1.0.3"
     "@vuepress-reco/vuepress-plugin-screenfull" "^1.0.0"
@@ -6509,12 +6714,12 @@ vuepress-theme-reco@1.0.9-alpha.8:
     valine "1.3.6"
     vue-click-outside "1.0.7"
 
-vuepress@1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-1.0.3.tgz#7c744061b5a3244ab86d49ac8d66417258509f13"
+vuepress@1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/vuepress/-/vuepress-1.2.0.tgz#2f2cdf337ad40a3e4866dfd33e97b840db386af7"
   dependencies:
-    "@vuepress/core" "^1.0.3"
-    "@vuepress/theme-default" "^1.0.3"
+    "@vuepress/core" "^1.2.0"
+    "@vuepress/theme-default" "^1.2.0"
     cac "^6.3.9"
     envinfo "^7.2.0"
     opencollective-postinstall "^2.0.2"
