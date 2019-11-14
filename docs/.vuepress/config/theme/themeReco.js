@@ -24,6 +24,28 @@ module.exports = {
     recordIP: true,
     hideListAccessNumber: true
   },
+  // vssueConfig: {
+  //   admins: ['recoluan'],
+  //   platform: 'github',
+  //   owner: 'vuepress-reco',
+  //   repo: 'vuepress-reco.github.io',
+  //   clientId: '4d81cea3b3d8aac8e88e',
+  //   clientSecret: 'd23e8556b6d3c85abffbf4b8d853afb2ea08875a',
+  // },
+  friendLink: [
+    {
+      title: '午后南杂',
+      desc: 'Enjoy when you can, and endure when you must.',
+      email: '1156743527@qq.com',
+      link: 'https://www.recoluan.com'
+    },
+    {
+      title: 'vuepress-theme-reco',
+      desc: 'A simple and beautiful vuepress Blog & Doc theme.',
+      avatar: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
+      link: 'https://vuepress-theme-reco.recoluan.com'
+    },
+  ],
   // 备案号
   record: '京ICP备17067634号-1',
   // 项目开始时间
