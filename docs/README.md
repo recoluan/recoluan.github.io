@@ -5,14 +5,11 @@ bgImageStyle: {
   height: '450px'
 }
 faceImage: '/head.png'
-heroImage: /hero_write.png
+heroImage: /hero_black.png
 heroImageStyle: {
-  maxHeight: '200px',
+  maxHeight: '100px',
   display: block,
-  margin: '6rem auto 1.5rem',
-  borderRadius: '50%',
-  background: '#25252d',
-  boxShadow: '0 5px 18px rgba(0,0,0,0.2)'
+  margin: '5rem auto 0'
 }
 isShowTitleInHome: false
 actionText: About Me
