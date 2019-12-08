@@ -12,6 +12,7 @@ heroImageStyle: {
   margin: '5rem auto 0'
 }
 isShowTitleInHome: false
+isShowHeroImage: true
 actionText: About Me
 actionLink: /views/personalInfo/
 features:
