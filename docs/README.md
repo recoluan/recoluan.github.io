@@ -4,7 +4,6 @@ bgImage: '/banner_2.jpg'
 bgImageStyle: {
   height: '450px'
 }
-faceImage: '/head.png'
 heroImage: /hero_black.png
 heroImageStyle: {
   maxHeight: '100px',

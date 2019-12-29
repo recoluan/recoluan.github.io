@@ -11,6 +11,7 @@ module.exports = {
       text: 'Tag' // 默认 “标签”
     }
   },
+  authorAvatar: '/head.png',
   // 最后更新时间
   lastUpdated: 'Last Updated', // string | boolean
   // 作者
@@ -24,14 +25,6 @@ module.exports = {
     recordIP: true,
     hideListAccessNumber: true
   },
-  // vssueConfig: {
-  //   admins: ['recoluan'],
-  //   platform: 'github',
-  //   owner: 'vuepress-reco',
-  //   repo: 'vuepress-reco.github.io',
-  //   clientId: '4d81cea3b3d8aac8e88e',
-  //   clientSecret: 'd23e8556b6d3c85abffbf4b8d853afb2ea08875a',
-  // },
   friendLink: [
     {
       title: '午后南杂',
@@ -47,7 +40,7 @@ module.exports = {
     },
   ],
   // 备案号
-  record: '京ICP备17067634号-1',
+  // record: '京ICP备17067634号-1',
   // 项目开始时间
   startYear: '2017'
 }
