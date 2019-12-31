@@ -11,11 +11,11 @@ module.exports = {
       text: 'Tag' // 默认 “标签”
     }
   },
-  authorAvatar: '/head.png',
   // 最后更新时间
   lastUpdated: 'Last Updated', // string | boolean
   // 作者
   author: 'reco_luan',
+  authorAvatar: '/head.png',
   // valine 设置
   valineConfig: {
     appId: 'Q6hMeY2PSaM9FMkXetzoJoU5-gzGzoHsz',
