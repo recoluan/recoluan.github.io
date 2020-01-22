@@ -10,7 +10,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
-    "publish": "bash deploy.sh"
+    "deploy": "bash scripts/deploy.sh",
+    "push": "bash scripts/push.sh"
   },
   "dependencies": {
     "vuepress": "1.2.0",
