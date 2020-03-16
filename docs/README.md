@@ -10,6 +10,7 @@ heroImageStyle: {
   display: block,
   margin: '5rem auto 0'
 }
+heroText: null
 isShowTitleInHome: false
 isShowHeroImage: true
 actionText: About Me

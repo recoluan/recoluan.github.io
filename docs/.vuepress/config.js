@@ -19,7 +19,7 @@ module.exports = {
   theme: 'reco',
   themeConfig,
   markdown: {
-    lineNumbers: true
+    // lineNumbers: true
   },
   plugins: [
     [
