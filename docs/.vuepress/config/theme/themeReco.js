@@ -21,7 +21,8 @@ module.exports = {
     appId: 'Q6hMeY2PSaM9FMkXetzoJoU5-gzGzoHsz',
     appKey: 'iLQlev5jo2Cm5pLcI0z3qhtr',
     placeholder: '填写邮箱可以收到回复提醒哦！',
-    notify: true,
+    verify: true, // 验证码服务
+    // notify: true, // 
     recordIP: true,
     hideListAccessNumber: true
   },
