@@ -14,7 +14,8 @@ module.exports = {
     ['link', { rel: 'apple-touch-icon', href: '/hero_write.png' }],
     ['link', { rel: 'mask-icon', href: '/hero_write.svg', color: '#42b983' }],
     ['meta', { name: 'msapplication-TileImage', content: '/hero_write.png' }],
-    ['meta', { name: 'msapplication-TileColor', content: '#000000' }]
+    ['meta', { name: 'msapplication-TileColor', content: '#000000' }],
+    ['script', { 'ata-ad-client': 'ca-pub-5123799675896802', async: 'async', src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js' }]
   ],
   theme: 'reco',
   themeConfig,
