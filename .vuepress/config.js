@@ -1,4 +1,4 @@
-const themeConfig = require('./config/theme/')
+const themeConfig = require('./config/theme')
 
 module.exports = {
   title: "午后南杂",
