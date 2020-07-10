@@ -14,10 +14,11 @@
     "push": "bash scripts/push.sh"
   },
   "dependencies": {
-    "vuepress": "1.4.1",
-    "vuepress-theme-reco": "1.4.5",
-    "@vuepress/plugin-pwa": "1.2.0",
     "@vuepress/plugin-google-analytics": "1.2.0",
-    "md5": "2.2.1"
+    "@vuepress/plugin-pwa": "1.2.0",
+    "md5": "2.2.1",
+    "vue-class-component": "^7.2.3",
+    "vuepress": "1.4.1",
+    "vuepress-theme-reco": "1.5.3"
   }
 }
