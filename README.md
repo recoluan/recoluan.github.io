@@ -1,9 +1,9 @@
 ---
 home: true
 bgImage: '/banner_2.jpg'
-bgImageStyle: {
-  height: '450px'
-}
+# bgImageStyle: {
+#   height: '450px'
+# }
 heroImage: /hero_black.png
 heroImageStyle: {
   maxHeight: '100px',
