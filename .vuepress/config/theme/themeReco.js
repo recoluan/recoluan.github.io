@@ -12,7 +12,7 @@ module.exports = {
     },
     socialLinks: [
       { icon: 'reco-github', link: 'https://github.com/recoluan' },
-      { icon: 'fa-camera', link: 'https://www.npmjs.com/~reco_luan' }
+      { icon: 'reco-npm', link: 'https://www.npmjs.com/~reco_luan' }
     ]
   },
   // 最后更新时间
