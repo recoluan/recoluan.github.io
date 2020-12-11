@@ -9,7 +9,11 @@ module.exports = {
     tag: {
       location: 3, // 在导航栏菜单中所占的位置，默认3
       text: 'Tag' // 默认 “标签”
-    }
+    },
+    socialLinks: [
+      { icon: 'reco-github', link: 'https://github.com/recoluan' },
+      { icon: 'fa-camera', link: 'https://www.npmjs.com/~reco_luan' }
+    ]
   },
   // 最后更新时间
   lastUpdated: 'Last Updated', // string | boolean
