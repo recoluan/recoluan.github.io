@@ -43,6 +43,12 @@ module.exports = {
       logo: "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
       link: 'https://vuepress-theme-reco.recoluan.com'
     },
+    {
+      title: '小诺',
+      desc: '可能是支持数据库最全面的低代码快速开发平台',
+      logo: "https://doc.xiaonuo.vip/xiaonuo_logo.png",
+      link: 'https://doc.xiaonuo.vip/'
+    },
   ],
   // 备案号
   // record: '京ICP备17067634号-1',
