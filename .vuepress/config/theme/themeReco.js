@@ -51,7 +51,7 @@ module.exports = {
     },
   ],
   // 备案号
-  // record: '京ICP备17067634号-1',
+  record: '京京ICP备2021009702号',
   // 项目开始时间
   startYear: '2017',
   mode: 'light'
