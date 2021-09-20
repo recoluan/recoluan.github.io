@@ -6,7 +6,7 @@ git init
 git add -A
 git commit -m 'deploy'
 
-git push -f git@e.coding.net:recoluan/recoluan/recoluan.git master
+git push -f git@github.com:recoluan/recoluan.github.io.git master
 
 cd ../
 rm -rf public
