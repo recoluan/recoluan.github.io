@@ -1,4 +1,6 @@
 node_modules/
 docs/.vuepress/theme
 docs/.vuepress/plugins
-yarn.lock
+public
+.vuepress/.cache
+.vuepress/.temp
