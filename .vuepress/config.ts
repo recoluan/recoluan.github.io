@@ -35,8 +35,8 @@ export default defineUserConfig<DefaultThemeOptions>({
     ],
     // valine 设置
     valineConfig: {
-      appId: 'jvc9s4BkJYQNOcpsbVTPMePe-gzGzoHsz',
-      appKey: 'Js91M9DfM9vPwVaUj7xdkbxh',
+      appId: 'Q6hMeY2PSaM9FMkXetzoJoU5-gzGzoHsz',
+      appKey: 'iLQlev5jo2Cm5pLcI0z3qhtr',
       placeholder: '填写邮箱可以收到回复提醒哦！',
       verify: true, // 验证码服务
       // notify: true, //
