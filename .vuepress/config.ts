@@ -10,9 +10,10 @@ export default defineUserConfig<DefaultThemeOptions>({
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
   ],
   theme: 'reco',
+  lang: 'zh-CN',
   themeConfig: {
     style: '@vuepress-reco/style-default',
-    // logo: '/head.png',
+    logo: '/head.png',
     // logo: '/hero_black.png',
     author: 'reco_luan',
     authorAvatar: '/head.png',
@@ -21,11 +22,9 @@ export default defineUserConfig<DefaultThemeOptions>({
     lastUpdatedText: '',
     navbar:
     [
-      { text: 'Home', link: '/' },
-      { text: 'Categories', link: '/categories/essay/1/' },
-      { text: 'Tags', link: '/tags/webpack/1/' },
-      { text: 'Contact', 
-      children: [
+      { 
+        text: 'Contact',
+        children: [
           { text: 'GitHub', link: 'https://github.com/recoluan' },
           { text: '简书', link: 'https://www.jianshu.com/u/cd674a19515e' },
           { text: 'CSDN', link: 'https://blog.csdn.net/recoluan' },
@@ -43,12 +42,6 @@ export default defineUserConfig<DefaultThemeOptions>({
       recordIP: true,
       // hideComments: true
     },
-    socialLinks: [
-      { icon: 'BrandGithub', link: 'https://github.com/recoluan' }
-    ],
-    // 备案号
-    record: '京京ICP备2021009702号',
-    // 项目开始时间
-    startYear: '2017',
+    autoAddCategoryToNavbar: true
   },
 })

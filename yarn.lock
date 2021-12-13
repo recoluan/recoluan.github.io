@@ -394,10 +394,10 @@
   dependencies:
     "@vuepress/core" "2.0.0-beta.27"
 
-"@vuepress-reco/style-default@^2.0.1-alpha.15":
-  version "2.0.1-alpha.15"
-  resolved "https://registry.npmjs.org/@vuepress-reco/style-default/-/style-default-2.0.1-alpha.15.tgz#5a002e43b7f057e52cf36774ba0575e76182992f"
-  integrity sha512-C76oKe6S0Z8a6evZ15kQLRvqcf6ZQXkouudGPwOd13M1/pawy/GXzJyjOC+unnjXMaWETeiW3yNJGu9lCUi2eA==
+"@vuepress-reco/style-default@^2.0.1-alpha.18":
+  version "2.0.1-alpha.18"
+  resolved "https://registry.npmjs.org/@vuepress-reco/style-default/-/style-default-2.0.1-alpha.18.tgz#86e17c9872b7eecb73b9902d5995a2649e4710e1"
+  integrity sha512-wCLzFZSO1Y2i3mxRQq7LrwybNJvSRX3hdXVvdLlYalBvZ4pGRGQT3kj890kaJ3mro9i7Z33YxEuss90krODzew==
   dependencies:
     "@vuepress-reco/core" "^2.0.1-alpha.14"
     "@vuepress-reco/vuepress-plugin-comments" "^2.0.1-alpha.14"
@@ -422,10 +422,10 @@
     "@vuepress/utils" "2.0.0-beta.27"
     valine "1.4.14"
 
-"@vuepress-reco/vuepress-plugin-page@^2.0.1-alpha.14":
-  version "2.0.1-alpha.14"
-  resolved "https://registry.npmmirror.com/@vuepress-reco/vuepress-plugin-page/download/@vuepress-reco/vuepress-plugin-page-2.0.1-alpha.14.tgz#46b0bcce5c9223a5dcbb213a1a23826fc5d0eb04"
-  integrity sha512-hmZRjMZ0jsnHOlXIfp+uyBj9AgchaFkmeOJv/Z0nO0AH2oE7BEbe+S6bU6MjlOC8RGJh2DkzBwxIRO1qExtlKw==
+"@vuepress-reco/vuepress-plugin-page@^2.0.1-alpha.16":
+  version "2.0.1-alpha.16"
+  resolved "https://registry.npmjs.org/@vuepress-reco/vuepress-plugin-page/-/vuepress-plugin-page-2.0.1-alpha.16.tgz#69d93dd82970178f9f477994b899f3468b00ec39"
+  integrity sha512-vFc9t4Ugj1pclD3/aJ9NBloBWhcYcSzQyhSGPfYjmZxR2YbMgAkRnD0iopaoGw5giG6cjaDNW9i9WQ0GBS3cFQ==
   dependencies:
     "@vuepress-reco/core" "^2.0.1-alpha.14"
     "@vuepress/client" "2.0.0-beta.27"
@@ -4373,14 +4373,14 @@ vue@^3.2.20:
     "@vue/server-renderer" "3.2.23"
     "@vue/shared" "3.2.23"
 
-vuepress-theme-reco@2.0.1-alpha.15:
-  version "2.0.1-alpha.15"
-  resolved "https://registry.npmjs.org/vuepress-theme-reco/-/vuepress-theme-reco-2.0.1-alpha.15.tgz#ace258b84e6970fd1786cca41a8fc09f088a7029"
-  integrity sha512-Ka8/MT7weAtkXPehgSyWBzoNkO0cJLvsLxosWAuBPTIyZ/HvV/VFOIP7Rr8JnJetfKxxl2asliwaAR9k3cNInQ==
+vuepress-theme-reco@2.0.1-alpha.18:
+  version "2.0.1-alpha.18"
+  resolved "https://registry.npmjs.org/vuepress-theme-reco/-/vuepress-theme-reco-2.0.1-alpha.18.tgz#7b003f59e91c16d9f74c3f7980add504cd057514"
+  integrity sha512-XYpmN/tVcDNUMS91Z8fjFCwxJ/pBpArZ9pxVMLj7RsqXdq+NJugfMOkPVWX/ovAs+94GAD1vL4vDyjo33GvsyA==
   dependencies:
     "@vicons/tabler" "^0.11.0"
-    "@vuepress-reco/style-default" "^2.0.1-alpha.15"
-    "@vuepress-reco/vuepress-plugin-page" "^2.0.1-alpha.14"
+    "@vuepress-reco/style-default" "^2.0.1-alpha.18"
+    "@vuepress-reco/vuepress-plugin-page" "^2.0.1-alpha.16"
     "@vuepress/plugin-active-header-links" "2.0.0-beta.27"
     "@vuepress/plugin-container" "^2.0.0-beta.27"
     "@vuepress/plugin-git" "2.0.0-beta.27"
