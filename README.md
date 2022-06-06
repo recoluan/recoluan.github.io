@@ -5,11 +5,11 @@ modules:
   - Blog
   - Footer
 banner:
-  bgImage: '/banner_2.jpg'
+  bgImage: '/bg.svg'
   bgImageStyle: {
-    height: '450px'
+    height: '550px'
   }
-  heroImage: /hero_black.png
+  # heroImage: /hero_black.png
   heroImageStyle: {
     maxHeight: '100px',
     display: block,

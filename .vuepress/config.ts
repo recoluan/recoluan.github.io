@@ -1,7 +1,7 @@
 import { defineUserConfig } from 'vuepress'
-import type { DefaultThemeOptions } from 'vuepress'
+import { recoTheme } from 'vuepress-theme-reco'
 
-export default defineUserConfig<DefaultThemeOptions>({
+export default defineUserConfig({
   title: "午后南杂",
   description: 'Enjoy when you can, and endure when you must.',
   dest: 'public',
@@ -9,9 +9,7 @@ export default defineUserConfig<DefaultThemeOptions>({
     ['link', { rel: 'icon', href: '/favicon.ico' }],
     ['meta', { name: 'viewport', content: 'width=device-width,initial-scale=1,user-scalable=no' }],
   ],
-  theme: 'reco',
-  lang: 'zh-CN',
-  themeConfig: {
+  theme: recoTheme({
     style: '@vuepress-reco/style-default',
     logo: '/head.png',
     // logo: '/hero_black.png',
@@ -43,5 +41,6 @@ export default defineUserConfig<DefaultThemeOptions>({
       // hideComments: true
     },
     autoAddCategoryToNavbar: true
-  },
+  }),
+  lang: 'zh-CN',
 })
