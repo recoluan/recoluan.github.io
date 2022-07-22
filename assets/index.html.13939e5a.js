@@ -1,0 +1,1 @@
+const t=JSON.parse('{"key":"v-323946dc","path":"/tags/hexo/1/","title":"","lang":"zh-CN","frontmatter":{"layout":"Categories"},"excerpt":"","headers":[],"git":{},"filePathRelative":null}');export{t as data};
