@@ -1,26 +1,43 @@
 ---
 home: true
 modules:
-  - Banner
+  - BannerBrand
   - Blog
   - Footer
-banner:
-  bgImage: '/bg.svg'
-  bgImageStyle: {
-    height: '550px'
-  }
-  # heroImage: /hero_black.png
-  heroImageStyle: {
-    maxHeight: '100px',
-    display: block,
-    margin: '5rem auto 0'
-  }
+bannerBrand:
   heroText: 午后南杂
   tagline: Enjoy when you can, and endure when you must.
+  # heroImage: /logo.png
+  # heroImageStyle:
+  #   maxWidth: 200px
+  #   width: 100%
+  #   display: block
+  #   margin: 0 auto 2rem
+  #   borderRadius: 1rem
+  bgImage: /bg.svg
+  # bgImageStyle:
+  #   height: 750px
+  buttons:
+    - { text: vuepress-reco, link: 'https://github.com/vuepress-reco' }
+    - { text: vscode-theme-reco, link: 'https://marketplace.visualstudio.com/items?itemName=recoluan.vscode-theme-reco' }
+  socialLinks:
+    - { icon: 'LogoGithub', link: 'https://github.com/recoluan' }
+# banner:
+#   bgImage: '/bg.svg'
+#   bgImageStyle: {
+#     height: '550px'
+#   }
+#   # heroImage: /hero_black.png
+#   heroImageStyle: {
+#     maxHeight: '100px',
+#     display: block,
+#     margin: '5rem auto 0'
+#   }
+#   heroText: 午后南杂
+#   tagline: Enjoy when you can, and endure when you must.
 blog:
   socialLinks:
-    - { icon: 'BrandGithub', link: 'https://github.com/recoluan' }
-    - { icon: 'BrandTwitter', link: 'https://twitter.com/reco_luan' }
+    - { icon: 'LogoGithub', link: 'https://github.com/recoluan' }
 footer:
   startYear: '2017'
 # actionText: About Me
