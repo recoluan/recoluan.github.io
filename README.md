@@ -18,8 +18,8 @@ bannerBrand:
   # bgImageStyle:
   #   height: 750px
   buttons:
-    - { text: vuepress-reco, link: 'https://github.com/vuepress-reco' }
-    - { text: vscode-theme-reco, link: 'https://marketplace.visualstudio.com/items?itemName=recoluan.vscode-theme-reco' }
+    - { text: vuepress-reco, link: 'https://github.com/vuepress-reco', type: 'text', icon: 'ColorPalette' }
+    - { text: vscode-theme-reco, link: 'https://marketplace.visualstudio.com/items?itemName=recoluan.vscode-theme-reco', type: 'text', icon: 'ColorPalette' }
   socialLinks:
     - { icon: 'LogoGithub', link: 'https://github.com/recoluan' }
 # banner:
