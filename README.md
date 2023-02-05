@@ -5,7 +5,8 @@ modules:
   - Blog
   - Footer
 bannerBrand:
-  heroText: 午后南杂
+  title: 午后南杂
+  description: reco 的小小杂货铺
   tagline: Enjoy when you can, and endure when you must.
   # heroImage: /logo.png
   # heroImageStyle:
@@ -20,8 +21,6 @@ bannerBrand:
   buttons:
     - { text: vuepress-reco, link: 'https://github.com/vuepress-reco', type: 'text', icon: 'ColorPalette' }
     - { text: vscode-theme-reco, link: 'https://marketplace.visualstudio.com/items?itemName=recoluan.vscode-theme-reco', type: 'text', icon: 'ColorPalette' }
-  socialLinks:
-    - { icon: 'LogoGithub', link: 'https://github.com/recoluan' }
 # banner:
 #   bgImage: '/bg.svg'
 #   bgImageStyle: {
