@@ -1,8 +1,19 @@
-.hero-content {
-  img {
-    @apply mb-8 !important;
+body {
+  .navbar-links-wrapper {
+    @apply hidden !important;
   }
-  p {
-    @apply text-2xl;
+  .banner-brand__wrapper {
+    background-image: radial-gradient(rgba(93, 103, 232, 0.2) 10%, rgba(255, 255, 255, 0) 60%);
+    .banner-brand__content {
+      .title {
+        @apply leading-tight !important;
+      }
+      .description {
+        @apply text-xl;
+      }
+    }
+  }
+  .works__container {
+    background-image: radial-gradient(rgba(239, 68, 68, 0.1) 10%, rgba(255, 255, 255, 0) 60%);
   }
 }
