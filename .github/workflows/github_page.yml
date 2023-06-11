@@ -1,0 +1,30 @@
+name: Deploy static content to Pages
+
+on:
+  push:
+    branches: ["gh-pages-source"]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions: 
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 16
+          cache: npm
+      - run: npm install
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to GitHub Pages
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: main
+          build_dir: public
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAGE_TOKEN }}
