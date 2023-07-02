@@ -3,6 +3,7 @@ home: true
 modules:
   - BannerBrand
   - Works
+  - Comment
   - Footer
 bannerBrand:
   title: Reco's Personal Homepage
