@@ -12,4 +12,6 @@ bannerBrand:
     - { icon: 'LogoGithub', link: 'https://github.com/recoluan' }
 footer:
   startYear: '2017'
+  record: '京ICP备2023018606号-1'
+  recordLink: 'beian.miit.gov.cn'
 ---
