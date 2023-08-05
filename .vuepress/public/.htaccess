@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond %{HTTP:From-Https} !^on$ [NC]
+RewriteCond %{HTTP_HOST} ^(www.)?recoluan.com$ [NC]
+RewriteRule ^(.*)$ https://www.recoluan.com/$1 [R=301,L]
+</IfModule>
