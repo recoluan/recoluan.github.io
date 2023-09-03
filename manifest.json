@@ -1,0 +1,20 @@
+{
+  "name": "午后南杂",
+  "short_name": "午后南杂",
+  "icons": [
+    {
+      "src": "/hero_write.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/hero_write.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#fff",
+  "theme_color": "#42b983"
+}
