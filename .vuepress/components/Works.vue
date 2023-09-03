@@ -15,14 +15,9 @@
 <script setup lang="ts">
 const data = [
   {
-    title: '📖 Blog',
-    desc: "Reco's blogs.",
-    link: 'http://blog.recoluan.com'
-  },
-  {
-    title: '📖 Work',
-    desc: "Reco's work records.",
-    link: 'http://work.recoluan.com'
+    title: '🛠️ Revili',
+    desc: 'A command and GUI integration tool based on vite.',
+    link: 'http://revili.recoluan.com'
   },
   {
     title: '🎨 vuepress-theme-reco',
@@ -33,6 +28,16 @@ const data = [
     title: '🎨 vscode-theme-reco',
     desc: 'This Theme as much as possible according to vuepress-theme-reco.',
     link: 'https://marketplace.visualstudio.com/items?itemName=recoluan.vscode-theme-reco'
+  },
+  {
+    title: '📖 Blog',
+    desc: "Reco's blogs.",
+    link: 'http://blog.recoluan.com'
+  },
+  {
+    title: '📖 Work',
+    desc: "Reco's work records.",
+    link: 'http://work.recoluan.com'
   },
 ]
 
