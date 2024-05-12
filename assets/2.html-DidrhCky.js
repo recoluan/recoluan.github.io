@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as a}from"./app-Bwk_BGmh.js";const r={};function c(o,l){return t(),a("div")}const s=e(r,[["render",c],["__file","2.html.vue"]]),_=JSON.parse('{"path":"/categories/article/2.html","title":"","lang":"zh-CN","frontmatter":{"layout":"Categories"},"headers":[],"git":{},"filePathRelative":null}');export{s as comp,_ as data};
