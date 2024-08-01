@@ -1,9 +1,11 @@
 import { defineUserConfig } from "vuepress";
 import { recoTheme } from "vuepress-theme-reco";
+import { viteBundler } from '@vuepress/bundler-vite'
 
 export default defineUserConfig({
   title: "Reco's Personal Homepage",
   description: "Reco's Personal Homepage",
+  bundler: viteBundler(),
   dest: "public",
   head: [
     ["link", { rel: "icon", href: "/favicon.ico" }],
