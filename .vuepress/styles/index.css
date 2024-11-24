@@ -1,6 +1,14 @@
 body {
-  .navbar-links-wrapper {
+  .btn-toggle-dark-mode, .search-box {
     @apply hidden !important;
+  }
+  .social-links {
+    &::before {
+      @apply hidden !important;
+    }
+    .social-item:first-child {
+      @apply hidden !important;
+    }
   }
   .banner-brand__wrapper {
     background-image: radial-gradient(rgba(93, 103, 232, 0.2) 10%, rgba(255, 255, 255, 0) 60%);
@@ -15,5 +23,11 @@ body {
   }
   .works__container {
     background-image: radial-gradient(rgba(239, 68, 68, 0.1) 10%, rgba(255, 255, 255, 0) 60%);
+  }
+  .reco-valine-wrapper {
+    margin: 0 auto;
+    max-width: 1024px;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }

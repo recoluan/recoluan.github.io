@@ -19,7 +19,6 @@ export default defineUserConfig({
   ],
   theme: recoTheme({
     colorMode: "dark",
-    style: "@vuepress-reco/style-default",
     logo: "/head.png",
     author: "reco_luan",
     authorAvatar: "/head.png",
@@ -37,5 +36,15 @@ export default defineUserConfig({
         // hideComments: true
       },
     },
+    socialLinks: [
+      {
+        icon: 'IconRecoTheme',
+        link: 'https://theme-reco.vuejs.press' 
+      },
+      {
+        icon: 'IconRevili',
+        link: 'https://revili.recoluan.com' 
+      }
+    ],
   }),
 });
